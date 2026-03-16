@@ -432,7 +432,7 @@
         .about-grid {
           grid-template-columns: 1fr auto auto;
           gap: 3rem;
-          align-items: start;
+          align-items: stretch;
         }
       }
 
@@ -454,6 +454,19 @@
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
+      }
+
+      @media (min-width: 768px) {
+        .about-grid > div:last-child {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .about-education {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
       }
 
       .about-stat-card {
