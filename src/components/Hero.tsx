@@ -1,5 +1,6 @@
 import heroBg from "@/assets/hero-bg.jpg";
 import { useEffect, useState } from "react";
+import { scrollToSection } from "@/lib/scroll";
 
 const Hero = () => {
   const buzzwords = [
@@ -26,7 +27,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-start items-stretch overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroBg}
@@ -36,8 +37,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
       </div>
 
-      <div className="container relative z-10 py-32">
-        <div className="max-w-3xl">
+      <div className="container relative z-10 py-32 flex flex-col items-start text-left">
+        <div className="max-w-3xl w-full">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-6 animate-fade-in">
             UX Research Portfolio
           </p>
@@ -57,10 +58,24 @@ const Hero = () => {
             </span>
           </p>
           <div className="mt-10 flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <a href="#contact" className="inline-flex items-center px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide hover:opacity-90 transition-opacity no-print">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("#contact");
+              }}
+              className="inline-flex items-center px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide hover:opacity-90 transition-opacity no-print"
+            >
               Get in Touch
             </a>
-            <a href="#work" className="inline-flex items-center px-8 py-3.5 rounded-lg border border-foreground/20 text-foreground font-body font-medium text-sm tracking-wide hover:bg-foreground/5 transition-colors no-print">
+            <a
+              href="#work"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("#work");
+              }}
+              className="inline-flex items-center px-8 py-3.5 rounded-lg border border-foreground/20 text-foreground font-body font-medium text-sm tracking-wide hover:bg-foreground/5 transition-colors no-print"
+            >
               View Case Studies
             </a>
             <a href="/Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-8 py-3.5 rounded-lg border border-foreground/20 text-foreground font-body font-medium text-sm tracking-wide hover:bg-foreground/5 transition-colors no-print">

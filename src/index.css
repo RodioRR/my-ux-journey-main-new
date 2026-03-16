@@ -81,6 +81,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }
@@ -92,6 +96,11 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
+  }
+
+  /* Offset scroll targets so they're not hidden under fixed navbar */
+  [id] {
+    scroll-margin-top: 5rem;
   }
 }
 
