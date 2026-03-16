@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purple shade comparison – Hero buzzword</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --background: hsl(40 33% 96%);
+      --foreground: hsl(195 30% 15%);
+      --primary: hsl(187 55% 28%);
+      --muted-foreground: hsl(195 15% 45%);
+      --font-display: "DM Serif Display", serif;
+      --font-body: "DM Sans", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: var(--font-body);
+      padding: 2rem;
+    }
+    h1.page-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+    .comparison-grid {
+      display: grid;
+      gap: 3rem;
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+    .hero-sample {
+      padding: 2rem;
+      border-radius: 0.75rem;
+      background: white;
+      border: 1px solid hsl(40 20% 88%);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .hero-sample .hero-label {
+      font-size: 0.875rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .hero-sample .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .hero-sample .hero-title span {
+      color: var(--primary);
+    }
+    .hero-sample .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      line-height: 1.6;
+    }
+    .hero-buzzword {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 600;
+    }
+    .purple-label {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      font-family: monospace;
+      color: var(--muted-foreground);
+      padding: 0.25rem 0.5rem;
+      background: hsl(40 20% 95%);
+      border-radius: 4px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="page-title">Purple shade comparison – choose your favourite</h1>
+
+  <div class="comparison-grid">
+    <!-- Current palette from index.html -->
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #805AD5">curious.</span></p>
+      <span class="purple-label">#805AD5</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #9B6ED8">curious.</span></p>
+      <span class="purple-label">#9B6ED8</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #7C3AED">curious.</span></p>
+      <span class="purple-label">#7C3AED</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #A78BFA">curious.</span></p>
+      <span class="purple-label">#A78BFA</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #8B5CF6">curious.</span></p>
+      <span class="purple-label">#8B5CF6</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #6D28D9">curious.</span></p>
+      <span class="purple-label">#6D28D9</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #9F7AEA">curious.</span></p>
+      <span class="purple-label">#9F7AEA</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #7E57C2">curious.</span></p>
+      <span class="purple-label">#7E57C2</span>
+    </div>
+
+    <!-- Additional purple variations for comparison -->
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #6366F1">curious.</span></p>
+      <span class="purple-label">#6366F1 (indigo)</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #9333EA">curious.</span></p>
+      <span class="purple-label">#9333EA</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #6D28D9">curious.</span></p>
+      <span class="purple-label">#6D28D9 (darker)</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #5B21B6">curious.</span></p>
+      <span class="purple-label">#5B21B6</span>
+    </div>
+
+    <div class="hero-sample">
+      <p class="hero-label">UX Research Portfolio</p>
+      <h2 class="hero-title">Hi, I'm<br /><span>Melanie Gierszal</span></h2>
+      <p class="hero-subtitle">and I'm <span class="hero-buzzword" style="color: #A855F7">curious.</span></p>
+      <span class="purple-label">#A855F7</span>
+    </div>
+  </div>
+</body>
+</html>
