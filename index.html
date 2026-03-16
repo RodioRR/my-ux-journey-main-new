@@ -179,17 +179,10 @@
         }
       }
 
-      /* NAVBAR - Lovable: transparent at top, bg on scroll */
+      /* NAVBAR - Lovable: static, scrolls with page */
       .nav {
-        position: fixed;
-        inset-inline: 0;
-        top: 0;
+        position: relative;
         z-index: 50;
-        transition: background-color 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
-        background: transparent;
-      }
-
-      .nav.scrolled {
         background: rgba(255, 250, 240, 0.9);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
@@ -880,6 +873,7 @@
       .testimonials-grid {
         display: grid;
         gap: 2rem;
+        align-items: stretch;
       }
 
       @media (min-width: 768px) {
@@ -895,6 +889,7 @@
       }
 
       .testimonial-card {
+        margin: 0;
         padding: 2rem;
         border-radius: 0.75rem;
         background: rgba(236, 234, 230, 0.5);
@@ -904,21 +899,31 @@
         justify-content: space-between;
       }
 
+      .testimonial-card footer {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+        border-top: none;
+      }
+
       .testimonial-quote {
+        margin: 0 0 2rem 0;
+        padding: 0;
         font-size: 0.875rem;
         color: var(--muted-foreground);
         line-height: 1.6;
         font-style: italic;
-        margin-bottom: 1.5rem;
       }
 
       .testimonial-author {
+        margin: 0 0 0.25rem 0;
         font-family: var(--font-display);
         font-size: 1rem;
         color: var(--foreground);
       }
 
       .testimonial-role {
+        margin: 0;
         font-size: 0.875rem;
         color: var(--muted-foreground);
       }
@@ -1823,21 +1828,21 @@
             <h2 class="section-heading">What people say</h2>
             <div class="testimonials-grid">
               <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"Współpraca z Melanie to dowód na to, jak ogromny wpływ na biznes potrafi mieć świetny UX Research. Melanie to profesjonalistka w każdym calu. Jej przenikliwość i analityczny umysł pozwalają jej dostrzegać niuanse w zachowaniach użytkowników, które inni łatwo przeoczają. Najbardziej imponująca w pracy Melanie jest jej umiejętność łączenia perspektywy użytkownika z celami firmy. Jej badania nigdy nie kończyły się na samej diagnozie problemu, zawsze dostarczała konkretne, wartościowe rekomendacje, których wdrożenie przynosiło nam wymierne korzyści biznesowe. Gorąco polecam Melanie każdej organizacji, która chce tworzyć lepsze produkty i usługi w oparciu o rzetelne dane."</p>
+                <p class="testimonial-quote">"Współpraca z Melanie to dowód na to, jak ogromny wpływ na biznes potrafi mieć świetny UX Research. (...) Najbardziej imponująca w pracy Melanie jest jej umiejętność łączenia perspektywy użytkownika z celami firmy. (...)"</p>
                 <footer>
                   <p class="testimonial-author">Maciej Rynarzewski</p>
                   <p class="testimonial-role">Strategy Director at ZEN.COM</p>
                 </footer>
               </blockquote>
               <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. She also has an impeccable command of four (!) languages, which makes her able to talk to users from all around the world. As a manager, she was very supportive, offered her help and shared her expertise whenever we needed it. I learned a lot from Melanie and I'm sure whoever gets to work with her will learn a lot, too."</p>
+                <p class="testimonial-quote">"During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. (...) As a manager, she was very supportive, offered her help and shared her expertise whenever we needed it. (...)"</p>
                 <footer>
                   <p class="testimonial-author">Olga Skoczek (Wojnarowska)</p>
                   <p class="testimonial-role">UX Researcher at G2A.COM</p>
                 </footer>
               </blockquote>
               <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"I have pleasure to work with Melanie on many projects that focus strongly on UX Research. She has helped me improve my UX Designs plenty of times and as well as optimising many products. She's a very knowledgable researcher that has provided critical data and solutions to company's projects and has improved the flow of information across many branches in the company. I'm very thankful I get to design, knowing that my every move is being backed by such a professional."</p>
+                <p class="testimonial-quote">"I have pleasure to work with Melanie on many projects that focus strongly on UX Research. (...) She's a very knowledgable researcher that has provided critical data and solutions to company's projects and has improved the flow of information across many branches in the company. (...)"</p>
                 <footer>
                   <p class="testimonial-author">Kamil Rejman</p>
                   <p class="testimonial-role">UX Designer at G2A.COM</p>
@@ -1875,10 +1880,6 @@
           <p>
             © <span id="year"></span> Melanie Gierszal. All rights reserved.
           </p>
-          <div class="footer-links">
-            <a href="mailto:gierszal.melanie@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/melaniegierszal/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
         </div>
       </footer>
     </div>
