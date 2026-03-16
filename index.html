@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Melanie Gierszal · UX Research Portfolio</title>
+    <meta
+      name="description"
+      content="UX Research portfolio of Melanie Gierszal – Baymard-certified UX Researcher turning complex data into actionable insights."
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --background: hsl(40 33% 96%);
+        --foreground: hsl(195 30% 15%);
+        --card: hsl(40 30% 98%);
+        --card-foreground: hsl(195 30% 15%);
+        --primary: hsl(187 55% 28%);
+        --primary-foreground: hsl(40 33% 96%);
+        --secondary: hsl(30 50% 90%);
+        --secondary-foreground: hsl(195 30% 15%);
+        --muted: hsl(40 20% 92%);
+        --muted-foreground: hsl(195 15% 45%);
+        --accent: hsl(28 70% 65%);
+        --accent-foreground: hsl(195 30% 15%);
+        --border: hsl(40 20% 88%);
+        --radius: 0.75rem;
+        --font-display: "DM Serif Display", serif;
+        --font-body: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--background);
+        color: var(--foreground);
+        font-family: var(--font-body);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      .min-h-screen {
+        min-height: 100vh;
+      }
+
+      .bg-card {
+        background: var(--card);
+      }
+
+      .bg-muted {
+        background: var(--muted);
+      }
+
+      .text-muted {
+        color: var(--muted-foreground);
+      }
+
+      .text-primary {
+        color: var(--primary);
+      }
+
+      .border {
+        border: 1px solid var(--border);
+      }
+
+      .rounded-lg {
+        border-radius: var(--radius);
+      }
+
+      .rounded-xl {
+        border-radius: calc(var(--radius) * 1.4);
+      }
+
+      .rounded-full {
+        border-radius: 999px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.9rem 1.9rem;
+        font-size: 0.86rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-radius: var(--radius);
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: opacity 150ms ease, background-color 150ms ease,
+          border-color 150ms ease, color 150ms ease;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--primary-foreground);
+      }
+
+      .btn-primary:hover {
+        opacity: 0.9;
+      }
+
+      .btn-outline {
+        border-color: rgba(15, 23, 42, 0.12);
+        color: var(--foreground);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: rgba(15, 23, 42, 0.04);
+      }
+
+      .section {
+        padding: 4.5rem 0;
+      }
+
+      @media (min-width: 768px) {
+        .section {
+          padding: 6rem 0;
+        }
+      }
+
+      /* NAVBAR */
+      .nav {
+        position: fixed;
+        inset-inline: 0;
+        top: 0;
+        z-index: 40;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 300ms ease, opacity 300ms ease,
+          background-color 200ms ease, border-color 200ms ease;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      }
+
+      .nav.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .nav-inner {
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+      }
+
+      .nav-logo span {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: none;
+        gap: 2rem;
+        font-size: 0.85rem;
+      }
+
+      .nav-links a {
+        color: var(--muted-foreground);
+      }
+
+      .nav-links a:hover {
+        color: var(--foreground);
+      }
+
+      .nav-toggle {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .nav-toggle-icon {
+        width: 22px;
+        height: 22px;
+        position: relative;
+      }
+
+      .nav-toggle-icon span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--foreground);
+        border-radius: 999px;
+        transition: transform 200ms ease, opacity 200ms ease, top 200ms ease,
+          bottom 200ms ease;
+      }
+
+      .nav-toggle-icon span:nth-child(1) {
+        top: 4px;
+      }
+
+      .nav-toggle-icon span:nth-child(2) {
+        top: 10px;
+      }
+
+      .nav-toggle-icon span:nth-child(3) {
+        bottom: 4px;
+      }
+
+      .nav-mobile-open .nav-toggle-icon span:nth-child(1) {
+        top: 10px;
+        transform: rotate(45deg);
+      }
+
+      .nav-mobile-open .nav-toggle-icon span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-mobile-open .nav-toggle-icon span:nth-child(3) {
+        bottom: auto;
+        top: 10px;
+        transform: rotate(-45deg);
+      }
+
+      .nav-mobile-panel {
+        display: none;
+        border-top: 1px solid rgba(148, 163, 184, 0.4);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .nav-mobile-panel.open {
+        display: block;
+      }
+
+      .nav-mobile-links {
+        padding: 0.75rem 0 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      @media (min-width: 768px) {
+        .nav-inner {
+          height: 5rem;
+        }
+
+        .nav-links {
+          display: flex;
+        }
+
+        .nav-toggle {
+          display: none;
+        }
+
+        .nav-mobile-panel {
+          display: none !important;
+        }
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 5rem;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+      }
+
+      .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+      }
+
+      .hero-bg-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(255,250,240,0.6), rgba(255,250,240,0.4), var(--background));
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        line-height: 1.05;
+        margin-bottom: 1rem;
+      }
+
+      .hero-title span {
+        color: var(--primary);
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+        color: var(--muted-foreground);
+        max-width: 34rem;
+        line-height: 1.7;
+      }
+
+      .hero-buzzword {
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 600;
+        transition: opacity 0.5s ease;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 2rem;
+      }
+
+      /* SECTION HEADERS */
+      .eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-heading {
+        font-size: clamp(1.9rem, 3vw, 2.5rem);
+        margin-bottom: 1rem;
+      }
+
+      /* ABOUT */
+      .about-grid {
+        display: grid;
+        gap: 2.5rem;
+      }
+
+      @media (min-width: 960px) {
+        .about-grid {
+          grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
+          gap: 3.5rem;
+        }
+      }
+
+      .about-body {
+        font-size: 0.98rem;
+        color: var(--muted-foreground);
+        line-height: 1.8;
+      }
+
+      .about-body p {
+        margin-bottom: 0.9rem;
+      }
+
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin-bottom: 2.2rem;
+      }
+
+      .about-stat-card {
+        background: white;
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        padding: 1.1rem 1.2rem;
+      }
+
+      .about-stat-number {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 0.2rem;
+      }
+
+      .about-stat-label {
+        font-size: 0.85rem;
+        color: var(--muted-foreground);
+      }
+
+      .about-education h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .about-edu-item {
+        display: flex;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        color: var(--muted-foreground);
+      }
+
+      .about-edu-year {
+        width: 5rem;
+        flex-shrink: 0;
+      }
+
+      .about-edu-degree {
+        color: var(--foreground);
+        font-weight: 500;
+      }
+
+      /* CASE STUDIES */
+      .cases-list {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      .case {
+        border-radius: 1.3rem;
+        border: 1px solid var(--border);
+        background: white;
+        overflow: hidden;
+      }
+
+      .case-media {
+        height: 210px;
+        background: linear-gradient(
+          135deg,
+          hsl(187 55% 85%),
+          hsl(40 33% 96%)
+        );
+      }
+
+      .case-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .case-body {
+        padding: 1.6rem 1.6rem 1.75rem;
+      }
+
+      .case-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .case-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 999px;
+        background: var(--muted);
+        color: var(--muted-foreground);
+      }
+
+      .case-title {
+        font-size: 1.35rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .case-subtitle {
+        font-size: 0.9rem;
+        font-style: italic;
+        color: var(--muted-foreground);
+        margin-bottom: 0.8rem;
+      }
+
+      .case-problem {
+        font-size: 0.92rem;
+        color: var(--muted-foreground);
+        line-height: 1.7;
+        margin-bottom: 0.9rem;
+      }
+
+      .case-impact {
+        padding: 0.9rem 0.9rem;
+        border-radius: 0.9rem;
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        background: hsla(187, 55%, 28%, 0.06);
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .case-impact span:first-child {
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      .case-toggle {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--primary);
+        cursor: pointer;
+        border: none;
+        background: none;
+        padding: 0;
+      }
+
+      .case-detail {
+        margin-top: 1.2rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(148, 163, 184, 0.5);
+        display: none;
+        font-size: 0.9rem;
+        color: var(--muted-foreground);
+        line-height: 1.7;
+      }
+
+      .case-detail.open {
+        display: grid;
+        gap: 1.2rem;
+      }
+
+      @media (min-width: 900px) {
+        .case-detail.open {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .case-detail h4 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+      }
+
+      /* SKILLS */
+      .skills-grid {
+        display: grid;
+        gap: 2.4rem;
+      }
+
+      @media (min-width: 960px) {
+        .skills-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+
+      .skills-col h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .skills-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .skills-list li {
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+        font-size: 0.9rem;
+        color: var(--muted-foreground);
+        margin-bottom: 0.4rem;
+      }
+
+      .skills-dot {
+        width: 0.32rem;
+        height: 0.32rem;
+        border-radius: 999px;
+        background: var(--primary);
+        margin-top: 0.45rem;
+      }
+
+      .skills-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .skills-tag {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 0.7rem;
+        border: 1px solid var(--border);
+        background: white;
+      }
+
+      .skills-lang-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .skills-lang-pill {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.7rem;
+        border-radius: 999px;
+        background: var(--muted);
+        color: var(--muted-foreground);
+      }
+
+      /* TESTIMONIALS */
+      .testimonials-grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .testimonials-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .testimonials-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .testimonial-card {
+        padding: 2rem;
+        border-radius: 1rem;
+        background: white;
+        border: 1px solid var(--border);
+      }
+
+      .testimonial-quote {
+        font-size: 0.9rem;
+        color: var(--muted-foreground);
+        line-height: 1.7;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+      }
+
+      .testimonial-author {
+        font-family: var(--font-display);
+        font-size: 1rem;
+      }
+
+      .testimonial-role {
+        font-size: 0.85rem;
+        color: var(--muted-foreground);
+      }
+
+      /* CONTACT */
+      .contact-inner {
+        max-width: 36rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact-text {
+        font-size: 0.96rem;
+        color: var(--muted-foreground);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .contact-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+      }
+
+      @media (min-width: 640px) {
+        .contact-row {
+          flex-direction: row;
+        }
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--foreground);
+      }
+
+      .contact-link:hover {
+        color: var(--primary);
+      }
+
+      .icon {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        border-radius: 999px;
+        border: 1px solid var(--primary);
+        position: relative;
+      }
+
+      .icon::before {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border-radius: inherit;
+        background: var(--primary);
+      }
+
+      /* FOOTER */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 1.4rem 0 1.5rem;
+        font-size: 0.8rem;
+        color: var(--muted-foreground);
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      @media (min-width: 640px) {
+        .footer-inner {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .footer-links a:hover {
+        color: var(--foreground);
+      }
+
+      /* SCROLL TO TOP */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 50;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 999px;
+        background: var(--primary);
+        color: var(--primary-foreground);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .scroll-to-top:hover {
+        opacity: 0.9;
+      }
+
+      .scroll-to-top.hidden {
+        opacity: 0;
+        transform: translateY(0.5rem);
+        pointer-events: none;
+      }
+
+      /* SIMPLE PRINT STYLES */
+      @media print {
+        body {
+          background: white;
+          color: black;
+        }
+
+        .nav,
+        .btn,
+        .nav-mobile-panel,
+        .scroll-to-top {
+          display: none !important;
+        }
+
+        .section {
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+        }
+
+        .min-h-screen {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="min-h-screen">
+      <nav class="nav" id="nav">
+        <div class="container nav-inner">
+          <a href="#" class="nav-logo">
+            M<span>·</span>G
+          </a>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="#work">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <div class="nav-toggle-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+        <div class="nav-mobile-panel" id="nav-mobile">
+          <div class="container nav-mobile-links">
+            <a href="#about">About</a>
+            <a href="Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="#work">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <!-- HERO -->
+        <section class="hero" id="top">
+          <div class="hero-bg">
+            <img src="assets/hero-bg.jpg" alt="" />
+            <div class="hero-bg-overlay"></div>
+          </div>
+          <div class="container hero-content">
+            <p class="hero-label">UX Research Portfolio</p>
+            <h1 class="hero-title">
+              Hi, I'm<br /><span>Melanie Gierszal</span>
+            </h1>
+            <p class="hero-subtitle">
+              and I'm <span class="hero-buzzword" id="buzzword">curious.</span>
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Get in Touch</a>
+              <a href="#work" class="btn btn-outline">View Case Studies</a>
+              <a href="Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Open Resume</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section bg-card" id="about">
+          <div class="container about-grid">
+            <div>
+              <p class="eyebrow">About</p>
+              <h2 class="section-heading">
+                Research that<br /><span class="text-primary">moves the needle</span>
+              </h2>
+              <div class="about-body">
+                <p>
+                  I'm a curiosity-driven UX Researcher taking ownership and initiative.
+                </p>
+                <p>
+                  The passion for asking users the right questions are rooted in my background in cognitive sciences, the ability to lead between the lines - in applied linguistic studies.
+                </p>
+                <p>
+                  I thrive when leading cross-functional projects that balance user needs with business goals, turning research into revenue.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class="about-stats">
+                <div class="about-stat-card">
+                  <div class="about-stat-number">10+</div>
+                  <div class="about-stat-label">Years Experience</div>
+                </div>
+                <div class="about-stat-card">
+                  <div class="about-stat-number">50+</div>
+                  <div class="about-stat-label">Research Projects</div>
+                </div>
+                <div class="about-stat-card">
+                  <div class="about-stat-number">6</div>
+                  <div class="about-stat-label">Languages</div>
+                </div>
+              </div>
+              <div class="about-education">
+                <h3>Degrees</h3>
+                <div class="about-edu-item">
+                  <span class="about-edu-year text-muted">—</span>
+                  <div>
+                    <div class="about-edu-degree">M.A. in Cognitive Science</div>
+                    <div class="text-muted">Human-Computer Interaction, Cognitive Neuropsychology</div>
+                  </div>
+                </div>
+                <div class="about-edu-item">
+                  <span class="about-edu-year text-muted">—</span>
+                  <div>
+                    <div class="about-edu-degree">Postgraduate in Business Planning and Strategy</div>
+                  </div>
+                </div>
+                <div class="about-edu-item">
+                  <span class="about-edu-year text-muted">—</span>
+                  <div>
+                    <div class="about-edu-degree">B.A. in Applied Linguistics</div>
+                    <div class="text-muted">Intercultural Communication, Translations</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CASE STUDIES -->
+        <section class="section" id="work">
+          <div class="container">
+            <p class="eyebrow">Selected Work</p>
+            <h2 class="section-heading">Case Studies</h2>
+            <div class="cases-list">
+              <!-- Case 1 -->
+              <article class="case" data-case="1">
+                <div class="case-media"></div>
+                <div class="case-body">
+                  <div class="case-tags">
+                    <span class="case-tag">Cross-functional Leadership</span>
+                    <span class="case-tag">Conversion Optimization</span>
+                    <span class="case-tag">A/B Testing</span>
+                    <span class="case-tag">Team Leadership</span>
+                  </div>
+                  <h3 class="case-title">Leading Conversion Optimisation Team</h3>
+                  <p class="case-subtitle">
+                    Established and led a structured conversion optimization practice as UX Lead Researcher, transforming stakeholder ideas into a pipeline of 92 research-driven experiments over 2 years.
+                  </p>
+                  <div class="case-impact">
+                    <span>Impact: </span>
+                    <span>Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</span>
+                  </div>
+                  <button type="button" class="case-toggle" data-toggle="1">Read full case study →</button>
+                  <div class="case-detail" id="case-detail-1">
+                    <div>
+                      <h4>Scope of Ownership</h4>
+                      <p>As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment.</p>
+                    </div>
+                    <div>
+                      <h4>Research Process</h4>
+                      <p>Implemented a Design Thinking framework: ideation workshops (empathize, define, ideate); hypothesis mapping; KPI and test plan alignment; A/B and multivariate tests.</p>
+                      <h4>Key Insight</h4>
+                      <p>A structured, research-driven practice boosted experiment volume and quality, yielding improvements in user journeys and business KPIs.</p>
+                    </div>
+                    <div>
+                      <h4>Reflections</h4>
+                      <p>Mastered Design Thinking workshop facilitation to align diverse stakeholders and generate high-quality hypotheses. Gained expertise in cross-functional project coordination.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Case 2 -->
+              <article class="case" data-case="2">
+                <div class="case-media">
+                  <img src="assets/case-study-checkout-flow-new.jpeg" alt="Order Fee Optimization" />
+                </div>
+                <div class="case-body">
+                  <div class="case-tags">
+                    <span class="case-tag">High-risk Data Analysis</span>
+                    <span class="case-tag">Multivariate Testing</span>
+                    <span class="case-tag">Checkout Optimization</span>
+                  </div>
+                  <h3 class="case-title">Order Fee Optimization</h3>
+                  <p class="case-subtitle">
+                    Led end-to-end multivariate tests to refine the checkout financial model, optimizing order fee amounts, visuals, and flow.
+                  </p>
+                  <div class="case-impact">
+                    <span>Impact: </span>
+                    <span>Increased conversion rate by 1 percentage point, supporting revenue growth while preserving margins.</span>
+                  </div>
+                  <button type="button" class="case-toggle" data-toggle="2">Read full case study →</button>
+                  <div class="case-detail" id="case-detail-2">
+                    <div>
+                      <h4>My Role</h4>
+                      <p>As research project manager, I defined hypotheses, selected methodology and KPIs, conducted analysis, prepared financial reports, and delivered recommendations.</p>
+                    </div>
+                    <div>
+                      <h4>Research Process</h4>
+                      <p>Ran 3 rounds of multivariate tests (~2 months each) on a global desktop segment, testing order fee amounts per price bracket, visual placement on checkout, price inclusion/exclusion.</p>
+                      <h4>Key Insight</h4>
+                      <p>Transparent pricing (upsell removed, fees integrated into totals) maintained KPIs and improved conversion by 1 p.p. across segments.</p>
+                    </div>
+                    <div>
+                      <h4>Reflections</h4>
+                      <p>Excelled in a combined PM-UX researcher role, navigating technical and legal considerations in a high-stakes project.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Case 3 -->
+              <article class="case" data-case="3">
+                <div class="case-media">
+                  <img src="assets/case-study-user-report-map.png" alt="Yearly User Report" />
+                </div>
+                <div class="case-body">
+                  <div class="case-tags">
+                    <span class="case-tag">Strategic User Insights</span>
+                    <span class="case-tag">User Surveys</span>
+                    <span class="case-tag">Strategic Reporting</span>
+                  </div>
+                  <h3 class="case-title">Yearly User Report</h3>
+                  <p class="case-subtitle">
+                    Created and led an annual user research report, synthesizing global survey data with internal analytics to inform business strategy.
+                  </p>
+                  <div class="case-impact">
+                    <span>Impact: </span>
+                    <span>Identified 3–4 key segments and behavioral shifts, guiding management, marketing, and product decisions.</span>
+                  </div>
+                  <button type="button" class="case-toggle" data-toggle="3">Read full case study →</button>
+                  <div class="case-detail" id="case-detail-3">
+                    <div>
+                      <h4>My Role</h4>
+                      <p>As creator and lead, I managed the end-to-end process: defined research goals, designed survey structure, planned global rollout, analyzed data, produced visual reports.</p>
+                    </div>
+                    <div>
+                      <h4>Research Process</h4>
+                      <p>Conducted recurring global surveys; performed quantitative analysis combined with behavioral metrics; conducted trend comparisons with previous years.</p>
+                      <h4>Key Insight</h4>
+                      <p>The yearly user report revealed clear shifts in user profiles, gaming preferences, and purchase behaviour over time.</p>
+                    </div>
+                    <div>
+                      <h4>Reflections</h4>
+                      <p>Developed skills in combining scalable surveys with internal analytics to produce comprehensive insights beyond individual methods.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Case 4 -->
+              <article class="case" data-case="4">
+                <div class="case-media">
+                  <img src="assets/case-study-shorter-checkout.png" alt="Shorter Checkout" />
+                </div>
+                <div class="case-body">
+                  <div class="case-tags">
+                    <span class="case-tag">Funnel Optimization</span>
+                    <span class="case-tag">A/B Test</span>
+                    <span class="case-tag">Checkout Optimization</span>
+                  </div>
+                  <h3 class="case-title">Shorter Checkout</h3>
+                  <p class="case-subtitle">
+                    Directed end-to-end A/B test as sole UX Researcher to eliminate a redundant checkout step, reducing drop-off.
+                  </p>
+                  <div class="case-impact">
+                    <span>Impact: </span>
+                    <span>Increased cart conversion rate by 5 percentage points, enhancing purchase completion and revenue.</span>
+                  </div>
+                  <button type="button" class="case-toggle" data-toggle="4">Read full case study →</button>
+                  <div class="case-detail" id="case-detail-4">
+                    <div>
+                      <h4>My Role</h4>
+                      <p>As sole UX Researcher, I defined research goals and KPIs, configured and monitored the A/B test, analyzed behavioral and conversion data.</p>
+                    </div>
+                    <div>
+                      <h4>Research Process</h4>
+                      <p>Executed a controlled A/B test (n=250k+ users), comparing the full flow against a streamlined single-step version.</p>
+                      <h4>Key Insight</h4>
+                      <p>The additional step, despite visual consistency, elevated drop-off rates and failed to retain users at journey end.</p>
+                    </div>
+                    <div>
+                      <h4>Reflections</h4>
+                      <p>Established a practice of thorough preparation, recognizing that research success depends on upstream alignment.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Case 5 -->
+              <article class="case" data-case="5">
+                <div class="case-media">
+                  <img src="assets/case-study-challenger-bank.png" alt="Challenger Bank" />
+                </div>
+                <div class="case-body">
+                  <div class="case-tags">
+                    <span class="case-tag">Discovery Research</span>
+                    <span class="case-tag">Competitive Analysis</span>
+                    <span class="case-tag">Fintech Innovation</span>
+                  </div>
+                  <h3 class="case-title">First Steps of a New Challenger Bank</h3>
+                  <p class="case-subtitle">
+                    Led UX research discovery for a new challenger bank app targeting young users and small businesses, defining niche, USP, and business model.
+                  </p>
+                  <div class="case-impact">
+                    <span>Impact: </span>
+                    <span>Enabled progression to planning phase, culminating in the launch of ZEN.COM as a standalone venture.</span>
+                  </div>
+                  <button type="button" class="case-toggle" data-toggle="5">Read full case study →</button>
+                  <div class="case-detail" id="case-detail-5">
+                    <div>
+                      <h4>My Role</h4>
+                      <p>As UX Researcher in the R&D department, I spearheaded the discovery phase, synthesizing desk research, competitive analysis, user interviews, surveys, and moderated usability tests.</p>
+                    </div>
+                    <div>
+                      <h4>Research Process</h4>
+                      <p>Desk research, competitive benchmarking, user interviews and surveys with target segments.</p>
+                      <h4>Key Insight</h4>
+                      <p>Two viable niches (young users and SME) emerged with tailored USPs, alongside feature priorities and monetization models.</p>
+                    </div>
+                    <div>
+                      <h4>Reflections</h4>
+                      <p>Excelled in bridging UX research with strategic product decisions in fintech.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Case 6 -->
+              <article class="case" data-case="6">
+                <div class="case-media">
+                  <img src="assets/case-study-mobile-onboarding.png" alt="Mobile App Purchase Flow" />
+                </div>
+                <div class="case-body">
+                  <div class="case-tags">
+                    <span class="case-tag">Moderated Usability Test</span>
+                    <span class="case-tag">Mobile</span>
+                    <span class="case-tag">Risk Mitigation</span>
+                  </div>
+                  <h3 class="case-title">Mobile App Purchase Flow</h3>
+                  <p class="case-subtitle">
+                    Led rapid moderated usability tests to validate redesigned purchase flow and onboarding, preventing a flawed launch.
+                  </p>
+                  <div class="case-impact">
+                    <span>Impact: </span>
+                    <span>Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention.</span>
+                  </div>
+                  <button type="button" class="case-toggle" data-toggle="6">Read full case study →</button>
+                  <div class="case-detail" id="case-detail-6">
+                    <div>
+                      <h4>My Role</h4>
+                      <p>Designed and executed moderated usability tests despite tight timelines; analyzed findings, recommended blocks, and advocated for follow-up research.</p>
+                    </div>
+                    <div>
+                      <h4>Research Process</h4>
+                      <p>Moderated usability tests with 5 target users (quick recruitment via network).</p>
+                      <h4>Key Insight</h4>
+                      <p>Onboarding induced confusion and distrust; purchase flow obscured pricing transparency via unexpected changes.</p>
+                    </div>
+                    <div>
+                      <h4>Reflections</h4>
+                      <p>Agile adaptation trumps perfection in fast-paced environments—honed skills in high-pressure validation.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section bg-card" id="skills">
+          <div class="container">
+            <p class="eyebrow">Expertise</p>
+            <h2 class="section-heading">Skills &amp; Methods</h2>
+            <div class="skills-grid">
+              <div class="skills-col">
+                <h3>Research Methods</h3>
+                <ul class="skills-list">
+                  <li><span class="skills-dot"></span>A/B &amp; Multivariate Testing</li>
+                  <li><span class="skills-dot"></span>Moderated &amp; Unmoderated Usability Testing</li>
+                  <li><span class="skills-dot"></span>Expert Reviews &amp; Heuristic Evaluation</li>
+                  <li><span class="skills-dot"></span>Surveys &amp; Data Analysis</li>
+                  <li><span class="skills-dot"></span>Card Sorting &amp; Tree Testing</li>
+                  <li><span class="skills-dot"></span>In‑depth Interviews</li>
+                  <li><span class="skills-dot"></span>Data Visualisation</li>
+                </ul>
+              </div>
+              <div class="skills-col">
+                <h3>Tools</h3>
+                <div class="skills-tags">
+                  <span class="skills-tag">Google Analytics</span>
+                  <span class="skills-tag">Firebase</span>
+                  <span class="skills-tag">Hotjar</span>
+                  <span class="skills-tag">Clarity</span>
+                  <span class="skills-tag">Alchemer</span>
+                  <span class="skills-tag">Survicate</span>
+                  <span class="skills-tag">Figma</span>
+                  <span class="skills-tag">Miro</span>
+                  <span class="skills-tag">Jira</span>
+                  <span class="skills-tag">BigQuery (SQL)</span>
+                  <span class="skills-tag">Excel (Advanced)</span>
+                  <span class="skills-tag">Google Tag Manager</span>
+                </div>
+              </div>
+              <div class="skills-col">
+                <h3>Certificates</h3>
+                <div class="skills-list">
+                  <li><span class="skills-dot"></span>UX Professional (Baymard)</li>
+                  <li><span class="skills-dot"></span>Product Analytics (Witflow)</li>
+                  <li><span class="skills-dot"></span>UX Strategy Fundamentals (Joe Natoli)</li>
+                  <li><span class="skills-dot"></span>Conducting Usability Testing (IDF)</li>
+                  <li><span class="skills-dot"></span>User Methods and Best Practices (IDF)</li>
+                </div>
+              </div>
+              <div class="skills-col">
+                <h3>Languages</h3>
+                <div class="skills-lang-row">
+                  <span>Polish</span>
+                  <span class="skills-lang-pill">Native</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>German</span>
+                  <span class="skills-lang-pill">Native</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>English</span>
+                  <span class="skills-lang-pill">Fluent</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>Spanish</span>
+                  <span class="skills-lang-pill">Communicative</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>Swedish</span>
+                  <span class="skills-lang-pill">Basic</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>Russian</span>
+                  <span class="skills-lang-pill">Basic</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section bg-card" id="testimonials">
+          <div class="container">
+            <p class="eyebrow">Testimonials</p>
+            <h2 class="section-heading">What people say</h2>
+            <div class="testimonials-grid">
+              <blockquote class="testimonial-card">
+                <p class="testimonial-quote">"Współpraca z Melanie to dowód na to, jak ogromny wpływ na biznes potrafi mieć świetny UX Research. Melanie to profesjonalistka w każdym calu. Jej przenikliwość i analityczny umysł pozwalają jej dostrzegać niuanse w zachowaniach użytkowników, które inni łatwo przeoczają."</p>
+                <footer>
+                  <p class="testimonial-author">Maciej Rynarzewski</p>
+                  <p class="testimonial-role">Strategy Director at ZEN.COM</p>
+                </footer>
+              </blockquote>
+              <blockquote class="testimonial-card">
+                <p class="testimonial-quote">"During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. She also has an impeccable command of four (!) languages."</p>
+                <footer>
+                  <p class="testimonial-author">Olga Skoczek (Wojnarowska)</p>
+                  <p class="testimonial-role">UX Researcher at G2A.COM</p>
+                </footer>
+              </blockquote>
+              <blockquote class="testimonial-card">
+                <p class="testimonial-quote">"I have pleasure to work with Melanie on many projects that focus strongly on UX Research. She has helped me improve my UX Designs plenty of times and as well as optimising many products. She's a very knowledgable researcher that has provided critical data and solutions."</p>
+                <footer>
+                  <p class="testimonial-author">Kamil Rejman</p>
+                  <p class="testimonial-role">UX Designer at G2A.COM</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact">
+          <div class="container contact-inner">
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-heading">Let&apos;s work together</h2>
+            <p class="contact-text">
+              Whether you need a UX research strategy, user testing, or
+              data‑driven insights — I&apos;d love to hear about your project.
+            </p>
+            <div class="contact-row">
+              <a href="mailto:gierszal.melanie@gmail.com" class="contact-link">
+                <span class="icon"></span>
+                <span>gierszal.melanie@gmail.com</span>
+              </a>
+              <div class="contact-link" aria-hidden="true">
+                <span class="icon"></span>
+                <span>Warsaw, Poland</span>
+              </div>
+            </div>
+            <a href="mailto:gierszal.melanie@gmail.com" class="btn btn-primary">
+              Send a message
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container footer-inner">
+          <p>
+            © <span id="year"></span> Melanie Gierszal. All rights reserved.
+          </p>
+          <div class="footer-links">
+            <a href="mailto:gierszal.melanie@gmail.com">Email</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <button class="scroll-to-top hidden" id="scroll-to-top" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script>
+      (function () {
+        var yearEl = document.getElementById("year");
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
+
+        var nav = document.getElementById("nav");
+        var navToggle = document.getElementById("nav-toggle");
+        var navMobile = document.getElementById("nav-mobile");
+        var mobileOpen = false;
+
+        function onScroll() {
+          if (!nav) return;
+          var fold = window.innerHeight || 0;
+          var y = window.scrollY || window.pageYOffset || 0;
+          if (y > fold) {
+            nav.classList.add("visible");
+          } else {
+            nav.classList.remove("visible");
+          }
+          var scrollBtn = document.getElementById("scroll-to-top");
+          if (scrollBtn) {
+            if (y > 500) {
+              scrollBtn.classList.remove("hidden");
+            } else {
+              scrollBtn.classList.add("hidden");
+            }
+          }
+        }
+
+        window.addEventListener("scroll", onScroll);
+        onScroll();
+
+        var scrollToTopBtn = document.getElementById("scroll-to-top");
+        if (scrollToTopBtn) {
+          scrollToTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        if (navToggle && navMobile) {
+          navToggle.addEventListener("click", function () {
+            mobileOpen = !mobileOpen;
+            if (mobileOpen) {
+              document.body.classList.add("nav-mobile-open");
+              navMobile.classList.add("open");
+            } else {
+              document.body.classList.remove("nav-mobile-open");
+              navMobile.classList.remove("open");
+            }
+          });
+
+          navMobile.addEventListener("click", function (e) {
+            var target = e.target;
+            if (target && target.tagName === "A") {
+              mobileOpen = false;
+              document.body.classList.remove("nav-mobile-open");
+              navMobile.classList.remove("open");
+            }
+          });
+        }
+
+        var toggles = document.querySelectorAll("[data-toggle]");
+        toggles.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var id = btn.getAttribute("data-toggle");
+            if (!id) return;
+            var detail = document.getElementById("case-detail-" + id);
+            if (!detail) return;
+            var open = detail.classList.contains("open");
+            if (open) {
+              detail.classList.remove("open");
+              btn.textContent = "Read full case study →";
+            } else {
+              detail.classList.add("open");
+              btn.textContent = "Show less ↑";
+            }
+          });
+        });
+
+        var buzzwords = [
+          "curious.",
+          "multilingual.",
+          "asking the right questions.",
+          "taking ownership.",
+          "a cognitive scientist.",
+          "an analytical mind.",
+          "reading between the lines.",
+          "taking initiative.",
+          "a UX Researcher.",
+          "committed.",
+          "a project leader.",
+          "proactive."
+        ];
+        var buzzwordEl = document.getElementById("buzzword");
+        if (buzzwordEl) {
+          var idx = 0;
+          var colors = ["#805AD5", "#9B6ED8", "#7C3AED", "#A78BFA", "#8B5CF6", "#6D28D9", "#9F7AEA", "#7E57C2"];
+          setInterval(function () {
+            idx = (idx + 1) % buzzwords.length;
+            buzzwordEl.textContent = buzzwords[idx];
+            buzzwordEl.style.color = colors[idx % colors.length];
+          }, 2500);
+        }
+      })();
+    </script>
+  </body>
+</html>
