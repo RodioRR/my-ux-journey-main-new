@@ -601,8 +601,8 @@
       .case-impact-box {
         padding: 1rem;
         border-radius: var(--radius);
-        background: hsla(187, 55%, 28%, 0.05);
-        border: 1px solid hsla(187, 55%, 28%, 0.1);
+        background: rgba(236, 234, 230, 0.3);
+        border: 1px solid var(--border);
         margin-bottom: 1.25rem;
         font-size: 0.875rem;
       }
@@ -611,9 +611,15 @@
         color: var(--primary);
       }
 
-      .case-impact-box span:first-child {
+      .case-impact-box h4 {
+        font-family: var(--font-display);
+        font-size: 1.125rem;
         color: var(--primary);
-        font-weight: 500;
+        margin: 0 0 1rem 0;
+      }
+
+      .case-impact-box .case-scope-text {
+        margin: 0;
       }
 
       .case-1-grid {
@@ -709,17 +715,19 @@
       }
 
       .case-expanded-card {
-        padding: 1.25rem;
+        padding: 1rem;
         border-radius: var(--radius);
         background: var(--background);
         border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
       }
 
       .case-expanded-card h4 {
         font-family: var(--font-display);
         font-size: 1.125rem;
         color: var(--primary);
-        margin-bottom: 1rem;
+        margin: 0 0 1.5rem 0;
       }
 
       .case-expanded-label {
@@ -728,13 +736,27 @@
         text-transform: uppercase;
         color: var(--accent);
         font-weight: 500;
-        margin-bottom: 0.5rem;
+        margin-top: 1.25rem;
+        margin-bottom: 0.125rem;
+      }
+
+      .case-expanded-label:first-child {
+        margin-top: 0;
+      }
+
+      .case-expanded-card h4 + .case-expanded-label {
+        margin-top: 1rem;
       }
 
       .case-expanded-text {
         font-size: 0.875rem;
         color: var(--muted-foreground);
         line-height: 1.6;
+        margin: 0;
+      }
+
+      .case-expanded-card > *:last-child {
+        margin-bottom: 0;
       }
 
       .case-detail {
@@ -1268,7 +1290,8 @@
                     <p class="case-scope-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
                   </div>
                   <div class="case-impact-box">
-                    <span>Impact: </span><span>Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</span>
+                    <h4>Impact</h4>
+                    <p class="case-scope-text">Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</p>
                   </div>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="1">Read full case study →</button>
@@ -1351,7 +1374,8 @@
                   </div>
                 </div>
                 <div class="case-impact-box">
-                  <span>Impact: </span><span>Increased conversion rate by 1 percentage point, supporting revenue growth while preserving margins.</span>
+                  <h4>Impact</h4>
+                  <p class="case-scope-text">Increased conversion rate by 1 percentage point, supporting revenue growth while preserving margins.</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="2">Read full case study →</button>
                 <div class="case-detail" id="case-detail-2">
@@ -1431,7 +1455,8 @@
                   </div>
                 </div>
                 <div class="case-impact-box">
-                  <span>Impact: </span><span>Identified 3–4 key segments and behavioral shifts, guiding management, marketing, and product decisions.</span>
+                  <h4>Impact</h4>
+                  <p class="case-scope-text">Identified 3–4 key segments and behavioral shifts, guiding management, marketing, and product decisions.</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="3">Read full case study →</button>
                 <div class="case-detail" id="case-detail-3">
@@ -1510,7 +1535,8 @@
                   </div>
                 </div>
                 <div class="case-impact-box">
-                  <span>Impact: </span><span>Increased cart conversion rate by 5 percentage points, enhancing purchase completion and revenue.</span>
+                  <h4>Impact</h4>
+                  <p class="case-scope-text">Increased cart conversion rate by 5 percentage points, enhancing purchase completion and revenue.</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="4">Read full case study →</button>
                 <div class="case-detail" id="case-detail-4">
@@ -1590,7 +1616,8 @@
                   </div>
                 </div>
                 <div class="case-impact-box">
-                  <span>Impact: </span><span>Enabled progression to planning phase, culminating in the launch of ZEN.COM as a standalone venture.</span>
+                  <h4>Impact</h4>
+                  <p class="case-scope-text">Enabled progression to planning phase, culminating in the launch of ZEN.COM as a standalone venture.</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="5">Read full case study →</button>
                 <div class="case-detail" id="case-detail-5">
@@ -1671,7 +1698,8 @@
                   </div>
                 </div>
                 <div class="case-impact-box">
-                  <span>Impact: </span><span>Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention and trust erosion (based on industry benchmarks).</span>
+                  <h4>Impact</h4>
+                  <p class="case-scope-text">Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention and trust erosion (based on industry benchmarks).</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="6">Read full case study →</button>
                 <div class="case-detail" id="case-detail-6">
