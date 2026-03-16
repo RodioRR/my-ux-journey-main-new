@@ -630,9 +630,21 @@
 
       @media (min-width: 768px) {
         .case-1-grid {
-          grid-template-columns: 5fr 2fr;
+          grid-template-columns: 3fr 2fr;
+          grid-template-areas: "scope impact";
           gap: 1.5rem;
-          align-items: start;
+          align-items: stretch;
+        }
+
+        .case-1-grid .case-row-scope {
+          grid-area: scope;
+          align-self: stretch;
+        }
+
+        .case-1-grid .case-impact-box {
+          grid-area: impact;
+          align-self: stretch;
+          margin-bottom: 0;
         }
       }
 
@@ -645,36 +657,96 @@
 
       @media (min-width: 768px) {
         .case-row {
-          flex-direction: row;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: "scope image";
           gap: 2rem;
         }
 
         .case-row.reversed {
-          flex-direction: row-reverse;
+          grid-template-areas: "image scope";
         }
-      }
 
-      .case-row-scope {
-        flex: 1;
+        .case-row > .case-row-scope {
+          grid-area: scope;
+          min-width: 0;
+        }
+
+        .case-row > .case-row-image {
+          grid-area: image;
+          min-width: 0;
+        }
       }
 
       .case-row-image {
-        flex: 1;
         overflow: hidden;
         border-radius: 0.75rem;
-      }
-
-      @media (min-width: 768px) {
-        .case-row-image.portrait {
-          flex: 0 0 40%;
-          max-width: 40%;
-        }
+        cursor: pointer;
       }
 
       .case-row-image img {
         width: 100%;
         height: auto;
         object-fit: contain;
+        display: block;
+      }
+
+      @media (min-width: 768px) {
+        .case-row > .case-row-image {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .case-row > .case-row-image img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      /* Image modal */
+      .image-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.85);
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .image-modal.open {
+        display: flex;
+      }
+
+      .image-modal img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .image-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      .image-modal-close:hover {
+        background: rgba(255, 255, 255, 0.3);
       }
 
       .case-toggle {
@@ -1277,21 +1349,20 @@
                   <span class="case-tag">Cross-functional Leadership</span>
                   <span class="case-tag">Conversion Optimization</span>
                   <span class="case-tag">A/B Testing</span>
-                  <span class="case-tag">Team Leadership</span>
-                  <span class="case-tag">Design Thinking Workshops</span>
+                  <span class="case-tag">Workshops Facilitation</span>
                   <span class="case-tag">Hypothesis Prioritization</span>
                 </div>
                 <p class="case-subtitle">
-                  Established and led a structured conversion optimization practice as UX Lead Researcher, transforming stakeholder ideas into a pipeline of 92 research-driven experiments over 2 years.
+                  Established and led a structured conversion optimization practice, transforming stakeholder ideas into a pipeline of research-driven experiments.
                 </p>
                 <div class="case-1-grid">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
+                    <p class="case-scope-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis prioritization; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
                   </div>
                   <div class="case-impact-box">
                     <h4>Impact</h4>
-                    <p class="case-scope-text">Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</p>
+                    <p class="case-scope-text">Oversaw 92 projects in 2 years; Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</p>
                   </div>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="1">Read full case study →</button>
@@ -1310,7 +1381,7 @@
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
                         <div class="case-expanded-label">Scope of Ownership</div>
-                        <p class="case-expanded-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
+                        <p class="case-expanded-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis prioritization; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
                         <div class="case-expanded-label">Collaboration</div>
                         <p class="case-expanded-text">UX Researchers, Designers, Product Managers, Business, Marketing, Senior Leadership</p>
                       </div>
@@ -1530,7 +1601,7 @@
                     <div class="case-scope-label">Scope of Ownership</div>
                     <p class="case-scope-text">As sole UX Researcher, I defined research goals and KPIs (e.g., cart conversion rate, drop-off at step), configured and monitored the A/B test, analyzed behavioral and conversion data, and provided actionable recommendations to product and business stakeholders.</p>
                   </div>
-                  <div class="case-row-image portrait">
+                  <div class="case-row-image">
                     <img src="assets/case-study-shorter-checkout.png" alt="Shorter Checkout" />
                   </div>
                 </div>
@@ -1911,6 +1982,11 @@
           </p>
         </div>
       </footer>
+
+      <div class="image-modal" id="image-modal" role="dialog" aria-modal="true" aria-label="Full size image">
+        <button type="button" class="image-modal-close" id="image-modal-close" aria-label="Close">×</button>
+        <img src="" alt="" id="image-modal-img" />
+      </div>
     </div>
 
     <button class="scroll-to-top hidden" id="scroll-to-top" aria-label="Scroll to top">
@@ -2001,6 +2077,32 @@
             }
           });
         }
+
+        var imageModal = document.getElementById("image-modal");
+        var imageModalImg = document.getElementById("image-modal-img");
+        var imageModalClose = document.getElementById("image-modal-close");
+        var caseImages = document.querySelectorAll(".case-row-image");
+        caseImages.forEach(function (el) {
+          var img = el.querySelector("img");
+          if (!img) return;
+          el.addEventListener("click", function () {
+            imageModalImg.src = img.src;
+            imageModalImg.alt = img.alt;
+            imageModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+          });
+        });
+        function closeImageModal() {
+          imageModal.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        if (imageModalClose) imageModalClose.addEventListener("click", closeImageModal);
+        if (imageModal) imageModal.addEventListener("click", function (e) {
+          if (e.target === imageModal) closeImageModal();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && imageModal && imageModal.classList.contains("open")) closeImageModal();
+        });
 
         var toggles = document.querySelectorAll("[data-toggle]");
         toggles.forEach(function (btn) {
