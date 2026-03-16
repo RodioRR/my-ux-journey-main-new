@@ -804,6 +804,28 @@
         color: var(--muted-foreground);
       }
 
+      .skills-cert-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .skills-cert-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+      }
+
+      .skills-cert-name {
+        font-size: 0.875rem;
+        color: var(--foreground);
+      }
+
+      .skills-cert-issuer {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+      }
+
       .skills-lang-row {
         display: flex;
         justify-content: space-between;
@@ -1165,6 +1187,8 @@
                   <span class="case-tag">Conversion Optimization</span>
                   <span class="case-tag">A/B Testing</span>
                   <span class="case-tag">Team Leadership</span>
+                  <span class="case-tag">Design Thinking Workshops</span>
+                  <span class="case-tag">Hypothesis Prioritization</span>
                 </div>
                 <p class="case-subtitle">
                   Established and led a structured conversion optimization practice as UX Lead Researcher, transforming stakeholder ideas into a pipeline of 92 research-driven experiments over 2 years.
@@ -1172,7 +1196,7 @@
                 <div class="case-1-grid">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment.</p>
+                    <p class="case-scope-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
                   </div>
                   <div class="case-impact-box">
                     <span>Impact: </span><span>Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</span>
@@ -1185,29 +1209,48 @@
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
                         <div class="case-expanded-label">Business Goal</div>
-                        <p class="case-expanded-text">Develop a repeatable, centralized process for hypothesis generation, prioritization, and testing.</p>
+                        <p class="case-expanded-text">Develop a repeatable, centralized process for hypothesis generation, prioritization, and testing to ensure conversion initiatives relied on user research and data rather than intuition.</p>
                         <div class="case-expanded-label">User Pain</div>
-                        <p class="case-expanded-text">Teams lacked a shared space and process to turn ideas into testable hypotheses.</p>
+                        <p class="case-expanded-text">Teams lacked a shared space and process to turn ideas into testable hypotheses, which led to scattered experiments, duplicated efforts, and missed opportunities to systematically improve key user journeys.</p>
+                        <div class="case-expanded-label">Trigger</div>
+                        <p class="case-expanded-text">Leadership recognised that despite many ad-hoc A/B tests, the organisation neither had a clear workflow nor a dedicated research-driven conversion team, which limited the impact of experimentation and long-term learning.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
-                        <p class="case-expanded-text">As UX Lead Researcher, I designed and managed the end-to-end practice.</p>
+                        <div class="case-expanded-label">Scope of Ownership</div>
+                        <p class="case-expanded-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
+                        <div class="case-expanded-label">Collaboration</div>
+                        <p class="case-expanded-text">UX Researchers, Designers, Product Managers, Business, Marketing, Senior Leadership</p>
                       </div>
                     </div>
                     <div class="case-expanded-card" style="margin-bottom:1.5rem">
                       <h4>Research Process</h4>
-                      <p class="case-expanded-text">Implemented a Design Thinking framework: ideation workshops; hypothesis mapping; KPI alignment; A/B and multivariate tests.</p>
+                      <div class="case-expanded-label">Research Goals</div>
+                      <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
+                        <li>Create a sustainable, cross-functional practice linking stakeholder input to user-centered research.</li>
+                        <li>Convert qualitative and quantitative data into prioritized, testable hypotheses.</li>
+                      </ul>
+                      <div class="case-expanded-label">Method</div>
+                      <p class="case-expanded-text">Implemented a Design Thinking framework: ideation workshops (empathize, define, ideate); hypothesis mapping; KPI and test plan alignment; A/B and multivariate tests (single/multi-round); supplemented by qualitative methods (e.g., interviews, usability checks).</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
                         <div class="case-expanded-label">Key Insight</div>
-                        <p class="case-expanded-text">A structured, research-driven practice boosted experiment volume and quality.</p>
+                        <p class="case-expanded-text">A structured, research-driven practice boosted experiment volume and quality, yielding improvements in user journeys and business KPIs.</p>
+                        <div class="case-expanded-label">Project Decision</div>
+                        <p class="case-expanded-text">Oversaw 92 projects in 2 years, including: AI product page recommendations (+2% basket increase); Markov Chains tool for on-site behavior mapping; Checkout upsell removal (+0.5 percentage point conversion lift); other tests (e.g., copy variants, FOMO displays, ratings removal) validated status quo or refined strategies.</p>
+                        <div class="case-expanded-label">Numbers</div>
+                        <p class="case-expanded-text">92 projects; multiple wins (e.g., +2% baskets, +0.5% conversion) prevented misguided changes.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
+                        <div class="case-expanded-label">What Worked</div>
+                        <p class="case-expanded-text">Fostered a continuous feedback loop across research, product, and business, enabling iterative workflow improvements and data-informed decisions.</p>
+                        <div class="case-expanded-label">What Could Be Done Differently</div>
+                        <p class="case-expanded-text">Clarify ownership in select projects to avoid inefficiencies or cancellations; prioritize fewer, higher-impact initiatives over volume.</p>
                         <div class="case-expanded-label">Key Learnings</div>
-                        <p class="case-expanded-text">Mastered Design Thinking workshop facilitation to align diverse stakeholders.</p>
+                        <p class="case-expanded-text">Mastered Design Thinking workshop facilitation to align diverse stakeholders and generate high-quality hypotheses. Gained expertise in cross-functional project coordination, managing backlogs and timelines for 92 experiments. Learned to synthesize insights from multiple projects into strategic decisions, with a focus on effective prioritization.</p>
                       </div>
                     </div>
                   </div>
@@ -1220,6 +1263,10 @@
                 <div class="case-tags">
                   <span class="case-tag">High-risk Data Analysis</span>
                   <span class="case-tag">Multivariate Testing</span>
+                  <span class="case-tag">A/B Testing</span>
+                  <span class="case-tag">Research Project Management</span>
+                  <span class="case-tag">Financial Reporting</span>
+                  <span class="case-tag">Cross-Functional Leadership</span>
                   <span class="case-tag">Checkout Optimization</span>
                 </div>
                 <p class="case-subtitle">
@@ -1228,7 +1275,7 @@
                 <div class="case-row reversed">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As research project manager, I defined hypotheses, selected methodology and KPIs, conducted analysis, prepared financial reports, and delivered recommendations.</p>
+                    <p class="case-scope-text">As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed an A/B testing system integrated with the database for real-time metric tracking.</p>
                   </div>
                   <div class="case-row-image">
                     <img src="assets/case-study-checkout-flow-new.jpeg" alt="Order Fee Optimization" />
@@ -1243,25 +1290,48 @@
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
+                        <div class="case-expanded-label">Business Goal</div>
                         <p class="case-expanded-text">Sustain revenue while eliminating the upsell and enhancing pricing transparency at checkout.</p>
+                        <div class="case-expanded-label">User Pain</div>
+                        <p class="case-expanded-text">Users experienced confusion and distrust, often noting issues like unexpected total changes at checkout. This was driven by feedback highlighting unclear pricing.</p>
+                        <div class="case-expanded-label">Trigger</div>
+                        <p class="case-expanded-text">Analysis of user complaints identified the upsell as a key barrier to conversion.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
-                        <p class="case-expanded-text">As research project manager, I defined hypotheses, selected methodology and KPIs, conducted analysis, prepared financial reports.</p>
+                        <div class="case-expanded-label">Scope of Ownership</div>
+                        <p class="case-expanded-text">As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed an A/B testing system integrated with the database for real-time metric tracking.</p>
+                        <div class="case-expanded-label">Collaboration</div>
+                        <p class="case-expanded-text">General Manager, Legal, Marketing, PM, BI, IT</p>
                       </div>
                     </div>
                     <div class="case-expanded-card">
                       <h4>Research Process</h4>
-                      <p class="case-expanded-text">Ran 3 rounds of multivariate tests (~2 months each) on a global desktop segment.</p>
+                      <div class="case-expanded-label">Research Goals</div>
+                      <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
+                        <li>Determine optimal order fee amounts by price bracket and product type to maintain revenue levels.</li>
+                      </ul>
+                      <div class="case-expanded-label">Method</div>
+                      <p class="case-expanded-text">Ran 3 rounds of multivariate tests (~2 months each) on a global desktop segment, testing order fee amounts per price bracket, visual placement on checkout, price inclusion/exclusion, and Proprietary Payment Method profitability.</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
-                        <p class="case-expanded-text">Transparent pricing maintained KPIs and improved conversion by 1 p.p.</p>
+                        <div class="case-expanded-label">Key Insight</div>
+                        <p class="case-expanded-text">Transparent pricing (upsell removed, fees integrated into totals) maintained KPIs and improved conversion by 1 p.p. across segments.</p>
+                        <div class="case-expanded-label">Project Decision</div>
+                        <p class="case-expanded-text">Eliminated upsell, established tiered fees (e.g., 5% for orders under €50), and displayed fees clearly within totals.</p>
+                        <div class="case-expanded-label">Numbers</div>
+                        <p class="case-expanded-text">Increased conversion rate by 1 percentage point, directly translating into significantly higher revenue.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
-                        <p class="case-expanded-text">Excelled in a combined PM-UX researcher role in a high-stakes project.</p>
+                        <div class="case-expanded-label">What Worked</div>
+                        <p class="case-expanded-text">The custom A/B system provided real-time insights, identifying effective variants that supported substantial financial outcomes. Strong cross-team alignment facilitated implementation.</p>
+                        <div class="case-expanded-label">What Could Be Done Differently</div>
+                        <p class="case-expanded-text">Initiate earlier stakeholder alignment and clearer task delegation (e.g., IT monitoring) to reduce timeline.</p>
+                        <div class="case-expanded-label">Key Learnings</div>
+                        <p class="case-expanded-text">Excelled in a combined PM-UX researcher role, navigating technical and legal considerations in a high-stakes project. This experience underscores the value of researcher-led project management for data-driven results, aligning with my goals in international project leadership.</p>
                       </div>
                     </div>
                   </div>
@@ -1274,7 +1344,10 @@
                 <div class="case-tags">
                   <span class="case-tag">Strategic User Insights</span>
                   <span class="case-tag">User Surveys</span>
+                  <span class="case-tag">Data Analysis</span>
                   <span class="case-tag">Strategic Reporting</span>
+                  <span class="case-tag">Segment Profiling</span>
+                  <span class="case-tag">Trend Analysis</span>
                 </div>
                 <p class="case-subtitle">
                   Created and led an annual user research report, synthesizing global survey data with internal analytics to inform business strategy.
@@ -1282,7 +1355,7 @@
                 <div class="case-row">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As creator and lead, I managed the end-to-end process: defined research goals, designed survey structure, planned global rollout, analyzed data, produced visual reports.</p>
+                    <p class="case-scope-text">As creator and lead, I managed the end-to-end process: defined research goals and questions; designed survey structure for sociodemographics, gaming behaviors, and purchase patterns; planned global rollout, sampling, and timing; analyzed data for correlations; integrated with internal analytics and prior-year benchmarks; produced visual reports and actionable presentations.</p>
                   </div>
                   <div class="case-row-image">
                     <img src="assets/case-study-user-report-map.png" alt="Yearly User Report" />
@@ -1297,25 +1370,50 @@
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
-                        <p class="case-expanded-text">Provide management, marketing, and product with up-to-date, structured user insights.</p>
+                        <div class="case-expanded-label">Business Goal</div>
+                        <p class="case-expanded-text">Provide management, marketing, and product with up-to-date, structured user insights so that strategic decisions were grounded in current customer profiles, not assumptions or outdated research.</p>
+                        <div class="case-expanded-label">User Pain</div>
+                        <p class="case-expanded-text">The organization lacked a unified, regularly updated view of user sociodemographics, gaming habits, and purchase behaviors, leading to fragmented decision-making.</p>
+                        <div class="case-expanded-label">Trigger</div>
+                        <p class="case-expanded-text">Leadership recognised that in a fast-changing e-commerce environment, not systematically tracking how users change over time meant missing opportunities to adapt offers, messaging, and product strategy.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
-                        <p class="case-expanded-text">As creator and lead, I managed the end-to-end process.</p>
+                        <div class="case-expanded-label">Scope of Ownership</div>
+                        <p class="case-expanded-text">As creator and lead, I managed the end-to-end process: defined research goals and questions; designed survey structure for sociodemographics, gaming behaviors, and purchase patterns; planned global rollout, sampling, and timing; analyzed data for correlations; integrated with internal analytics and prior-year benchmarks; produced visual reports and actionable presentations.</p>
+                        <div class="case-expanded-label">Collaboration</div>
+                        <p class="case-expanded-text">Management, Business, Marketing, Data Analysts</p>
                       </div>
                     </div>
                     <div class="case-expanded-card">
                       <h4>Research Process</h4>
-                      <p class="case-expanded-text">Conducted recurring global surveys; performed quantitative analysis combined with behavioral metrics.</p>
+                      <div class="case-expanded-label">Research Goals</div>
+                      <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
+                        <li>Profile core users (sociodemographics, motivations, gaming habits).</li>
+                        <li>Track behavioral and preference changes across segments over time.</li>
+                        <li>Validate survey findings against internal analytics for enriched insights.</li>
+                      </ul>
+                      <div class="case-expanded-label">Method</div>
+                      <p class="case-expanded-text">Conducted recurring global surveys throughout the year for declarative data; performed quantitative analysis of responses combined with behavioral metrics (e.g., purchase frequency, category preferences, device usage); conducted trend comparisons with previous years.</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
-                        <p class="case-expanded-text">The yearly user report revealed clear shifts in user profiles and purchase behaviour.</p>
+                        <div class="case-expanded-label">Key Insight</div>
+                        <p class="case-expanded-text">The yearly user report revealed clear shifts in user profiles, gaming preferences, and purchase behaviour over time, exposing previously unnoticed segments and contradictions between assumed and actual user behaviour.</p>
+                        <div class="case-expanded-label">Project Decision</div>
+                        <p class="case-expanded-text">Management adopted for campaign targeting; marketing refined segment-specific offers; product adjusted messaging and feature priorities based on trends.</p>
+                        <div class="case-expanded-label">Numbers</div>
+                        <p class="case-expanded-text">Globally representative sample; defined 3–4 segments; surfaced significant shifts.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
-                        <p class="case-expanded-text">Developed skills in combining scalable surveys with internal analytics.</p>
+                        <div class="case-expanded-label">What Worked</div>
+                        <p class="case-expanded-text">Created a repeatable, yearly rhythm for user research that closed the gap between one-off analytics and long-term strategic understanding, enabling continuous learning about the user base.</p>
+                        <div class="case-expanded-label">What Could Be Done Differently</div>
+                        <p class="case-expanded-text">Integrate report earlier into planning cycles (e.g., quarterly reviews) and incorporate workshops for broader team adoption and business application.</p>
+                        <div class="case-expanded-label">Key Learnings</div>
+                        <p class="case-expanded-text">Developed skills in combining scalable surveys with internal analytics to produce comprehensive insights beyond individual methods. Gained expertise in creating living strategic documents that build organizational memory and reinforce user-centered decision-making over time.</p>
                       </div>
                     </div>
                   </div>
@@ -1336,7 +1434,7 @@
                 <div class="case-row reversed">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As sole UX Researcher, I defined research goals and KPIs, configured and monitored the A/B test, analyzed behavioral and conversion data.</p>
+                    <p class="case-scope-text">As sole UX Researcher, I defined research goals and KPIs (e.g., cart conversion rate, drop-off at step), configured and monitored the A/B test, analyzed behavioral and conversion data, and provided actionable recommendations to product and business stakeholders.</p>
                   </div>
                   <div class="case-row-image portrait">
                     <img src="assets/case-study-shorter-checkout.png" alt="Shorter Checkout" />
@@ -1351,25 +1449,48 @@
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
-                        <p class="case-expanded-text">Minimize losses in late checkout stages by removing an unnecessary step.</p>
+                        <div class="case-expanded-label">Business Goal</div>
+                        <p class="case-expanded-text">Minimize losses in late checkout stages by removing an unnecessary step, while sustaining or improving conversion and revenue.</p>
+                        <div class="case-expanded-label">User Pain</div>
+                        <p class="case-expanded-text">Users encountered a redundant step that repeated information, fostering confusion and abandonment risks near purchase completion.</p>
+                        <div class="case-expanded-label">Trigger</div>
+                        <p class="case-expanded-text">Analytics revealed that extra steps in the journey—duplicating data from the marketplace-embedded step into the new payment gateway—increased exit rates significantly.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
-                        <p class="case-expanded-text">As sole UX Researcher, I defined research goals and KPIs, configured and monitored the A/B test.</p>
+                        <div class="case-expanded-label">Scope of Ownership</div>
+                        <p class="case-expanded-text">As sole UX Researcher, I defined research goals and KPIs (e.g., cart conversion rate, drop-off at step), configured and monitored the A/B test, analyzed behavioral and conversion data, and provided actionable recommendations to product and business stakeholders.</p>
+                        <div class="case-expanded-label">Collaboration</div>
+                        <p class="case-expanded-text">IT, Business Intelligence</p>
                       </div>
                     </div>
                     <div class="case-expanded-card">
                       <h4>Research Process</h4>
-                      <p class="case-expanded-text">Executed a controlled A/B test (n=250k+ users), comparing the full flow against a streamlined single-step version.</p>
+                      <div class="case-expanded-label">Research Goals</div>
+                      <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
+                        <li>Assess the effect of removing the redundant step on cart conversion rate and purchase completion.</li>
+                      </ul>
+                      <div class="case-expanded-label">Method</div>
+                      <p class="case-expanded-text">Executed a controlled A/B test (n=250k+ users), comparing the full flow (two steps) against a streamlined single-step version in the payment gateway. Tracked KPIs via integrated analytics dashboard.</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
-                        <p class="case-expanded-text">The additional step elevated drop-off rates and failed to retain users at journey end.</p>
+                        <div class="case-expanded-label">Key Insight</div>
+                        <p class="case-expanded-text">The additional step, despite visual consistency, elevated drop-off rates and failed to retain users at journey end.</p>
+                        <div class="case-expanded-label">Project Decision</div>
+                        <p class="case-expanded-text">Removed the redundant step, consolidating into a single, streamlined checkout within the payment gateway.</p>
+                        <div class="case-expanded-label">Numbers</div>
+                        <p class="case-expanded-text">Increased cart conversion rate by 5 percentage points, directly improving purchase completion and revenue.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
-                        <p class="case-expanded-text">Established a practice of thorough preparation and upstream alignment.</p>
+                        <div class="case-expanded-label">What Worked</div>
+                        <p class="case-expanded-text">Enabled rapid, data-driven decisions through close KPI monitoring and clear stakeholder alignment.</p>
+                        <div class="case-expanded-label">What Could Be Done Differently</div>
+                        <p class="case-expanded-text">Address technical debt earlier to accelerate implementation beyond the checkout modifications.</p>
+                        <div class="case-expanded-label">Key Learnings</div>
+                        <p class="case-expanded-text">Established a practice of thorough preparation, recognizing that research success depends on upstream alignment with development, business expectations, and shared goals.</p>
                       </div>
                     </div>
                   </div>
@@ -1382,6 +1503,9 @@
                 <div class="case-tags">
                   <span class="case-tag">Discovery Research</span>
                   <span class="case-tag">Competitive Analysis</span>
+                  <span class="case-tag">Stakeholder Alignment</span>
+                  <span class="case-tag">Product Strategy</span>
+                  <span class="case-tag">Cross-Functional Collaboration</span>
                   <span class="case-tag">Fintech Innovation</span>
                 </div>
                 <p class="case-subtitle">
@@ -1390,7 +1514,7 @@
                 <div class="case-row">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As UX Researcher in the R&D department, I spearheaded the discovery phase, synthesizing desk research, competitive analysis, user interviews, surveys, and moderated usability tests.</p>
+                    <p class="case-scope-text">As UX Researcher in the R&D department, I spearheaded the discovery phase, synthesizing desk research, competitive analysis, user interviews, surveys, and moderated usability tests to define product viability. Delivered comprehensive research summary with personal and business feature lists, wireframes, monetization strategies, niches, personas and USPs.</p>
                   </div>
                   <div class="case-row-image">
                     <img src="assets/case-study-challenger-bank.png" alt="Challenger Bank" />
@@ -1405,25 +1529,49 @@
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
+                        <div class="case-expanded-label">Business Goal</div>
                         <p class="case-expanded-text">Launch a competitive challenger bank for personal and business users in the European market.</p>
+                        <div class="case-expanded-label">User Pain</div>
+                        <p class="case-expanded-text">Young users and small business owners lacked seamless banking apps with intuitive experiences.</p>
+                        <div class="case-expanded-label">Trigger</div>
+                        <p class="case-expanded-text">Rapid emergence of challenger banks across Europe signaled market opportunity.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
-                        <p class="case-expanded-text">As UX Researcher in the R&D department, I spearheaded the discovery phase.</p>
+                        <div class="case-expanded-label">Scope of Ownership</div>
+                        <p class="case-expanded-text">As UX Researcher in the R&D department, I spearheaded the discovery phase, synthesizing desk research, competitive analysis, user interviews, surveys, and moderated usability tests to define product viability. Delivered comprehensive research summary with personal and business feature lists, wireframes, monetization strategies, niches, personas and USPs.</p>
+                        <div class="case-expanded-label">Collaboration</div>
+                        <p class="case-expanded-text">CEO, Product Owner, UX Designer, Market Researcher, Business Analyst</p>
                       </div>
                     </div>
                     <div class="case-expanded-card">
                       <h4>Research Process</h4>
+                      <div class="case-expanded-label">Research Goals</div>
+                      <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
+                        <li>Identify niche and unique selling propositions (USPs) for differentiation.</li>
+                        <li>Validate early business model and monetization paths.</li>
+                      </ul>
+                      <div class="case-expanded-label">Method</div>
                       <p class="case-expanded-text">Desk research, competitive benchmarking, user interviews and surveys with target segments.</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
-                        <p class="case-expanded-text">Two viable niches (young users and SME) emerged with tailored USPs.</p>
+                        <div class="case-expanded-label">Key Insight</div>
+                        <p class="case-expanded-text">Two viable niches (young users and SME) emerged with tailored USPs, alongside feature priorities, wireframes, and monetization models for scalability.</p>
+                        <div class="case-expanded-label">Project Decision</div>
+                        <p class="case-expanded-text">Advanced to planning phase; initiative spun out as independent entity ZEN.COM.</p>
+                        <div class="case-expanded-label">Numbers</div>
+                        <p class="case-expanded-text">Discovery research directly propelled project from ideation to structured planning and commercialization.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
-                        <p class="case-expanded-text">Excelled in bridging UX research with strategic product decisions in fintech.</p>
+                        <div class="case-expanded-label">What Worked</div>
+                        <p class="case-expanded-text">Fast-paced, in-person cross-functional collaboration accelerated insights, outperforming remote dynamics from prior experience.</p>
+                        <div class="case-expanded-label">What Could Be Done Differently</div>
+                        <p class="case-expanded-text">Clearer role definitions and aligned visions among business stakeholders upfront to minimize confusion and delays.</p>
+                        <div class="case-expanded-label">Key Learnings</div>
+                        <p class="case-expanded-text">Excelled in bridging UX research with strategic product decisions in fintech, reinforcing my strength in leading high-uncertainty discovery for international ventures.</p>
                       </div>
                     </div>
                   </div>
@@ -1434,9 +1582,12 @@
               <article class="case-item" data-case="6">
                 <h3 class="case-title">Mobile App Purchase Flow</h3>
                 <div class="case-tags">
+                  <span class="case-tag">Quick and Dirty</span>
                   <span class="case-tag">Moderated Usability Test</span>
                   <span class="case-tag">Mobile</span>
                   <span class="case-tag">Risk Mitigation</span>
+                  <span class="case-tag">Last-Minute Validation</span>
+                  <span class="case-tag">Qualitative Insights</span>
                 </div>
                 <p class="case-subtitle">
                   Led rapid moderated usability tests to validate redesigned purchase flow and onboarding, preventing a flawed launch.
@@ -1444,14 +1595,14 @@
                 <div class="case-row reversed">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">Designed and executed moderated usability tests despite tight timelines; analyzed findings, recommended blocks, and advocated for follow-up research.</p>
+                    <p class="case-scope-text">Designed and executed moderated usability tests despite tight timelines/budget; analyzed findings, recommended blocks, and advocated for follow-up research on pricing flow.</p>
                   </div>
                   <div class="case-row-image">
                     <img src="assets/case-study-mobile-onboarding.png" alt="Mobile App Purchase Flow" />
                   </div>
                 </div>
                 <div class="case-impact-box">
-                  <span>Impact: </span><span>Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention.</span>
+                  <span>Impact: </span><span>Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention and trust erosion (based on industry benchmarks).</span>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="6">Read full case study →</button>
                 <div class="case-detail" id="case-detail-6">
@@ -1459,25 +1610,49 @@
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
-                        <p class="case-expanded-text">Introduce new onboarding feature and test redesigned purchase flow elements ahead of launch.</p>
+                        <div class="case-expanded-label">Business Goal</div>
+                        <p class="case-expanded-text">Introduce new onboarding feature and test redesigned purchase flow elements (search, filters, product page offers) ahead of launch.</p>
+                        <div class="case-expanded-label">User Pain</div>
+                        <p class="case-expanded-text">New users faced confusion in first impressions, search findability, filters, and dynamic pricing changes, fostering distrust.</p>
+                        <div class="case-expanded-label">Trigger</div>
+                        <p class="case-expanded-text">Surge in user feedback prompted intuition-driven redesign; I intervened pre-release for quick validation.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
-                        <p class="case-expanded-text">Designed and executed moderated usability tests despite tight timelines.</p>
+                        <div class="case-expanded-label">Scope of Ownership</div>
+                        <p class="case-expanded-text">Designed and executed moderated usability tests despite tight timelines/budget; analyzed findings, recommended blocks, and advocated for follow-up research on pricing flow.</p>
+                        <div class="case-expanded-label">Collaboration</div>
+                        <p class="case-expanded-text">Product Owner (Mobile App), UX Designer, IT team</p>
                       </div>
                     </div>
                     <div class="case-expanded-card">
                       <h4>Research Process</h4>
+                      <div class="case-expanded-label">Research Goals</div>
+                      <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
+                        <li>Validate new user onboarding for clarity and trust.</li>
+                        <li>Probe redesigned purchase flow pain points: search findability, filters, and product page offers.</li>
+                      </ul>
+                      <div class="case-expanded-label">Method</div>
                       <p class="case-expanded-text">Moderated usability tests with 5 target users (quick recruitment via network).</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
-                        <p class="case-expanded-text">Onboarding induced confusion and distrust; purchase flow obscured pricing transparency.</p>
+                        <div class="case-expanded-label">Key Insight</div>
+                        <p class="case-expanded-text">Onboarding induced confusion and distrust; purchase flow obscured pricing transparency via unexpected changes.</p>
+                        <div class="case-expanded-label">Project Decision</div>
+                        <p class="case-expanded-text">Scrapped onboarding from release; deferred pricing flow redesign for deeper research.</p>
+                        <div class="case-expanded-label">Numbers</div>
+                        <p class="case-expanded-text">Testing with just 5 users surfaced critical issues (per Nielsen's 5-user rule), saving weeks of post-launch fixes.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
-                        <p class="case-expanded-text">Agile adaptation trumps perfection in fast-paced environments.</p>
+                        <div class="case-expanded-label">What Worked</div>
+                        <p class="case-expanded-text">Agile, 'quick &amp; dirty' approach delivered actionable insights under constraints, proving value of researcher intervention.</p>
+                        <div class="case-expanded-label">What Could Be Done Differently</div>
+                        <p class="case-expanded-text">Embed UX research from project kickoff, not end-stage.</p>
+                        <div class="case-expanded-label">Key Learnings</div>
+                        <p class="case-expanded-text">Agile adaptation trumps perfection in fast-paced environments—honed my skills in high-pressure validation, ideal for international product leadership.</p>
                       </div>
                     </div>
                   </div>
@@ -1524,12 +1699,27 @@
               </div>
               <div class="skills-col">
                 <h3>Certificates</h3>
-                <div class="skills-list">
-                  <li><span class="skills-dot"></span>UX Professional (Baymard)</li>
-                  <li><span class="skills-dot"></span>Product Analytics (Witflow)</li>
-                  <li><span class="skills-dot"></span>UX Strategy Fundamentals (Joe Natoli)</li>
-                  <li><span class="skills-dot"></span>Conducting Usability Testing (IDF)</li>
-                  <li><span class="skills-dot"></span>User Methods and Best Practices (IDF)</li>
+                <div class="skills-cert-list">
+                  <div class="skills-cert-item">
+                    <span class="skills-cert-name">UX Professional</span>
+                    <span class="skills-cert-issuer">Baymard</span>
+                  </div>
+                  <div class="skills-cert-item">
+                    <span class="skills-cert-name">Product Analytics</span>
+                    <span class="skills-cert-issuer">Witflow</span>
+                  </div>
+                  <div class="skills-cert-item">
+                    <span class="skills-cert-name">UX Strategy Fundamentals</span>
+                    <span class="skills-cert-issuer">Joe Natoli</span>
+                  </div>
+                  <div class="skills-cert-item">
+                    <span class="skills-cert-name">Conducting Usability Testing</span>
+                    <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                  </div>
+                  <div class="skills-cert-item">
+                    <span class="skills-cert-name">User Methods and Best Practices</span>
+                    <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                  </div>
                 </div>
               </div>
               <div class="skills-col">
@@ -1570,21 +1760,21 @@
             <h2 class="section-heading">What people say</h2>
             <div class="testimonials-grid">
               <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"Współpraca z Melanie to dowód na to, jak ogromny wpływ na biznes potrafi mieć świetny UX Research. Melanie to profesjonalistka w każdym calu. Jej przenikliwość i analityczny umysł pozwalają jej dostrzegać niuanse w zachowaniach użytkowników, które inni łatwo przeoczają."</p>
+                <p class="testimonial-quote">"Współpraca z Melanie to dowód na to, jak ogromny wpływ na biznes potrafi mieć świetny UX Research. Melanie to profesjonalistka w każdym calu. Jej przenikliwość i analityczny umysł pozwalają jej dostrzegać niuanse w zachowaniach użytkowników, które inni łatwo przeoczają. Najbardziej imponująca w pracy Melanie jest jej umiejętność łączenia perspektywy użytkownika z celami firmy. Jej badania nigdy nie kończyły się na samej diagnozie problemu, zawsze dostarczała konkretne, wartościowe rekomendacje, których wdrożenie przynosiło nam wymierne korzyści biznesowe. Gorąco polecam Melanie każdej organizacji, która chce tworzyć lepsze produkty i usługi w oparciu o rzetelne dane."</p>
                 <footer>
                   <p class="testimonial-author">Maciej Rynarzewski</p>
                   <p class="testimonial-role">Strategy Director at ZEN.COM</p>
                 </footer>
               </blockquote>
               <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. She also has an impeccable command of four (!) languages."</p>
+                <p class="testimonial-quote">"During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. She also has an impeccable command of four (!) languages, which makes her able to talk to users from all around the world. As a manager, she was very supportive, offered her help and shared her expertise whenever we needed it. I learned a lot from Melanie and I'm sure whoever gets to work with her will learn a lot, too."</p>
                 <footer>
                   <p class="testimonial-author">Olga Skoczek (Wojnarowska)</p>
                   <p class="testimonial-role">UX Researcher at G2A.COM</p>
                 </footer>
               </blockquote>
               <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"I have pleasure to work with Melanie on many projects that focus strongly on UX Research. She has helped me improve my UX Designs plenty of times and as well as optimising many products. She's a very knowledgable researcher that has provided critical data and solutions."</p>
+                <p class="testimonial-quote">"I have pleasure to work with Melanie on many projects that focus strongly on UX Research. She has helped me improve my UX Designs plenty of times and as well as optimising many products. She's a very knowledgable researcher that has provided critical data and solutions to company's projects and has improved the flow of information across many branches in the company. I'm very thankful I get to design, knowing that my every move is being backed by such a professional."</p>
                 <footer>
                   <p class="testimonial-author">Kamil Rejman</p>
                   <p class="testimonial-role">UX Designer at G2A.COM</p>
@@ -1628,7 +1818,7 @@
           </p>
           <div class="footer-links">
             <a href="mailto:gierszal.melanie@gmail.com">Email</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
       </footer>
