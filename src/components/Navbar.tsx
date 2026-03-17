@@ -4,9 +4,10 @@ import { scrollToSection } from "@/lib/scroll";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Resume", href: "/Melanie_Gierszal_Resume.pdf", external: true },
+  { label: "Resume", href: "/assets/Melanie%20Gierszal%20RESUME.pdf", external: true },
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 

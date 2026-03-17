@@ -73,7 +73,7 @@ const Hero = () => {
             >
               View Case Studies
             </a>
-            <a href="/Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-8 py-3.5 rounded-lg border border-foreground/20 text-foreground font-body font-medium text-sm tracking-wide hover:bg-foreground/5 transition-colors no-print">
+            <a href="/assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-8 py-3.5 rounded-lg border border-foreground/20 text-foreground font-body font-medium text-sm tracking-wide hover:bg-foreground/5 transition-colors no-print">
               Open Resume
             </a>
           </div>

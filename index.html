@@ -1068,8 +1068,30 @@
 
       .skills-cert-item {
         display: flex;
-        flex-direction: column;
-        gap: 0.125rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+
+      .skills-cert-view {
+        flex-shrink: 0;
+        padding: 0.25rem;
+        border: none;
+        background: none;
+        color: var(--primary);
+        cursor: pointer;
+        border-radius: 0.25rem;
+      }
+
+      .skills-cert-view:hover {
+        color: var(--accent);
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      .skills-cert-views {
+        display: flex;
+        gap: 0.25rem;
       }
 
       .skills-cert-name {
@@ -1377,9 +1399,10 @@
           </a>
           <div class="nav-links">
             <a href="#about">About</a>
-            <a href="public/Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             <a href="#work">Work</a>
             <a href="#skills">Skills</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
           </div>
           <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -1390,9 +1413,10 @@
         <div class="nav-mobile-panel" id="nav-mobile">
           <div class="container nav-mobile-links">
             <a href="#about">About</a>
-            <a href="public/Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             <a href="#work">Work</a>
             <a href="#skills">Skills</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -1417,7 +1441,7 @@
             <div class="hero-actions">
               <a href="#contact" class="hero-btn hero-btn-primary">Get in Touch</a>
               <a href="#work" class="hero-btn hero-btn-outline">View Case Studies</a>
-              <a href="public/Melanie_Gierszal_Resume.pdf" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-outline">Open Resume</a>
+              <a href="assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-outline">Open Resume</a>
             </div>
             </div>
           </div>
@@ -2124,24 +2148,54 @@
                 <h3>Certificates</h3>
                 <div class="skills-cert-list">
                   <div class="skills-cert-item">
-                    <span class="skills-cert-name">UX Professional</span>
-                    <span class="skills-cert-issuer">Baymard</span>
+                    <div>
+                      <span class="skills-cert-name">UX Professional</span>
+                      <span class="skills-cert-issuer">Baymard</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-baymard-ux-professional.png" data-modal-alt="UX Professional - Baymard" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                    </button>
                   </div>
                   <div class="skills-cert-item">
-                    <span class="skills-cert-name">Product Analytics</span>
-                    <span class="skills-cert-issuer">Witflow</span>
+                    <div>
+                      <span class="skills-cert-name">Product Analytics</span>
+                      <span class="skills-cert-issuer">Witflow</span>
+                    </div>
+                    <div class="skills-cert-views">
+                      <button type="button" class="skills-cert-view" data-modal-src="assets/cert-product-analytics-1.png" data-modal-alt="Product Analytics - Witflow (1)" aria-label="View certificate part 1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                      </button>
+                      <button type="button" class="skills-cert-view" data-modal-src="assets/cert-product-analytics-2.png" data-modal-alt="Product Analytics - Witflow (2)" aria-label="View certificate part 2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                      </button>
+                    </div>
                   </div>
                   <div class="skills-cert-item">
-                    <span class="skills-cert-name">UX Strategy Fundamentals</span>
-                    <span class="skills-cert-issuer">Joe Natoli</span>
+                    <div>
+                      <span class="skills-cert-name">UX Strategy Fundamentals</span>
+                      <span class="skills-cert-issuer">Joe Natoli</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-ux-strategy.png" data-modal-alt="UX Strategy Fundamentals - Joe Natoli" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                    </button>
                   </div>
                   <div class="skills-cert-item">
-                    <span class="skills-cert-name">Conducting Usability Testing</span>
-                    <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                    <div>
+                      <span class="skills-cert-name">Conducting Usability Testing</span>
+                      <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-conducting-usability-testing.jpeg" data-modal-alt="Conducting Usability Testing - Interaction Design Foundation" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                    </button>
                   </div>
                   <div class="skills-cert-item">
-                    <span class="skills-cert-name">User Methods and Best Practices</span>
-                    <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                    <div>
+                      <span class="skills-cert-name">User Methods and Best Practices</span>
+                      <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-user-methods.jpeg" data-modal-alt="User Methods and Best Practices - Interaction Design Foundation" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2371,18 +2425,25 @@
         var screensModalImg = document.getElementById("screens-modal-img");
         var screensModalTitle = document.getElementById("screens-modal-title");
         var screensModalClose = document.getElementById("screens-modal-close");
+        function openScreensModal(src, alt) {
+          if (screensModalImg) screensModalImg.src = src;
+          if (screensModalImg) screensModalImg.alt = alt || "";
+          if (screensModalTitle) screensModalTitle.textContent = alt || "";
+          if (screensModal) {
+            screensModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+          }
+        }
         var thumbnailBtns = document.querySelectorAll(".case-expanded-thumbnail[data-modal-src]");
         thumbnailBtns.forEach(function (btn) {
           btn.addEventListener("click", function () {
-            var src = btn.getAttribute("data-modal-src");
-            var alt = btn.getAttribute("data-modal-alt");
-            if (screensModalImg) screensModalImg.src = src;
-            if (screensModalImg) screensModalImg.alt = alt;
-            if (screensModalTitle) screensModalTitle.textContent = alt || "";
-            if (screensModal) {
-              screensModal.classList.add("open");
-              document.body.style.overflow = "hidden";
-            }
+            openScreensModal(btn.getAttribute("data-modal-src"), btn.getAttribute("data-modal-alt"));
+          });
+        });
+        var certBtns = document.querySelectorAll(".skills-cert-view[data-modal-src]");
+        certBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            openScreensModal(btn.getAttribute("data-modal-src"), btn.getAttribute("data-modal-alt"));
           });
         });
         function closeScreensModal() {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { ImageIcon } from "lucide-react";
 import ImageLightbox from "./case-studies/ImageLightbox";
 
 import certBaymard from "@/assets/cert-baymard-ux-professional.png";
@@ -133,10 +133,10 @@ const Skills = () => {
                   {(cert.image || cert.pdf) && (
                     <button
                       onClick={() => openCert(cert)}
-                      className="shrink-0 mt-0.5 text-primary hover:text-accent transition-colors"
+                      className="shrink-0 mt-0.5 p-1 rounded text-primary hover:text-accent hover:bg-muted/50 transition-colors"
                       aria-label={`View ${cert.name} certificate`}
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ImageIcon className="w-4 h-4" />
                     </button>
                   )}
                 </div>
