@@ -5,17 +5,12 @@ import { scrollToSection } from "@/lib/scroll";
 const Hero = () => {
   const buzzwords = [
     { text: "curious.", color: "#805AD5" },
+    { text: "a cognitive scientist.", color: "#8B5CF6" },
     { text: "multilingual.", color: "#9B6ED8" },
     { text: "asking the right questions.", color: "#7C3AED" },
-    { text: "taking ownership.", color: "#A78BFA" },
-    { text: "a cognitive scientist.", color: "#8B5CF6" },
-    { text: "an analytical mind.", color: "#6D28D9" },
-    { text: "reading between the lines.", color: "#9F7AEA" },
-    { text: "taking initiative.", color: "#7E57C2" },
-    { text: "a UX Researcher.", color: "#805AD5" },
-    { text: "committed.", color: "#9B6ED8" },
-    { text: "a project leader.", color: "#8B5CF6" },
     { text: "proactive.", color: "#A78BFA" },
+    { text: "reading between the lines.", color: "#9F7AEA" },
+    { text: "taking ownership.", color: "#7E57C2" },
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
 

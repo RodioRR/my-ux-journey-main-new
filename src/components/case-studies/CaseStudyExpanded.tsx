@@ -70,11 +70,15 @@ const CaseStudyExpanded = ({ study }: Props) => {
         <div className="space-y-4">
           <div>
             <h5 className="font-body text-xs tracking-[0.15em] uppercase text-accent font-medium mb-2">Research Goals</h5>
-            <ul className="list-disc list-inside font-body text-sm text-muted-foreground leading-relaxed space-y-1">
-              {study.researchGoals.map((goal, i) => (
-                <li key={i}>{goal}</li>
-              ))}
-            </ul>
+            {study.id === 4 ? (
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">{study.researchGoals[0]}</p>
+            ) : (
+              <ul className="list-disc list-inside font-body text-sm text-muted-foreground leading-relaxed space-y-1">
+                {study.researchGoals.map((goal, i) => (
+                  <li key={i}>{goal}</li>
+                ))}
+              </ul>
+            )}
           </div>
           <div>
             <h5 className="font-body text-xs tracking-[0.15em] uppercase text-accent font-medium mb-2">Method</h5>
