@@ -19,6 +19,9 @@ import challengerBankPhases from "@/assets/case-study-challenger-bank-phases.png
 import mobileOnboarding from "@/assets/case-study-mobile-onboarding.png";
 import mobileMethodology from "@/assets/case-study-mobile-methodology.png";
 import mobileConclusions from "@/assets/case-study-mobile-conclusions.png";
+import newCheckoutFlow from "@/assets/new-checkout-flow.jpg";
+import oldCheckoutFlow from "@/assets/old-checkout-flow.jpg";
+import sellerView from "@/assets/seller-view.jpg";
 
 export interface CaseStudy {
   id: number;
@@ -52,57 +55,67 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    tags: ["Cross-functional Leadership", "Conversion Optimization", "A/B Testing", "Team Leadership", "Design Thinking Workshops", "Hypothesis Prioritization"],
+    tags: ["Cross-functional Team Leadership", "Conversion Optimization", "A/B Testing", "Workshop Facilitation", "Design Thinking", "Hypothesis Prioritization"],
     title: "Leading Conversion Optimisation Team",
-    subtitle: "Established and led a structured conversion optimization practice as UX Lead Researcher, transforming stakeholder ideas into a pipeline of 92 research-driven experiments over 2 years.",
+    subtitle: "Established and led a conversion optimization practice as UX Lead Researcher, turning stakeholder ideas into a pipeline of research-driven experiments.",
     impact: "Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.",
-    scopeOfOwnership: "As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis framing, and prioritization; facilitated Design Thinking workshops; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.",
+    scopeOfOwnership: "As UX Lead Researcher, I designed and managed the practice: defined processes for idea generation, hypothesis framing, and prioritization; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into recommendations and decisions.",
     problem: {
-      businessGoal: "Develop a repeatable, centralized process for hypothesis generation, prioritization, and testing to ensure conversion initiatives relied on user research and data rather than intuition.",
-      userPain: "Teams lacked a shared space and process to turn ideas into testable hypotheses, which led to scattered experiments, duplicated efforts, and missed opportunities to systematically improve key user journeys.",
-      trigger: "Leadership recognised that despite many ad-hoc A/B tests, the organisation neither had a clear workflow nor a dedicated research-driven conversion team, which limited the impact of experimentation and long-term learning.",
+      businessGoal: "Develop a repeatable, centralized process for hypothesis generation, prioritization, and testing so conversion initiatives rely on user research and data rather than intuition.",
+      userPain: "Teams lacked a shared process to turn ideas into testable hypotheses, leading to scattered experiments and duplicated efforts.",
+      trigger: "Leadership recognised that despite ad-hoc tests, the organisation lacked a clear workflow and dedicated conversion team.",
     },
     collaboration: ["UX Researchers", "Designers", "Product Managers", "Business", "Marketing", "Senior Leadership"],
     researchGoals: [
-      "Create a sustainable, cross-functional practice linking stakeholder input to user-centered research.",
-      "Convert qualitative and quantitative data into prioritized, testable hypotheses.",
+      "Create a cross-functional practice linking stakeholder input to user-centred research.",
+      "Convert qualitative and quantitative data into prioritised, testable hypotheses.",
     ],
-    researchMethod: "Implemented a Design Thinking framework: ideation workshops (empathize, define, ideate); hypothesis mapping; KPI and test plan alignment; A/B and multivariate tests (single/multi-round); supplemented by qualitative methods (e.g., interviews, usability checks).",
-    keyInsight: "A structured, research-driven practice boosted experiment volume and quality, yielding improvements in user journeys and business KPIs.",
-    projectDecision: "Oversaw 92 projects in 2 years, including: AI product page recommendations (+2% basket increase); Markov Chains tool for on-site behavior mapping; Checkout upsell removal (+0.5 percentage point conversion lift); other tests (e.g., copy variants, FOMO displays, ratings removal) validated status quo or refined strategies.",
-    numbers: "92 projects; multiple wins (e.g., +2% baskets, +0.5% conversion) prevented misguided changes.",
-    whatWorked: "Fostered a continuous feedback loop across research, product, and business, enabling iterative workflow improvements and data-informed decisions.",
-    whatCouldBeDifferently: "Clarify ownership in select projects to avoid inefficiencies or cancellations; prioritize fewer, higher-impact initiatives over volume.",
-    keyLearnings: "Mastered Design Thinking workshop facilitation to align diverse stakeholders and generate high-quality hypotheses. Gained expertise in cross-functional project coordination, managing backlogs and timelines for 92 experiments. Learned to synthesize insights from multiple projects into strategic decisions, with a focus on effective prioritization.",
+    researchMethod: "Implemented Design Thinking: ideation workshops; hypothesis mapping; KPI and test plan alignment; A/B and multivariate tests; supplemented by qualitative methods (e.g. interviews, usability checks).",
+    keyInsight: "A structured, research-driven practice increased experiment volume and quality, with improvements in user journeys and business KPIs.",
+    projectDecision: "Oversaw over 90 projects in 2 years, including: AI product page recommendations (+2% basket increase); Markov Chains tool for on-site behaviour mapping; Checkout upsell removal (+0.5 p.p. conversion lift); other tests validated status quo or refined strategies.",
+    numbers: "Over 90 projects; wins (e.g. +2% baskets, +0.5% conversion) prevented misguided changes.",
+    whatWorked: "A continuous feedback loop across research, product, and business enabled iterative improvements and data-informed decisions.",
+    whatCouldBeDifferently: "Clarify ownership in select projects; prioritise fewer, higher-impact initiatives over volume.",
+    keyLearnings: "Gained experience in Design Thinking workshop facilitation to align stakeholders and generate hypotheses. Developed cross-functional project coordination, managing backlogs and timelines. Learned to synthesise insights from multiple projects into strategic decisions.",
     image: caseStudyConversion,
     imageAspect: "landscape",
   },
   {
     id: 2,
-    tags: ["High-risk Data Analysis", "Multivariate Testing", "A/B Testing", "Research Project Management", "Financial Reporting", "Cross-Functional Leadership", "Checkout Optimization"],
+    tags: ["Multivariate Testing", "Research Project Management", "Financial Reporting", "Cross-Functional Leadership", "Checkout Optimization"],
     title: "Order Fee Optimization",
-    subtitle: "Led end-to-end multivariate tests to refine the checkout financial model, optimizing order fee amounts, visuals, and flow.",
+    subtitle: "Led multivariate tests to refine checkout order fees, visuals, and flow.",
     impact: "Increased conversion rate by 1 percentage point, supporting revenue growth while preserving margins.",
-    scopeOfOwnership: "As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed an A/B testing system integrated with the database for real-time metric tracking.",
+    scopeOfOwnership: "As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed a multivariate testing system integrated with the database for real-time metric tracking.",
     problem: {
-      businessGoal: "Sustain revenue while eliminating the upsell and enhancing pricing transparency at checkout.",
-      userPain: "Users experienced confusion and distrust, often noting issues like unexpected total changes at checkout. This was driven by feedback highlighting unclear pricing.",
-      trigger: "Analysis of user complaints identified the upsell as a key barrier to conversion.",
+      businessGoal: "Maintain revenue while removing the upsell and improving pricing transparency at checkout.",
+      userPain: "Users reported confusion and unexpected total changes at checkout due to unclear pricing.",
+      trigger: "User feedback pointed to the upsell as a conversion barrier.",
     },
     collaboration: ["General Manager", "Legal", "Marketing", "PM", "BI", "IT"],
     researchGoals: [
       "Determine optimal order fee amounts by price bracket and product type to maintain revenue levels.",
+      "Optimize visual presentation: fee position in user flow, checkout placement, and inclusion in total price.",
+      "Evaluate Proprietary Payment Method with and without discounts for profitability.",
     ],
-    researchMethod: "Ran 3 rounds of multivariate tests (~2 months each) on a global desktop segment, testing order fee amounts per price bracket, visual placement on checkout, price inclusion/exclusion, and Proprietary Payment Method profitability.",
-    keyInsight: "Transparent pricing (upsell removed, fees integrated into totals) maintained KPIs and improved conversion by 1 p.p. across segments.",
-    projectDecision: "Eliminated upsell, established tiered fees (e.g., 5% for orders under €50), and displayed fees clearly within totals.",
-    numbers: "Increased conversion rate by 1 percentage point, directly translating into significantly higher revenue.",
-    whatWorked: "The custom A/B system provided real-time insights, identifying effective variants that supported substantial financial outcomes. Strong cross-team alignment facilitated implementation.",
-    whatCouldBeDifferently: "Initiate earlier stakeholder alignment and clearer task delegation (e.g., IT monitoring) to reduce timeline.",
-    keyLearnings: "Excelled in a combined PM-UX researcher role, navigating technical and legal considerations in a high-stakes project. This experience underscores the value of researcher-led project management for data-driven results, aligning with my goals in international project leadership.",
+    researchMethod: "Ran 3 rounds of multivariate tests on global desktop, testing fee amounts by price bracket, checkout placement, and price display.",
+    keyInsight: "Transparent pricing—with fees shown in totals—maintained KPIs and improved conversion by 1 p.p.",
+    projectDecision: "Removed upsell; introduced tiered fees, shown in totals.",
+    numbers: "Conversion rate increased by 1 p.p.",
+    whatWorked: "Custom multivariate testing system enabled real-time tracking. Cross-team alignment supported implementation.",
+    whatCouldBeDifferently: "Earlier stakeholder alignment and clearer task delegation (e.g. IT monitoring) could have shortened the timeline.",
+    keyLearnings: "Gained experience in a combined PM–UX researcher role, handling technical and legal aspects. Reinforced the value of researcher-led project management for data-driven decisions.",
     image: caseStudyCheckoutFlow,
     imageAspect: "landscape",
     detailImages: [
+      {
+        label: "Screens",
+        images: [
+          { src: oldCheckoutFlow, alt: "Old checkout flow" },
+          { src: newCheckoutFlow, alt: "New checkout flow" },
+          { src: sellerView, alt: "Seller view old vs. new" },
+        ],
+      },
       {
         label: "Old Checkout Layout Flow",
         images: [

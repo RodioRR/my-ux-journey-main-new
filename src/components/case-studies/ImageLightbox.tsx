@@ -39,6 +39,7 @@ const ImageLightbox = ({ src, alt, open, onOpenChange }: Props) => {
         <VisuallyHidden>
           <DialogTitle>{alt}</DialogTitle>
         </VisuallyHidden>
+        <p className="text-sm font-medium text-foreground px-2 pb-2">{alt}</p>
         <div className="relative flex items-center justify-center">
           {multiPage && index > 0 && (
             <button

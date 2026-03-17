@@ -844,6 +844,106 @@
         margin-bottom: 0;
       }
 
+      .case-expanded-screens-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+      }
+
+      .case-expanded-screens-single-row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.75rem;
+        width: 100%;
+      }
+
+      .case-expanded-thumbnail-rect .thumb-square {
+        aspect-ratio: 3 / 2;
+      }
+
+      .case-expanded-thumbnail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        border: 1px solid var(--border);
+        transition: border-color 0.2s;
+        background: none;
+        cursor: pointer;
+        font: inherit;
+        text-align: center;
+        width: 100%;
+      }
+
+      .case-expanded-thumbnail:hover {
+        border-color: var(--primary);
+      }
+
+      .case-expanded-thumbnail span:first-of-type {
+        font-size: 0.75rem;
+        color: var(--muted-foreground);
+        padding: 0.25rem 0.25rem 0;
+        order: -1;
+      }
+
+      .case-expanded-thumbnail .thumb-square {
+        display: block;
+        aspect-ratio: 1;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 0.25rem;
+      }
+
+      .case-expanded-thumbnail .thumb-square img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: var(--card);
+      }
+
+      .case-expanded-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.75);
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .case-expanded-modal-overlay.open {
+        display: flex;
+      }
+
+      .case-expanded-modal {
+        max-width: 90vw;
+        max-height: 90vh;
+        background: var(--card);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .case-expanded-modal-title {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--foreground);
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .case-expanded-modal img {
+        max-height: 80vh;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
       .case-detail {
         display: none;
       }
@@ -1359,23 +1459,24 @@
               <article class="case-item" data-case="1">
                 <h3 class="case-title">Leading Conversion Optimisation Team</h3>
                 <div class="case-tags">
-                  <span class="case-tag">Cross-functional Leadership</span>
+                  <span class="case-tag">Cross-functional Team Leadership</span>
                   <span class="case-tag">Conversion Optimization</span>
                   <span class="case-tag">A/B Testing</span>
-                  <span class="case-tag">Workshops Facilitation</span>
+                  <span class="case-tag">Workshop Facilitation</span>
+                  <span class="case-tag">Design Thinking</span>
                   <span class="case-tag">Hypothesis Prioritization</span>
                 </div>
                 <p class="case-subtitle">
-                  Established and led a structured conversion optimization practice, transforming stakeholder ideas into a pipeline of research-driven experiments.
+                  Established and led a conversion optimization practice as UX Lead Researcher, turning stakeholder ideas into a pipeline of research-driven experiments.
                 </p>
                 <div class="case-1-grid">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis prioritization; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
+                    <p class="case-scope-text">As UX Lead Researcher, I designed and managed the practice: defined processes for idea generation, hypothesis framing, and prioritization; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into recommendations and decisions.</p>
                   </div>
                   <div class="case-impact-box">
                     <h4>Impact</h4>
-                    <p class="case-scope-text">Oversaw 92 projects in 2 years; Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</p>
+                    <p class="case-scope-text">Delivered measurable KPI lifts (e.g., +2% baskets, +0.5% checkout conversion) across key journeys.</p>
                   </div>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="1">Read full case study →</button>
@@ -1385,16 +1486,16 @@
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
                         <div class="case-expanded-label">Business Goal</div>
-                        <p class="case-expanded-text">Develop a repeatable, centralized process for hypothesis generation, prioritization, and testing to ensure conversion initiatives relied on user research and data rather than intuition.</p>
+                        <p class="case-expanded-text">Develop a repeatable, centralized process for hypothesis generation, prioritization, and testing so conversion initiatives rely on user research and data rather than intuition.</p>
                         <div class="case-expanded-label">User Pain</div>
-                        <p class="case-expanded-text">Teams lacked a shared space and process to turn ideas into testable hypotheses, which led to scattered experiments, duplicated efforts, and missed opportunities to systematically improve key user journeys.</p>
+                        <p class="case-expanded-text">Teams lacked a shared process to turn ideas into testable hypotheses, leading to scattered experiments and duplicated efforts.</p>
                         <div class="case-expanded-label">Trigger</div>
-                        <p class="case-expanded-text">Leadership recognised that despite many ad-hoc A/B tests, the organisation neither had a clear workflow nor a dedicated research-driven conversion team, which limited the impact of experimentation and long-term learning.</p>
+                        <p class="case-expanded-text">Leadership recognised that despite ad-hoc tests, the organisation lacked a clear workflow and dedicated conversion team.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
                         <div class="case-expanded-label">Scope of Ownership</div>
-                        <p class="case-expanded-text">As UX Lead Researcher, I designed and managed the end-to-end practice: defined processes for idea generation, hypothesis prioritization; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into reusable recommendations and decisions.</p>
+                        <p class="case-expanded-text">As UX Lead Researcher, I designed and managed the practice: defined processes for idea generation, hypothesis framing, and prioritization; maintained the research backlog; oversaw study design and KPI alignment; synthesized insights into recommendations and decisions.</p>
                         <div class="case-expanded-label">Collaboration</div>
                         <p class="case-expanded-text">UX Researchers, Designers, Product Managers, Business, Marketing, Senior Leadership</p>
                       </div>
@@ -1403,30 +1504,30 @@
                       <h4>Research Process</h4>
                       <div class="case-expanded-label">Research Goals</div>
                       <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
-                        <li>Create a sustainable, cross-functional practice linking stakeholder input to user-centered research.</li>
-                        <li>Convert qualitative and quantitative data into prioritized, testable hypotheses.</li>
+                        <li>Create a cross-functional practice linking stakeholder input to user-centred research.</li>
+                        <li>Convert qualitative and quantitative data into prioritised, testable hypotheses.</li>
                       </ul>
                       <div class="case-expanded-label">Method</div>
-                      <p class="case-expanded-text">Implemented a Design Thinking framework: ideation workshops (empathize, define, ideate); hypothesis mapping; KPI and test plan alignment; A/B and multivariate tests (single/multi-round); supplemented by qualitative methods (e.g., interviews, usability checks).</p>
+                      <p class="case-expanded-text">Implemented Design Thinking: ideation workshops; hypothesis mapping; KPI and test plan alignment; A/B and multivariate tests; supplemented by qualitative methods (e.g. interviews, usability checks).</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
                         <div class="case-expanded-label">Key Insight</div>
-                        <p class="case-expanded-text">A structured, research-driven practice boosted experiment volume and quality, yielding improvements in user journeys and business KPIs.</p>
+                        <p class="case-expanded-text">A structured, research-driven practice increased experiment volume and quality, with improvements in user journeys and business KPIs.</p>
                         <div class="case-expanded-label">Project Decision</div>
-                        <p class="case-expanded-text">Oversaw 92 projects in 2 years, including: AI product page recommendations (+2% basket increase); Markov Chains tool for on-site behavior mapping; Checkout upsell removal (+0.5 percentage point conversion lift); other tests (e.g., copy variants, FOMO displays, ratings removal) validated status quo or refined strategies.</p>
+                        <p class="case-expanded-text">Oversaw over 90 projects in 2 years, including: AI product page recommendations (+2% basket increase); Markov Chains tool for on-site behaviour mapping; Checkout upsell removal (+0.5 p.p. conversion lift); other tests validated status quo or refined strategies.</p>
                         <div class="case-expanded-label">Numbers</div>
-                        <p class="case-expanded-text">92 projects; multiple wins (e.g., +2% baskets, +0.5% conversion) prevented misguided changes.</p>
+                        <p class="case-expanded-text">Over 90 projects; wins (e.g. +2% baskets, +0.5% conversion) prevented misguided changes.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
                         <div class="case-expanded-label">What Worked</div>
-                        <p class="case-expanded-text">Fostered a continuous feedback loop across research, product, and business, enabling iterative workflow improvements and data-informed decisions.</p>
+                        <p class="case-expanded-text">A continuous feedback loop across research, product, and business enabled iterative improvements and data-informed decisions.</p>
                         <div class="case-expanded-label">What Could Be Done Differently</div>
-                        <p class="case-expanded-text">Clarify ownership in select projects to avoid inefficiencies or cancellations; prioritize fewer, higher-impact initiatives over volume.</p>
+                        <p class="case-expanded-text">Clarify ownership in select projects; prioritise fewer, higher-impact initiatives over volume.</p>
                         <div class="case-expanded-label">Key Learnings</div>
-                        <p class="case-expanded-text">Mastered Design Thinking workshop facilitation to align diverse stakeholders and generate high-quality hypotheses. Gained expertise in cross-functional project coordination, managing backlogs and timelines for 92 experiments. Learned to synthesize insights from multiple projects into strategic decisions, with a focus on effective prioritization.</p>
+                        <p class="case-expanded-text">Gained experience in Design Thinking workshop facilitation to align stakeholders and generate hypotheses. Developed cross-functional project coordination, managing backlogs and timelines. Learned to synthesise insights from multiple projects into strategic decisions.</p>
                       </div>
                     </div>
                   </div>
@@ -1437,21 +1538,19 @@
               <article class="case-item" data-case="2">
                 <h3 class="case-title">Order Fee Optimization</h3>
                 <div class="case-tags">
-                  <span class="case-tag">High-risk Data Analysis</span>
                   <span class="case-tag">Multivariate Testing</span>
-                  <span class="case-tag">A/B Testing</span>
                   <span class="case-tag">Research Project Management</span>
                   <span class="case-tag">Financial Reporting</span>
                   <span class="case-tag">Cross-Functional Leadership</span>
                   <span class="case-tag">Checkout Optimization</span>
                 </div>
                 <p class="case-subtitle">
-                  Led end-to-end multivariate tests to refine the checkout financial model, optimizing order fee amounts, visuals, and flow.
+                  Led multivariate tests to refine checkout order fees, visuals, and flow.
                 </p>
                 <div class="case-row reversed">
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed an A/B testing system integrated with the database for real-time metric tracking.</p>
+                    <p class="case-scope-text">As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed a multivariate testing system integrated with the database for real-time metric tracking.</p>
                   </div>
                   <div class="case-row-image">
                     <img src="assets/case-study-checkout-flow-new.jpeg" alt="Order Fee Optimization" />
@@ -1468,16 +1567,16 @@
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
                         <div class="case-expanded-label">Business Goal</div>
-                        <p class="case-expanded-text">Sustain revenue while eliminating the upsell and enhancing pricing transparency at checkout.</p>
+                        <p class="case-expanded-text">Maintain revenue while removing the upsell and improving pricing transparency at checkout.</p>
                         <div class="case-expanded-label">User Pain</div>
-                        <p class="case-expanded-text">Users experienced confusion and distrust, often noting issues like unexpected total changes at checkout. This was driven by feedback highlighting unclear pricing.</p>
+                        <p class="case-expanded-text">Users reported confusion and unexpected total changes at checkout due to unclear pricing.</p>
                         <div class="case-expanded-label">Trigger</div>
-                        <p class="case-expanded-text">Analysis of user complaints identified the upsell as a key barrier to conversion.</p>
+                        <p class="case-expanded-text">User feedback pointed to the upsell as a conversion barrier.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
                         <div class="case-expanded-label">Scope of Ownership</div>
-                        <p class="case-expanded-text">As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed an A/B testing system integrated with the database for real-time metric tracking.</p>
+                        <p class="case-expanded-text">As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed a multivariate testing system integrated with the database for real-time metric tracking.</p>
                         <div class="case-expanded-label">Collaboration</div>
                         <p class="case-expanded-text">General Manager, Legal, Marketing, PM, BI, IT</p>
                       </div>
@@ -1487,28 +1586,53 @@
                       <div class="case-expanded-label">Research Goals</div>
                       <ul class="case-expanded-text" style="list-style:disc;padding-left:1.25rem;margin:0.5rem 0">
                         <li>Determine optimal order fee amounts by price bracket and product type to maintain revenue levels.</li>
+                        <li>Optimize visual presentation: fee position in user flow, checkout placement, and inclusion in total price.</li>
+                        <li>Evaluate Proprietary Payment Method with and without discounts for profitability.</li>
                       </ul>
                       <div class="case-expanded-label">Method</div>
-                      <p class="case-expanded-text">Ran 3 rounds of multivariate tests (~2 months each) on a global desktop segment, testing order fee amounts per price bracket, visual placement on checkout, price inclusion/exclusion, and Proprietary Payment Method profitability.</p>
+                      <p class="case-expanded-text">Ran 3 rounds of multivariate tests on global desktop, testing fee amounts by price bracket, checkout placement, and price display.</p>
+                      <div class="case-expanded-label">Screens</div>
+                      <div class="case-expanded-screens-grid case-expanded-screens-single-row">
+                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/Old%20checkout%20flow.jpg" data-modal-alt="Old checkout flow">
+                          <span>Old checkout flow</span>
+                          <span class="thumb-square"><img src="assets/Old%20checkout%20flow.jpg" alt="Old checkout flow" /></span>
+                        </button>
+                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/New%20checkout%20flow.jpg" data-modal-alt="New checkout flow">
+                          <span>New checkout flow</span>
+                          <span class="thumb-square"><img src="assets/New%20checkout%20flow.jpg" alt="New checkout flow" /></span>
+                        </button>
+                        <button type="button" class="case-expanded-thumbnail" data-modal-src="assets/seller%20view.jpg" data-modal-alt="Seller view old vs. new">
+                          <span>Seller view old vs. new</span>
+                          <span class="thumb-square"><img src="assets/seller%20view.jpg" alt="Seller view old vs. new" /></span>
+                        </button>
+                        <button type="button" class="case-expanded-thumbnail" data-modal-src="assets/test-groups-table.png" data-modal-alt="Test Groups">
+                          <span>Test Groups</span>
+                          <span class="thumb-square"><img src="assets/test-groups-table.png" alt="Test Groups" /></span>
+                        </button>
+                        <button type="button" class="case-expanded-thumbnail" data-modal-src="assets/hypothesis-metrics.png" data-modal-alt="Hypothesis &amp; Metrics">
+                          <span>Hypothesis &amp; Metrics</span>
+                          <span class="thumb-square"><img src="assets/hypothesis-metrics.png" alt="Hypothesis & Metrics" /></span>
+                        </button>
+                      </div>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
                         <div class="case-expanded-label">Key Insight</div>
-                        <p class="case-expanded-text">Transparent pricing (upsell removed, fees integrated into totals) maintained KPIs and improved conversion by 1 p.p. across segments.</p>
+                        <p class="case-expanded-text">Transparent pricing—with fees shown in totals—maintained KPIs and improved conversion by 1 p.p.</p>
                         <div class="case-expanded-label">Project Decision</div>
-                        <p class="case-expanded-text">Eliminated upsell, established tiered fees (e.g., 5% for orders under €50), and displayed fees clearly within totals.</p>
+                        <p class="case-expanded-text">Removed upsell; introduced tiered fees, shown in totals.</p>
                         <div class="case-expanded-label">Numbers</div>
-                        <p class="case-expanded-text">Increased conversion rate by 1 percentage point, directly translating into significantly higher revenue.</p>
+                        <p class="case-expanded-text">Conversion rate increased by 1 p.p.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
                         <div class="case-expanded-label">What Worked</div>
-                        <p class="case-expanded-text">The custom A/B system provided real-time insights, identifying effective variants that supported substantial financial outcomes. Strong cross-team alignment facilitated implementation.</p>
+                        <p class="case-expanded-text">Custom multivariate testing system enabled real-time tracking. Cross-team alignment supported implementation.</p>
                         <div class="case-expanded-label">What Could Be Done Differently</div>
-                        <p class="case-expanded-text">Initiate earlier stakeholder alignment and clearer task delegation (e.g., IT monitoring) to reduce timeline.</p>
+                        <p class="case-expanded-text">Earlier stakeholder alignment and clearer task delegation (e.g. IT monitoring) could have shortened the timeline.</p>
                         <div class="case-expanded-label">Key Learnings</div>
-                        <p class="case-expanded-text">Excelled in a combined PM-UX researcher role, navigating technical and legal considerations in a high-stakes project. This experience underscores the value of researcher-led project management for data-driven results, aligning with my goals in international project leadership.</p>
+                        <p class="case-expanded-text">Gained experience in a combined PM–UX researcher role, handling technical and legal aspects. Reinforced the value of researcher-led project management for data-driven decisions.</p>
                       </div>
                     </div>
                   </div>
@@ -2000,6 +2124,14 @@
         <button type="button" class="image-modal-close" id="image-modal-close" aria-label="Close">×</button>
         <img src="" alt="" id="image-modal-img" />
       </div>
+
+      <div class="case-expanded-modal-overlay" id="screens-modal" role="dialog" aria-modal="true" aria-label="Screens image">
+        <div class="case-expanded-modal">
+          <div class="case-expanded-modal-title" id="screens-modal-title"></div>
+          <img src="" alt="" id="screens-modal-img" />
+        </div>
+        <button type="button" class="image-modal-close" id="screens-modal-close" aria-label="Close" style="position:absolute;top:1rem;right:1rem">×</button>
+      </div>
     </div>
 
     <button class="scroll-to-top hidden" id="scroll-to-top" aria-label="Scroll to top">
@@ -2115,6 +2247,38 @@
         });
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && imageModal && imageModal.classList.contains("open")) closeImageModal();
+        });
+
+        var screensModal = document.getElementById("screens-modal");
+        var screensModalImg = document.getElementById("screens-modal-img");
+        var screensModalTitle = document.getElementById("screens-modal-title");
+        var screensModalClose = document.getElementById("screens-modal-close");
+        var thumbnailBtns = document.querySelectorAll(".case-expanded-thumbnail[data-modal-src]");
+        thumbnailBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var src = btn.getAttribute("data-modal-src");
+            var alt = btn.getAttribute("data-modal-alt");
+            if (screensModalImg) screensModalImg.src = src;
+            if (screensModalImg) screensModalImg.alt = alt;
+            if (screensModalTitle) screensModalTitle.textContent = alt || "";
+            if (screensModal) {
+              screensModal.classList.add("open");
+              document.body.style.overflow = "hidden";
+            }
+          });
+        });
+        function closeScreensModal() {
+          if (screensModal) {
+            screensModal.classList.remove("open");
+            document.body.style.overflow = "";
+          }
+        }
+        if (screensModalClose) screensModalClose.addEventListener("click", closeScreensModal);
+        if (screensModal) screensModal.addEventListener("click", function (e) {
+          if (e.target === screensModal) closeScreensModal();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && screensModal && screensModal.classList.contains("open")) closeScreensModal();
         });
 
         var toggles = document.querySelectorAll("[data-toggle]");

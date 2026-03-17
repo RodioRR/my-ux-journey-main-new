@@ -85,57 +85,75 @@ const CaseStudyExpanded = ({ study }: Props) => {
           {(study.image || hasScreens || hasOtherImages) && (
             <div>
               <h5 className="font-body text-xs tracking-[0.15em] uppercase text-accent font-medium mb-3">Screens</h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {study.image && (
-                  <div className="space-y-1">
-                    <button
-                      onClick={() => setLightboxImage({ src: study.image, alt: study.title })}
-                      className="overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors w-full"
-                    >
-                      <img
-                        src={study.image}
-                        alt={study.title}
-                        className="w-full h-auto object-contain bg-background"
-                      />
-                    </button>
-                    <p className="font-body text-[10px] text-muted-foreground leading-tight">{study.title}</p>
-                  </div>
-                )}
-                {screensGroup?.map((group) =>
-                  group.images.map((img) => (
-                    <div key={img.alt} className="space-y-1">
+              {study.id === 2 ? (
+                <div className="grid grid-cols-5 gap-3 w-full">
+                  {screensGroup?.find((g) => g.label === "Screens")?.images.slice(0, 2).map((img) => (
+                    <div key={img.alt} className="flex flex-col items-center gap-1 min-w-0">
                       <button
                         onClick={() => setLightboxImage(img)}
-                        className="overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors w-full"
+                        className="aspect-[3/2] w-full min-w-0 overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors bg-background"
                       >
-                        <img
-                          src={img.src}
-                          alt={img.alt}
-                          className="w-full h-auto object-contain bg-background"
-                        />
+                        <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
                       </button>
-                      <p className="font-body text-[10px] text-muted-foreground leading-tight">{img.alt}</p>
+                      <p className="font-body text-xs text-muted-foreground leading-tight text-center">{img.alt}</p>
                     </div>
-                  ))
-                )}
-                {otherDetailImages?.map((group) =>
-                  group.images.map((img) => (
-                    <div key={img.alt} className="space-y-1">
+                  ))}
+                  {[
+                    ...(screensGroup?.find((g) => g.label === "Screens")?.images.slice(2, 3) ?? []),
+                    ...(otherDetailImages?.flatMap((g) => g.images) ?? []),
+                  ].map((img) => (
+                    <div key={img.alt} className="flex flex-col items-center gap-1 min-w-0">
                       <button
                         onClick={() => setLightboxImage(img)}
-                        className="overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors w-full"
+                        className="aspect-square w-full min-w-0 overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors bg-background"
                       >
-                        <img
-                          src={img.src}
-                          alt={img.alt}
-                          className="w-full h-auto object-contain bg-background"
-                        />
+                        <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
                       </button>
-                      <p className="font-body text-[10px] text-muted-foreground leading-tight">{img.alt}</p>
+                      <p className="font-body text-xs text-muted-foreground leading-tight text-center">{img.alt}</p>
                     </div>
-                  ))
-                )}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                  {study.image && (
+                    <div className="flex flex-col items-center gap-1">
+                      <button
+                        onClick={() => setLightboxImage({ src: study.image, alt: study.title })}
+                        className="aspect-square w-full min-w-0 overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors bg-background"
+                      >
+                        <img src={study.image} alt={study.title} className="w-full h-full object-cover" />
+                      </button>
+                      <p className="font-body text-xs text-muted-foreground leading-tight text-center">{study.title}</p>
+                    </div>
+                  )}
+                  {screensGroup?.map((group) =>
+                    group.images.map((img) => (
+                      <div key={img.alt} className="flex flex-col items-center gap-1">
+                        <button
+                          onClick={() => setLightboxImage(img)}
+                          className="aspect-square w-full min-w-0 overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors bg-background"
+                        >
+                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                        </button>
+                        <p className="font-body text-xs text-muted-foreground leading-tight text-center">{img.alt}</p>
+                      </div>
+                    ))
+                  )}
+                  {otherDetailImages?.map((group) =>
+                    group.images.map((img) => (
+                      <div key={img.alt} className="flex flex-col items-center gap-1">
+                        <button
+                          onClick={() => setLightboxImage(img)}
+                          className="aspect-square w-full min-w-0 overflow-hidden rounded-lg border border-border cursor-pointer hover:border-primary/40 transition-colors bg-background"
+                        >
+                          <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                        </button>
+                        <p className="font-body text-xs text-muted-foreground leading-tight text-center">{img.alt}</p>
+                      </div>
+                    ))
+                  )}
+                </div>
+              )}
             </div>
           )}
         </div>
