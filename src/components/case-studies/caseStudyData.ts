@@ -1,8 +1,8 @@
 import caseStudyCheckoutFlow from "@/assets/case-study-checkout-flow-new.jpeg";
 import caseStudyShorterCheckout from "@/assets/case-study-shorter-checkout.png";
 import caseStudyReport from "@/assets/case-study-user-report-map.png";
-import userReportToc1 from "@/assets/user-report-toc-1.png";
-import userReportToc2 from "@/assets/user-report-toc-2.png";
+import userReportToc1 from "@/assets/User Report ToC1.jpg";
+import userReportToc2 from "@/assets/User Report ToC2.jpg";
 import caseStudyConversion from "@/assets/case-study-conversion.jpg";
 import checkoutOld1 from "@/assets/checkout-old-1.png";
 import checkoutOld2 from "@/assets/checkout-old-2.png";
@@ -16,7 +16,7 @@ import sellerOld from "@/assets/seller-old.jpg";
 import sellerNew from "@/assets/seller-new.png";
 import challengerBank from "@/assets/case-study-challenger-bank.png";
 import challengerBankPhases from "@/assets/case-study-challenger-bank-phases.png";
-import mobileOnboarding from "@/assets/case-study-mobile-onboarding.png";
+import mobileOnboarding from "@/assets/Onboarding.jpg";
 import mobileMethodology from "@/assets/case-study-mobile-methodology.png";
 import mobileConclusions from "@/assets/case-study-mobile-conclusions.png";
 import newCheckoutFlow from "@/assets/new-checkout-flow.jpg";
@@ -164,25 +164,25 @@ export const caseStudies: CaseStudy[] = [
     title: "Yearly User Report",
     subtitle: "Created and led an annual user research report, synthesizing global survey data with internal analytics to inform business strategy.",
     impact: "Identified 3–4 key segments and behavioral shifts, guiding management, marketing, and product decisions.",
-    scopeOfOwnership: "As creator and lead, I managed the end-to-end process: defined research goals and questions; designed survey structure for sociodemographics, gaming behaviors, and purchase patterns; planned global rollout, sampling, and timing; analyzed data for correlations; integrated with internal analytics and prior-year benchmarks; produced visual reports and actionable presentations.",
+    scopeOfOwnership: "As creator and lead, I managed the end-to-end process: defined research goals for sociodemographics, gaming behaviors, and purchase patterns; analyzed data for correlations; integrated with internal analytics and prior-year benchmarks; produced visual reports and actionable presentations.",
     problem: {
-      businessGoal: "Provide management, marketing, and product with up-to-date, structured user insights so that strategic decisions were grounded in current customer profiles, not assumptions or outdated research.",
-      userPain: "The organization lacked a unified, regularly updated view of user sociodemographics, gaming habits, and purchase behaviors, leading to fragmented decision-making.",
-      trigger: "Leadership recognised that in a fast-changing e-commerce environment, not systematically tracking how users change over time meant missing opportunities to adapt offers, messaging, and product strategy.",
+      businessGoal: "Ground strategic decisions in current customer profiles, not assumptions or outdated research.",
+      userPain: "No unified, regularly updated view of users—leading to fragmented decisions.",
+      trigger: "Not tracking user changes over time meant missing opportunities.",
     },
     collaboration: ["Management", "Business", "Marketing", "Data Analysts"],
     researchGoals: [
       "Profile core users (sociodemographics, motivations, gaming habits).",
-      "Track behavioral and preference changes across segments over time.",
-      "Validate survey findings against internal analytics for enriched insights.",
+      "Track changes across segments over time.",
+      "Validate findings against internal analytics.",
     ],
-    researchMethod: "Conducted recurring global surveys throughout the year for declarative data; performed quantitative analysis of responses combined with behavioral metrics (e.g., purchase frequency, category preferences, device usage); conducted trend comparisons with previous years.",
-    keyInsight: "The yearly user report revealed clear shifts in user profiles, gaming preferences, and purchase behaviour over time, exposing previously unnoticed segments and contradictions between assumed and actual user behaviour.",
-    projectDecision: "Management adopted for campaign targeting; marketing refined segment-specific offers; product adjusted messaging and feature priorities based on trends.",
+    researchMethod: "Recurring global surveys; quantitative analysis combined with behavioral metrics; trend comparisons with prior years.",
+    keyInsight: "The report revealed shifts in profiles, preferences, and behaviour—exposing unnoticed segments and contradictions between assumed and actual behaviour.",
+    projectDecision: "Management adopted for targeting; marketing refined offers; product adjusted messaging and priorities based on trends.",
     numbers: "Globally representative sample; defined 3–4 segments; surfaced significant shifts.",
-    whatWorked: "Created a repeatable, yearly rhythm for user research that closed the gap between one-off analytics and long-term strategic understanding, enabling continuous learning about the user base.",
-    whatCouldBeDifferently: "Integrate report earlier into planning cycles (e.g., quarterly reviews) and incorporate workshops for broader team adoption and business application.",
-    keyLearnings: "Developed skills in combining scalable surveys with internal analytics to produce comprehensive insights beyond individual methods. Gained expertise in creating living strategic documents that build organizational memory and reinforce user-centered decision-making over time.",
+    whatWorked: "Repeatable yearly rhythm closed the gap between one-off analytics and long-term strategic understanding.",
+    whatCouldBeDifferently: "Integrate earlier into planning cycles; add workshops for broader adoption.",
+    keyLearnings: "Combined surveys with analytics for insights beyond individual methods. Repeatable reports build organisational memory and reinforce user-centred decisions.",
     image: caseStudyReport,
     imageAspect: "landscape",
     detailImages: [
@@ -201,23 +201,23 @@ export const caseStudies: CaseStudy[] = [
     title: "Shorter Checkout",
     subtitle: "Directed end-to-end A/B test as sole UX Researcher to eliminate a redundant checkout step, reducing drop-off.",
     impact: "Increased cart conversion rate by 5 percentage points, enhancing purchase completion and revenue.",
-    scopeOfOwnership: "As sole UX Researcher, I defined research goals and KPIs (e.g., cart conversion rate, drop-off at step), configured and monitored the A/B test, analyzed behavioral and conversion data, and provided actionable recommendations to product and business stakeholders.",
+    scopeOfOwnership: "Sole UX Researcher: defined goals and KPIs, configured and monitored the A/B test, analyzed data, delivered recommendations.",
     problem: {
-      businessGoal: "Minimize losses in late checkout stages by removing an unnecessary step, while sustaining or improving conversion and revenue.",
-      userPain: "Users encountered a redundant step that repeated information, fostering confusion and abandonment risks near purchase completion.",
-      trigger: "Analytics revealed that extra steps in the journey—duplicating data from the marketplace-embedded step into the new payment gateway—increased exit rates significantly.",
+      businessGoal: "Remove the unnecessary step; sustain or improve conversion and revenue.",
+      userPain: "A redundant step repeated information, fostering confusion and abandonment near purchase completion.",
+      trigger: "Analytics showed that extra steps duplicating data increased exit rates.",
     },
     collaboration: ["IT", "Business Intelligence"],
     researchGoals: [
-      "Assess the effect of removing the redundant step on cart conversion rate and purchase completion.",
+      "Assess the effect of removing the redundant step on cart conversion and purchase completion.",
     ],
-    researchMethod: "Executed a controlled A/B test (n=250k+ users), comparing the full flow (two steps) against a streamlined single-step version in the payment gateway. Tracked KPIs via integrated analytics dashboard.",
-    keyInsight: "The additional step, despite visual consistency, elevated drop-off rates and failed to retain users at journey end.",
-    projectDecision: "Removed the redundant step, consolidating into a single, streamlined checkout within the payment gateway.",
+    researchMethod: "Controlled A/B test: old (two steps) flow vs new (one step) flow. Tracked KPIs via analytics dashboard.",
+    keyInsight: "The additional step elevated drop-off rates and failed to retain users at journey end.",
+    projectDecision: "Removed the redundant step; consolidated into a single checkout in the payment gateway.",
     numbers: "Increased cart conversion rate by 5 percentage points, directly improving purchase completion and revenue.",
-    whatWorked: "Enabled rapid, data-driven decisions through close KPI monitoring and clear stakeholder alignment.",
-    whatCouldBeDifferently: "Address technical debt earlier to accelerate implementation beyond the checkout modifications.",
-    keyLearnings: "Established a practice of thorough preparation, recognizing that research success depends on upstream alignment with development, business expectations, and shared goals.",
+    whatWorked: "Close KPI monitoring and stakeholder alignment enabled rapid decisions.",
+    whatCouldBeDifferently: "Address technical debt earlier to accelerate implementation.",
+    keyLearnings: "Success depended on upstream alignment with dev, business, and shared goals.",
     image: caseStudyShorterCheckout,
     imageAspect: "portrait",
   },
@@ -227,9 +227,9 @@ export const caseStudies: CaseStudy[] = [
     title: "First Steps of a New Challenger Bank",
     subtitle: "Led UX research discovery for a new challenger bank app targeting young users and small businesses, defining niche, USP, and business model.",
     impact: "Enabled progression to planning phase, culminating in the launch of ZEN.COM as a standalone venture.",
-    scopeOfOwnership: "As UX Researcher in the R&D department, I spearheaded the discovery phase, synthesizing desk research, competitive analysis, user interviews, surveys, and moderated usability tests to define product viability. Delivered comprehensive research summary with personal and business feature lists, wireframes, monetization strategies, niches, personas and USPs.",
+    scopeOfOwnership: "As UX Researcher in R&D, I led the discovery phase: desk research, competitive analysis, user interviews, surveys, and moderated usability tests. Delivered research summary with feature lists, wireframes, monetization strategies, niches, personas, and USPs.",
     problem: {
-      businessGoal: "Launch a competitive challenger bank for personal and business users in the European market.",
+      businessGoal: "Launch competitive challenger bank for personal and business users in Europe.",
       userPain: "Young users and small business owners lacked seamless banking apps with intuitive experiences.",
       trigger: "Rapid emergence of challenger banks across Europe signaled market opportunity.",
     },
@@ -239,19 +239,19 @@ export const caseStudies: CaseStudy[] = [
       "Validate early business model and monetization paths.",
     ],
     researchMethod: "Desk research, competitive benchmarking, user interviews and surveys with target segments.",
-    keyInsight: "Two viable niches (young users and SME) emerged with tailored USPs, alongside feature priorities, wireframes, and monetization models for scalability.",
-    projectDecision: "Advanced to planning phase; initiative spun out as independent entity ZEN.COM.",
-    numbers: "Discovery research directly propelled project from ideation to structured planning and commercialization.",
-    whatWorked: "Fast-paced, in-person cross-functional collaboration accelerated insights, outperforming remote dynamics from prior experience.",
-    whatCouldBeDifferently: "Clearer role definitions and aligned visions among business stakeholders upfront to minimize confusion and delays.",
-    keyLearnings: "Excelled in bridging UX research with strategic product decisions in fintech, reinforcing my strength in leading high-uncertainty discovery for international ventures.",
+    keyInsight: "Two viable niches (young users and SME) emerged with tailored USPs, feature priorities, wireframes, and monetization models.",
+    projectDecision: "Advanced to planning phase; initiative spun out as ZEN.COM.",
+    numbers: "Discovery research propelled project from ideation to structured planning and commercialization.",
+    whatWorked: "Fast-paced, in-person cross-functional collaboration accelerated insights and alignment.",
+    whatCouldBeDifferently: "Clearer role definitions and aligned visions upfront.",
+    keyLearnings: "Bridged UX research with strategic product decisions in fintech. Led high-uncertainty discovery from ideation to commercialization.",
     image: challengerBank,
     imageAspect: "landscape",
     detailImages: [
       {
-        label: "Project Phases",
+        label: "Screens",
         images: [
-          { src: challengerBankPhases, alt: "Project phases from brief to implementation with actions and outcomes" },
+          { src: challengerBankPhases, alt: "Project phases from brief to implementation" },
         ],
       },
     ],
@@ -262,11 +262,11 @@ export const caseStudies: CaseStudy[] = [
     title: "Mobile App Purchase Flow",
     subtitle: "Led rapid moderated usability tests to validate redesigned purchase flow and onboarding, preventing a flawed launch.",
     impact: "Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention and trust erosion (based on industry benchmarks).",
-    scopeOfOwnership: "Designed and executed moderated usability tests despite tight timelines/budget; analyzed findings, recommended blocks, and advocated for follow-up research on pricing flow.",
+    scopeOfOwnership: "Designed and ran moderated usability tests under tight constraints; analyzed findings, recommended blocks, advocated for follow-up on pricing flow.",
     problem: {
-      businessGoal: "Introduce new onboarding feature and test redesigned purchase flow elements (search, filters, product page offers) ahead of launch.",
-      userPain: "New users faced confusion in first impressions, search findability, filters, and dynamic pricing changes, fostering distrust.",
-      trigger: "Surge in user feedback prompted intuition-driven redesign; I intervened pre-release for quick validation.",
+      businessGoal: "Introduce onboarding; test redesigned purchase flow (search, filters, offers) ahead of launch.",
+      userPain: "New users faced confusion in first impressions, search, filters, and pricing—fostering distrust.",
+      trigger: "User feedback prompted redesign; research brought in pre-release for validation.",
     },
     collaboration: ["Product Owner (Mobile App)", "UX Designer", "IT team"],
     researchGoals: [
@@ -276,23 +276,18 @@ export const caseStudies: CaseStudy[] = [
     researchMethod: "Moderated usability tests with 5 target users (quick recruitment via network).",
     keyInsight: "Onboarding induced confusion and distrust; purchase flow obscured pricing transparency via unexpected changes.",
     projectDecision: "Scrapped onboarding from release; deferred pricing flow redesign for deeper research.",
-    numbers: "Testing with just 5 users surfaced critical issues (per Nielsen's 5-user rule), saving weeks of post-launch fixes.",
-    whatWorked: "Agile, 'quick & dirty' approach delivered actionable insights under constraints, proving value of researcher intervention.",
+    numbers: "Testing with 5 users surfaced critical issues (per Nielsen's 5-user rule), saving weeks of post-launch fixes.",
+    whatWorked: "Agile, 'quick & dirty' approach delivered actionable insights under tight constraints.",
     whatCouldBeDifferently: "Embed UX research from project kickoff, not end-stage.",
-    keyLearnings: "Agile adaptation trumps perfection in fast-paced environments—honed my skills in high-pressure validation, ideal for international product leadership.",
+    keyLearnings: "Agile adaptation trumps perfection in fast-paced environments. Quick validation under constraints delivered actionable insights and prevented a flawed launch.",
     image: mobileOnboarding,
     imageAspect: "landscape",
     detailImages: [
       {
-        label: "Methodology",
+        label: "Screens",
         images: [
           { src: mobileMethodology, alt: "Methodology details for moderated usability test" },
-        ],
-      },
-      {
-        label: "Onboarding Conclusions & Recommendations",
-        images: [
-          { src: mobileConclusions, alt: "Onboarding conclusions and recommendations table" },
+          { src: mobileConclusions, alt: "Onboarding conclusions and recommendations" },
         ],
       },
     ],

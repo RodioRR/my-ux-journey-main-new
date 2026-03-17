@@ -11,28 +11,23 @@ import certUxStrategy from "@/assets/cert-ux-strategy.png";
 
 const researchMethods = [
   "A/B & Multivariate Testing",
-  "Moderated Usability Testing",
-  "Unmoderated Usability Testing",
-  "Expert Reviews & Heuristic Evaluation",
-  "Surveys & Data Analysis",
+  "Surveys",
+  "Analytics & Clickstream Analysis",
+  "Moderated & Unmoderated Usability Testing",
+  "In-depth Interviews & Contextual Inquiry",
   "Card Sorting & Tree Testing",
-  "In-depth Interviews",
-  "Data Visualization",
+  "Concept Testing & First-Click Testing",
+  "Eyetracking",
+  "Expert Reviews & Heuristic Evaluation",
 ];
 
-const tools = [
-  "Google Analytics",
-  "Firebase",
-  "Hotjar",
-  "Clarity",
-  "Alchemer",
-  "Survicate",
-  "Figma",
-  "Miro",
-  "Jira",
-  "BigQuery (SQL)",
-  "Excel (Advanced)",
-  "Google Tag Manager",
+const toolCategories = [
+  { label: "Data analysis", tools: ["Excel (Advanced)", "BigQuery (basic SQL)"] },
+  { label: "Survey", tools: ["Alchemer", "Survicate", "SurveyMonkey", "Typeform", "Microsoft Forms", "Google Forms"] },
+  { label: "Usability Testing", tools: ["Sharewell", "Lookback", "Maze", "Optimal Workshop"] },
+  { label: "Analytics", tools: ["Google Analytics", "Hotjar", "Clarity"] },
+  { label: "Project Management", tools: ["Confluence", "Jira", "Trello"] },
+  { label: "Design tools", tools: ["Canva", "Sketch", "Figma", "InVision"] },
 ];
 
 const languages = [
@@ -80,9 +75,12 @@ const Skills = () => {
         <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4">
           Expertise
         </p>
-        <h2 className="font-display text-3xl md:text-5xl text-foreground mb-16">
+        <h2 className="font-display text-3xl md:text-5xl text-foreground mb-1">
           Skills & Methods
         </h2>
+        <p className="font-body text-muted-foreground leading-relaxed mb-16 max-w-2xl">
+          Methods I use, tools I work with, and how I keep learning.
+        </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
@@ -99,14 +97,21 @@ const Skills = () => {
 
           <div>
             <h3 className="font-display text-xl text-primary mb-6">Tools</h3>
-            <div className="flex flex-wrap gap-2">
-              {tools.map((tool, i) => (
-                <span
-                  key={tool}
-                  className="font-body text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
-                >
-                  {tool}
-                </span>
+            <div className="space-y-4">
+              {toolCategories.map((cat) => (
+                <div key={cat.label}>
+                  <p className="font-body text-xs font-medium text-foreground mb-1.5">{cat.label}:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.tools.map((tool) => (
+                      <span
+                        key={tool}
+                        className="font-body text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>

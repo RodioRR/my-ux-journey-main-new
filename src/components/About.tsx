@@ -3,6 +3,7 @@ const About = () => {
     { number: "10+", label: "Years Experience" },
     { number: "50+", label: "Research Projects" },
     { number: "6", label: "Languages" },
+    { number: "16", label: "Research Methods" },
   ];
 
   return (
@@ -13,32 +14,31 @@ const About = () => {
           About
         </p>
 
-        {/* 3-column grid: title + stats + degrees at same height */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-12 items-start">
-          {/* Column 1: Title + Paragraphs */}
-          <div>
-            <h2 className="font-display text-3xl md:text-5xl text-foreground mb-8">
-              Research that
-              <br />
-              <span className="text-primary italic">moves the needle</span>
-            </h2>
+        {/* Heading full width, then 3 columns */}
+        <div>
+          <h2 className="font-display text-3xl md:text-5xl text-foreground mb-8">
+            Research that
+            <br />
+            <span className="text-primary italic">moves the needle</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-12 items-start">
+            {/* Column 1: Paragraphs */}
             <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
               <p>
-                I'm a curiosity-driven UX Researcher taking ownership and initiative.
+                I'm curious—a UX Researcher who takes ownership and initiative. Proactive and committed.
               </p>
               <p>
-                The passion for asking users the right questions are rooted in my background in cognitive sciences, the ability to lead between the lines - in applied linguistic studies.
+                As a cognitive scientist at heart, I'm trained to ask the right questions and read between the lines. Being multilingual lets me hear users in their own words; an analytical mind turns what they say into what they need.
               </p>
               <p>
-                I thrive when leading cross-functional projects that balance user needs with business goals, turning research into revenue.
+                I thrive as a project leader when leading cross-functional work that balances user needs with business goals. Turning research into revenue. Moving the needle.
               </p>
             </div>
-          </div>
 
-          {/* Column 2: Stats boxes */}
-          <div className="flex flex-col gap-3">
+            {/* Column 2: Stats boxes in 2 rows */}
+          <div className="grid grid-cols-2 gap-3 min-w-[200px]">
             {stats.map((stat) => (
-              <div key={stat.label} className="p-5 rounded-xl bg-background border border-border text-center min-w-[160px]">
+              <div key={stat.label} className="p-5 rounded-xl bg-background border border-border text-center">
                 <p className="font-display text-3xl text-accent mb-1">{stat.number}</p>
                 <p className="font-body text-sm text-muted-foreground">{stat.label}</p>
               </div>
@@ -47,7 +47,7 @@ const About = () => {
 
           {/* Column 3: Degrees */}
           <div>
-            <h3 className="font-display text-xl text-primary mb-4">Degrees</h3>
+            <h3 className="font-display text-xl text-primary text-left mb-4">Degrees</h3>
             <div className="space-y-5">
               <div className="font-body text-sm">
                 <p className="text-foreground font-medium">M.A. in Cognitive Science</p>
@@ -64,6 +64,7 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

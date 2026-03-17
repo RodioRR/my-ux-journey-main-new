@@ -12,7 +12,7 @@ const Contact = () => {
             Let's work together
           </h2>
           <p className="font-body text-muted-foreground leading-relaxed mb-12">
-            Whether you need a UX research strategy, user testing, or data-driven insights — I'd love to hear about your project.
+            If you're building something and want research that drives decisions, let's talk.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-8 mb-12">
