@@ -2,19 +2,27 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll";
 
-const navLinks = [
+type NavLinkItem =
+  | { label: string; href: string }
+  | { label: string; href: string; external: true; pdfBadge?: boolean };
+
+const navLinks: NavLinkItem[] = [
   { label: "About", href: "#about" },
-  { label: "Resume", href: "/assets/Melanie%20Gierszal%20RESUME.pdf", external: true },
-  { label: "Work", href: "#work" },
+  { label: "Case Studies", href: "#work" },
   { label: "Skills", href: "#skills" },
   { label: "Testimonials", href: "#testimonials" },
+  {
+    label: "Resume",
+    href: "/assets/Melanie%20Gierszal%20RESUME.pdf",
+    external: true,
+    pdfBadge: true,
+  },
   { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +31,9 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const linkClass =
+    "font-body text-base text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2";
 
   return (
     <nav
@@ -44,15 +55,21 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>
-            link.external ? (
+            "external" in link && link.external ? (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className={linkClass}
+                aria-label={link.pdfBadge ? "Resume (PDF, opens in new tab)" : undefined}
               >
-                {link.label}
+                <span>{link.label}</span>
+                {link.pdfBadge && (
+                  <span className="rounded border border-border/80 px-1.5 py-0.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    PDF
+                  </span>
+                )}
               </a>
             ) : (
               <a
@@ -62,7 +79,7 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className={linkClass}
               >
                 {link.label}
               </a>
@@ -83,16 +100,22 @@ const Navbar = () => {
         <div className="md:hidden bg-background border-b border-border">
           <div className="container py-4 flex flex-col gap-4">
             {navLinks.map((link) =>
-              link.external ? (
+              "external" in link && link.external ? (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
-                  className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className={linkClass}
+                  aria-label={link.pdfBadge ? "Resume (PDF, opens in new tab)" : undefined}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  {link.pdfBadge && (
+                    <span className="rounded border border-border/80 px-1.5 py-0.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      PDF
+                    </span>
+                  )}
                 </a>
               ) : (
                 <a
@@ -103,7 +126,7 @@ const Navbar = () => {
                     scrollToSection(link.href);
                     setMobileOpen(false);
                   }}
-                  className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className={linkClass}
                 >
                   {link.label}
                 </a>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ImageIcon } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import ImageLightbox from "./case-studies/ImageLightbox";
 
 import certBaymard from "@/assets/cert-baymard-ux-professional.png";
@@ -28,6 +28,7 @@ const toolCategories = [
   { label: "Analytics", tools: ["Google Analytics", "Hotjar", "Clarity"] },
   { label: "Project Management", tools: ["Confluence", "Jira", "Trello"] },
   { label: "Design tools", tools: ["Canva", "Sketch", "Figma", "InVision"] },
+  { label: "AI", tools: ["ChatGPT", "Perplexity", "Lovable", "Cursor"] },
 ];
 
 const languages = [
@@ -37,6 +38,18 @@ const languages = [
   { name: "Spanish", level: "Communicative" },
   { name: "Swedish", level: "Basic" },
   { name: "Russian", level: "Basic" },
+];
+
+const degrees: { title: string; lines?: string[] }[] = [
+  {
+    title: "M.A. in Cognitive Science",
+    lines: ["Human-Computer Interaction", "Cognitive Neuropsychology"],
+  },
+  { title: "Postgraduate in Business Planning and Strategy" },
+  {
+    title: "B.A. in Applied Linguistics",
+    lines: ["Intercultural Communication", "Translations"],
+  },
 ];
 
 type CertType = {
@@ -72,22 +85,22 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32 bg-card">
       <div className="container">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4">
+        <p className="font-body text-base tracking-[0.3em] uppercase text-primary mb-4">
           Expertise
         </p>
         <h2 className="font-display text-3xl md:text-5xl text-foreground mb-1">
           Skills & Methods
         </h2>
-        <p className="font-body text-muted-foreground leading-relaxed mb-16 max-w-2xl">
-          Methods I use, tools I work with, and how I keep learning.
+        <p className="font-body text-base text-muted-foreground leading-relaxed mb-12 md:mb-16 max-w-2xl">
+          Methods I use, tools I work with, languages, credentials, and formal education.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 lg:gap-8 xl:gap-6 items-start">
+          <div className="min-w-0">
             <h3 className="font-display text-xl text-primary mb-6">Research Methods</h3>
             <ul className="space-y-3">
               {researchMethods.map((method) => (
-                <li key={method} className="font-body text-sm text-muted-foreground flex items-start gap-3">
+                <li key={method} className="font-body text-base text-muted-foreground flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                   {method}
                 </li>
@@ -95,40 +108,19 @@ const Skills = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-display text-xl text-primary mb-6">Tools</h3>
-            <div className="space-y-4">
-              {toolCategories.map((cat) => (
-                <div key={cat.label}>
-                  <p className="font-body text-xs font-medium text-foreground mb-1.5">{cat.label}:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {cat.tools.map((tool) => (
-                      <span
-                        key={tool}
-                        className="font-body text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
+          <div className="min-w-0">
             <h3 className="font-display text-xl text-primary mb-6">Certificates</h3>
             <div className="space-y-4">
               {certificates.map((cert) => (
-                <div key={cert.name} className="font-body text-sm flex items-start justify-between gap-2">
-                  <div>
+                <div key={cert.name} className="font-body text-base flex items-start justify-between gap-2">
+                  <div className="min-w-0">
                     <p className="text-foreground">
                       {cert.name}
                       {cert.inProgress && (
-                        <span className="text-xs text-muted-foreground ml-1.5 italic">(in progress)</span>
+                        <span className="text-sm text-muted-foreground ml-1.5 italic">(in progress)</span>
                       )}
                     </p>
-                    <p className="text-muted-foreground text-xs">{cert.issuer}</p>
+                    <p className="text-muted-foreground text-sm">{cert.issuer}</p>
                   </div>
                   {(cert.image || cert.pdf) && (
                     <button
@@ -136,7 +128,7 @@ const Skills = () => {
                       className="shrink-0 mt-0.5 p-1 rounded text-primary hover:text-accent hover:bg-muted/50 transition-colors"
                       aria-label={`View ${cert.name} certificate`}
                     >
-                      <ImageIcon className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4" />
                     </button>
                   )}
                 </div>
@@ -144,15 +136,54 @@ const Skills = () => {
             </div>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h3 className="font-display text-xl text-primary mb-6">Languages</h3>
             <div className="space-y-4">
               {languages.map((lang) => (
-                <div key={lang.name} className="flex justify-between items-center font-body text-sm">
+                <div key={lang.name} className="flex justify-between items-center gap-2 font-body text-base">
                   <span className="text-foreground">{lang.name}</span>
-                  <span className="text-muted-foreground text-xs px-2.5 py-1 rounded-full bg-muted">
+                  <span className="text-muted-foreground text-sm px-2.5 py-1 rounded-full bg-muted shrink-0">
                     {lang.level}
                   </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="min-w-0">
+            <h3 className="font-display text-xl text-primary mb-6">Degrees</h3>
+            <div className="flex flex-col gap-6 font-body text-base">
+              {degrees.map((d) => (
+                <div key={d.title}>
+                  <p className="text-foreground font-medium leading-snug">{d.title}</p>
+                  {d.lines && (
+                    <div className="mt-1.5 space-y-0.5 text-muted-foreground text-sm leading-relaxed">
+                      {d.lines.map((line) => (
+                        <p key={line}>{line}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="min-w-0 col-span-full">
+            <h3 className="font-display text-xl text-primary mb-6">Tools</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
+              {toolCategories.map((cat) => (
+                <div key={cat.label} className="min-w-0">
+                  <p className="font-body text-base font-medium text-foreground mb-1.5">{cat.label}:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.tools.map((tool) => (
+                      <span
+                        key={tool}
+                        className="font-body text-sm leading-normal px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

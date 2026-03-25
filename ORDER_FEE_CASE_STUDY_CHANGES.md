@@ -1,4 +1,4 @@
-# Order Fee Optimization Case Study – Rewrite Summary
+# Order Fee Optimization Case Study  -  Rewrite Summary
 
 ## Overview
 The case study was rewritten to be more concise, professional, and free of exaggerations. Tone is simple and direct.
@@ -48,7 +48,7 @@ The case study was rewritten to be more concise, professional, and free of exagg
 |--------|-------|
 | Users experienced confusion and distrust, often noting issues like unexpected total changes at checkout. This was driven by feedback highlighting unclear pricing. | Users reported confusion and unexpected total changes at checkout due to unclear pricing. |
 
-*Removed: "distrust", "often noting issues"; simplified cause–effect.*
+*Removed: "distrust", "often noting issues"; simplified cause - effect.*
 
 **Trigger**
 | Before | After |
@@ -73,7 +73,7 @@ The case study was rewritten to be more concise, professional, and free of exagg
 **Key Insight**
 | Before | After |
 |--------|-------|
-| Transparent pricing (upsell removed, fees integrated into totals) maintained KPIs and improved conversion by 1 p.p. across segments. | Transparent pricing—with fees shown in totals—maintained KPIs and improved conversion by 1 p.p. |
+| Transparent pricing (upsell removed, fees integrated into totals) maintained KPIs and improved conversion by 1 p.p. across segments. | Transparent pricing - with fees shown in totals - maintained KPIs and improved conversion by 1 p.p. |
 
 *Simplified wording; removed "across segments".*
 
@@ -112,7 +112,7 @@ The case study was rewritten to be more concise, professional, and free of exagg
 **Key Learnings**
 | Before | After |
 |--------|-------|
-| Excelled in a combined PM-UX researcher role, navigating technical and legal considerations in a high-stakes project. This experience underscores the value of researcher-led project management for data-driven results, aligning with my goals in international project leadership. | Gained experience in a combined PM–UX researcher role, handling technical and legal aspects. Reinforced the value of researcher-led project management for data-driven decisions. |
+| Excelled in a combined PM-UX researcher role, navigating technical and legal considerations in a high-stakes project. This experience underscores the value of researcher-led project management for data-driven results, aligning with my goals in international project leadership. | Gained experience in a combined PM - UX researcher role, handling technical and legal aspects. Reinforced the value of researcher-led project management for data-driven decisions. |
 
 *Removed: "Excelled", "high-stakes", "international project leadership"; more neutral tone.*
 

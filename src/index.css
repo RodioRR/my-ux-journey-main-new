@@ -104,6 +104,22 @@
   }
 }
 
+@layer components {
+  /* One viewport tall: fixed nav overlays the top, so full 100dvh with matching pt- */
+  .hero-section {
+    height: 100vh;
+    max-height: 100vh;
+    min-height: 0;
+  }
+
+  @supports (height: 100dvh) {
+    .hero-section {
+      height: 100dvh;
+      max-height: 100dvh;
+    }
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -136,6 +152,11 @@
 
   .min-h-screen {
     min-height: auto !important;
+  }
+
+  .hero-section {
+    height: auto !important;
+    max-height: none !important;
   }
 
   footer {

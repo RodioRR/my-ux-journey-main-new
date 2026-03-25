@@ -1,4 +1,4 @@
-# Case Studies 3–6: Proposed Copy Changes
+# Case Studies 3 - 6: Proposed Copy Changes
 
 **Tone & vibe:** Professional, not overexaggerated · Simple but not simplistic · Neutral, factual language · Concise storytelling where it fits
 
@@ -13,7 +13,7 @@
 **Proposed:**
 > Combined scalable surveys with internal analytics to produce insights beyond individual methods. Created a repeatable yearly report that builds organizational memory and reinforces user-centered decision-making over time.
 
-*Rationale: Remove "Developed skills" and "Gained expertise" — state what was done, not what you gained. Slightly shorter.*
+*Rationale: Remove "Developed skills" and "Gained expertise"  -  state what was done, not what you gained. Slightly shorter.*
 
 ---
 
@@ -34,7 +34,7 @@
 > Directed end-to-end A/B test as sole UX Researcher to eliminate a redundant checkout step, reducing drop-off.
 
 **Proposed:**
-> +5 p.p. cart conversion — how removing one redundant checkout step reduced drop-off.
+> +5 p.p. cart conversion  -  how removing one redundant checkout step reduced drop-off.
 
 *Rationale: Lead with impact (per review). Keeps it concise and outcome-focused.*
 
@@ -60,7 +60,7 @@
 **Proposed:**
 > Bridged UX research with strategic product decisions in fintech. Led high-uncertainty discovery from ideation to structured planning and commercialization.
 
-*Rationale: Remove "Excelled in" and "reinforcing my strength" — use neutral, factual language. Echo the outcome (ideation → commercialization) instead of self-assessment.*
+*Rationale: Remove "Excelled in" and "reinforcing my strength"  -  use neutral, factual language. Echo the outcome (ideation → commercialization) instead of self-assessment.*
 
 ---
 
@@ -71,7 +71,7 @@
 **Proposed:**
 > Fast-paced, in-person cross-functional collaboration accelerated insights and alignment.
 
-*Rationale: Remove "outperforming remote dynamics from prior experience" — vague and slightly comparative. Keep the positive without the comparison.*
+*Rationale: Remove "outperforming remote dynamics from prior experience"  -  vague and slightly comparative. Keep the positive without the comparison.*
 
 ---
 
@@ -90,12 +90,12 @@
 
 ### keyLearnings
 **Current:**
-> Agile adaptation trumps perfection in fast-paced environments—honed my skills in high-pressure validation, ideal for international product leadership.
+> Agile adaptation trumps perfection in fast-paced environments - honed my skills in high-pressure validation, ideal for international product leadership.
 
 **Proposed:**
 > Agile adaptation trumps perfection in fast-paced environments. Quick validation under constraints delivered actionable insights and prevented a flawed launch.
 
-*Rationale: Remove "honed my skills" and "ideal for international product leadership" — self-promotional. State what happened (validation under constraints, prevented flawed launch) instead of what you gained.*
+*Rationale: Remove "honed my skills" and "ideal for international product leadership"  -  self-promotional. State what happened (validation under constraints, prevented flawed launch) instead of what you gained.*
 
 ---
 
@@ -106,7 +106,7 @@
 **Proposed:**
 > Agile, 'quick & dirty' approach delivered actionable insights under tight constraints.
 
-*Rationale: Remove "proving value of researcher intervention" — let the outcome speak. Slightly less self-referential.*
+*Rationale: Remove "proving value of researcher intervention"  -  let the outcome speak. Slightly less self-referential.*
 
 ---
 
@@ -132,4 +132,4 @@
 
 ---
 
-*Apply these changes in `src/components/case-studies/caseStudyData.ts`. The static HTML in `index.html` contains duplicate case study content — update there too if you maintain both versions.*
+*Apply these changes in `src/components/case-studies/caseStudyData.ts`. The static HTML in `index.html` contains duplicate case study content  -  update there too if you maintain both versions.*

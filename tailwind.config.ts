@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      /* Site minimum readable size: 14px (default Tailwind xs is 12px) */
+      fontSize: {
+        xs: ["0.875rem", { lineHeight: "1.25rem" }],
+      },
       fontFamily: {
         display: ['DM Serif Display', 'serif'],
         body: ['DM Sans', 'sans-serif'],

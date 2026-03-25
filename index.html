@@ -6,7 +6,7 @@
     <title>Melanie Gierszal · UX Research Portfolio</title>
     <meta
       name="description"
-      content="10+ years of UX Research. Melanie Gierszal – turning complex data into decisions that drive product and revenue."
+      content="10+ years of UX Research. Melanie Gierszal  -  turning complex data into decisions that drive product and revenue."
     />
 
     <link
@@ -215,7 +215,7 @@
       .nav-links {
         display: none;
         gap: 2rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
 
       .nav-links a {
@@ -224,6 +224,24 @@
 
       .nav-links a:hover {
         color: var(--foreground);
+      }
+
+      .nav-link-resume {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-pdf-badge {
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted-foreground);
+        border: 1px solid rgba(15, 23, 42, 0.2);
+        border-radius: 0.25rem;
+        padding: 0.125rem 0.375rem;
+        line-height: 1.2;
       }
 
       .nav-toggle {
@@ -254,7 +272,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
 
       .nav-mobile-links a {
@@ -279,20 +297,41 @@
         }
       }
 
-      /* HERO - Lovable: large typography, py-32 */
+      /* HERO  -  one viewport below nav (nav is in-flow); dvh for mobile browser chrome */
+      :root {
+        --hero-nav-h: 4rem;
+      }
+
+      @media (min-width: 768px) {
+        :root {
+          --hero-nav-h: 5rem;
+        }
+      }
+
       .hero {
         position: relative;
-        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         justify-content: center;
-        overflow: hidden;
+        min-height: calc(100vh - var(--hero-nav-h));
+        max-height: calc(100vh - var(--hero-nav-h));
+        overflow-x: hidden;
+        overflow-y: visible;
+      }
+
+      @supports (height: 100dvh) {
+        .hero {
+          min-height: calc(100dvh - var(--hero-nav-h));
+          max-height: calc(100dvh - var(--hero-nav-h));
+        }
       }
 
       .hero-bg {
         position: absolute;
         inset: 0;
+        overflow: hidden;
+        pointer-events: none;
       }
 
       .hero-bg img {
@@ -311,13 +350,14 @@
       .hero-content {
         position: relative;
         z-index: 1;
-        padding: 8rem 0 8rem;
+        padding-top: clamp(1.25rem, 4vw, 3rem);
+        padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
         max-width: 48rem;
         text-align: left;
       }
 
       .hero-label {
-        font-size: 0.875rem;
+        font-size: 1rem;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         color: var(--primary);
@@ -325,9 +365,9 @@
       }
 
       .hero-title {
-        font-size: clamp(3rem, 8vw, 6rem);
+        font-size: clamp(2rem, calc(5.5vw + 0.5rem), 6rem);
         line-height: 1.05;
-        margin-bottom: 2rem;
+        margin-bottom: clamp(1rem, 2vw, 2rem);
       }
 
       .hero-title span {
@@ -335,21 +375,15 @@
       }
 
       .hero-subtitle {
-        font-size: 1.125rem;
+        font-size: clamp(1rem, calc(2vw + 0.5rem), 1.25rem);
         color: var(--muted-foreground);
         max-width: 36rem;
         line-height: 1.7;
       }
 
-      @media (min-width: 768px) {
-        .hero-subtitle {
-          font-size: 1.25rem;
-        }
-      }
-
       .hero-buzzword {
         font-family: var(--font-display);
-        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-size: clamp(1.25rem, calc(3vw + 0.5rem), 2.25rem);
         font-weight: 600;
         color: #9B6ED8;
         transition: color 0.5s ease, opacity 0.5s ease;
@@ -358,19 +392,32 @@
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 2.5rem;
+        gap: 0.75rem;
+        margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      }
+
+      @media (min-width: 640px) {
+        .hero-actions {
+          gap: 1rem;
+        }
       }
 
       .hero-btn {
         display: inline-flex;
         align-items: center;
-        padding: 0.875rem 2rem;
+        padding: 0.75rem 1.25rem;
         font-size: 0.875rem;
         font-weight: 500;
         letter-spacing: 0.05em;
         border-radius: var(--radius);
         transition: opacity 150ms ease, background-color 150ms ease;
+      }
+
+      @media (min-width: 640px) {
+        .hero-btn {
+          padding: 0.875rem 2rem;
+          font-size: 1rem;
+        }
       }
 
       .hero-btn-primary {
@@ -394,7 +441,7 @@
 
       /* SECTION HEADERS */
       .eyebrow {
-        font-size: 0.875rem;
+        font-size: 1rem;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         color: var(--primary);
@@ -430,14 +477,14 @@
 
       @media (min-width: 768px) {
         .about-grid {
-          grid-template-columns: 1fr auto auto;
+          grid-template-columns: 1fr auto;
           gap: 3rem;
           align-items: start;
         }
       }
 
       .about-body {
-        font-size: 0.9375rem;
+        font-size: 1rem;
         color: var(--muted-foreground);
         line-height: 1.75;
       }
@@ -475,6 +522,28 @@
       .about-education {
         display: flex;
         flex-direction: column;
+        min-width: 0;
+        width: 100%;
+      }
+
+      .about-degrees-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .about-edu-card {
+        background: var(--background);
+        border-radius: 0.75rem;
+        border: 1px solid var(--border);
+        padding: 1.25rem;
+        font-size: 1rem;
+      }
+
+      .about-edu-card-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
       }
 
       .about-stat-card {
@@ -494,7 +563,7 @@
       }
 
       .about-stat-label {
-        font-size: 0.875rem;
+        font-size: 1rem;
         color: var(--muted-foreground);
       }
 
@@ -502,16 +571,8 @@
         font-family: var(--font-display);
         font-size: 1.25rem;
         color: var(--primary);
-        margin-bottom: 1.5rem;
-      }
-
-      .about-edu-item {
-        font-size: 0.875rem;
-        margin-bottom: 2rem;
-      }
-
-      .about-edu-item:last-child {
-        margin-bottom: 0;
+        margin-bottom: 1rem;
+        text-align: left;
       }
 
       .about-edu-degree {
@@ -580,7 +641,7 @@
       }
 
       .case-tag {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         padding: 0.25rem 0.625rem;
         border-radius: 999px;
         background: var(--muted);
@@ -605,7 +666,7 @@
       }
 
       .case-scope-label {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: var(--accent);
@@ -614,7 +675,7 @@
       }
 
       .case-scope-text {
-        font-size: 0.875rem;
+        font-size: 1rem;
         color: var(--muted-foreground);
         line-height: 1.6;
       }
@@ -625,7 +686,7 @@
         background: rgba(236, 234, 230, 0.3);
         border: 1px solid var(--border);
         margin-bottom: 1.25rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
 
       .case-impact-box strong {
@@ -643,6 +704,10 @@
         margin: 0;
       }
 
+      .case-row .case-impact-box {
+        margin-bottom: 0;
+      }
+
       .case-1-grid {
         display: grid;
         gap: 1.5rem;
@@ -651,19 +716,16 @@
 
       @media (min-width: 768px) {
         .case-1-grid {
-          grid-template-columns: 3fr 2fr;
-          grid-template-areas: "scope impact";
+          grid-template-columns: 2fr 1fr;
           gap: 1.5rem;
           align-items: stretch;
         }
 
         .case-1-grid .case-row-scope {
-          grid-area: scope;
           align-self: stretch;
         }
 
         .case-1-grid .case-impact-box {
-          grid-area: impact;
           align-self: stretch;
           margin-bottom: 0;
         }
@@ -679,27 +741,26 @@
       @media (min-width: 768px) {
         .case-row {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-areas: "scope image";
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-areas: "image scope impact";
           gap: 2rem;
-        }
-
-        .case-row.reversed {
-          grid-template-areas: "image scope";
         }
 
         .case-row > .case-row-scope {
           grid-area: scope;
           min-width: 0;
-          text-align: right;
-        }
-
-        .case-row.reversed > .case-row-scope {
           text-align: left;
         }
 
         .case-row > .case-row-image {
           grid-area: image;
+          min-width: 0;
+        }
+
+        .case-row > .case-impact-box {
+          grid-area: impact;
+          margin-bottom: 0;
+          align-self: stretch;
           min-width: 0;
         }
       }
@@ -776,7 +837,7 @@
       }
 
       .case-toggle {
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-weight: 500;
         color: var(--primary);
         cursor: pointer;
@@ -829,7 +890,7 @@
       }
 
       .case-expanded-label {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: var(--accent);
@@ -847,7 +908,7 @@
       }
 
       .case-expanded-text {
-        font-size: 0.875rem;
+        font-size: 1rem;
         color: var(--muted-foreground);
         line-height: 1.6;
         margin: 0;
@@ -895,7 +956,7 @@
       }
 
       .case-expanded-thumbnail span:first-of-type {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         color: var(--muted-foreground);
         padding: 0.25rem 0.25rem 0;
         order: -1;
@@ -943,7 +1004,7 @@
       }
 
       .case-expanded-modal-title {
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-weight: 500;
         color: var(--foreground);
         padding: 0.75rem 1rem;
@@ -990,7 +1051,7 @@
 
       .screens-modal-pager {
         text-align: center;
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         color: var(--muted-foreground);
         margin-top: 0.5rem;
       }
@@ -1010,7 +1071,7 @@
         display: block;
       }
 
-      /* SKILLS - Lovable: 4 cols, gap-12 */
+      /* SKILLS  -  row 1: four cols (methods, certs, langs, degrees); row 2: tools full width */
       .skills-section {
         padding: 6rem 0;
       }
@@ -1025,21 +1086,38 @@
         margin-bottom: 4rem;
       }
 
-      .skills-grid {
+      .skills-layout {
         display: grid;
-        gap: 3rem;
+        gap: 2.5rem 1.25rem;
+        grid-template-columns: 1fr;
       }
 
-      @media (min-width: 768px) {
-        .skills-grid {
+      @media (min-width: 640px) {
+        .skills-layout {
           grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem 1.5rem;
         }
       }
 
       @media (min-width: 1024px) {
-        .skills-grid {
-          grid-template-columns: repeat(4, 1fr);
+        .skills-layout {
+          grid-template-columns: repeat(3, 1fr);
         }
+      }
+
+      @media (min-width: 1280px) {
+        .skills-layout {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem 1rem;
+        }
+      }
+
+      .skills-layout .skills-tools-row {
+        grid-column: 1 / -1;
+      }
+
+      .skills-col {
+        min-width: 0;
       }
 
       .skills-col h3 {
@@ -1059,7 +1137,7 @@
         display: flex;
         gap: 0.75rem;
         align-items: flex-start;
-        font-size: 0.875rem;
+        font-size: 1rem;
         color: var(--muted-foreground);
         margin-bottom: 0.75rem;
       }
@@ -1074,9 +1152,27 @@
       }
 
       .skills-tool-categories {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        display: grid;
+        gap: 1.5rem 2rem;
+        grid-template-columns: 1fr;
+      }
+
+      @media (min-width: 640px) {
+        .skills-tool-categories {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .skills-tool-categories {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .skills-tool-categories {
+          grid-template-columns: repeat(4, 1fr);
+        }
       }
 
       .skills-tool-row {
@@ -1086,7 +1182,7 @@
       }
 
       .skills-tool-label {
-        font-size: 0.75rem;
+        font-size: 1rem;
         font-weight: 500;
         color: var(--foreground);
       }
@@ -1098,7 +1194,7 @@
       }
 
       .skills-tag {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         padding: 0.25rem 0.625rem;
         border-radius: 999px;
         background: var(--muted);
@@ -1140,12 +1236,12 @@
       }
 
       .skills-cert-name {
-        font-size: 0.875rem;
+        font-size: 1rem;
         color: var(--foreground);
       }
 
       .skills-cert-issuer {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         color: var(--muted-foreground);
       }
 
@@ -1153,16 +1249,49 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 0.875rem;
+        font-size: 1rem;
         margin-bottom: 1rem;
       }
 
       .skills-lang-pill {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         padding: 0.25rem 0.625rem;
         border-radius: 999px;
         background: var(--muted);
         color: var(--muted-foreground);
+      }
+
+      .skills-degrees-section {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+
+      .skills-degrees-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .skills-degree-block {
+        font-size: 1rem;
+      }
+
+      .skills-degree-title {
+        font-weight: 500;
+        color: var(--foreground);
+        line-height: 1.35;
+      }
+
+      .skills-degree-lines {
+        margin-top: 0.375rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+        line-height: 1.5;
       }
 
       /* TESTIMONIALS - Lovable: p-8 rounded-xl bg-background */
@@ -1180,9 +1309,10 @@
         display: grid;
         gap: 2rem;
         align-items: stretch;
+        grid-template-columns: 1fr;
       }
 
-      @media (min-width: 768px) {
+      @media (min-width: 640px) {
         .testimonials-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -1215,7 +1345,7 @@
       .testimonial-quote {
         margin: 0 0 2rem 0;
         padding: 0;
-        font-size: 0.875rem;
+        font-size: 1rem;
         color: var(--muted-foreground);
         line-height: 1.6;
         font-style: italic;
@@ -1230,8 +1360,51 @@
 
       .testimonial-role {
         margin: 0;
+        font-size: 1rem;
+        color: var(--muted-foreground);
+      }
+
+      .testimonial-original {
+        margin-top: 1rem;
+      }
+
+      .testimonial-original summary {
+        font-size: 0.875rem;
+        color: var(--primary);
+        cursor: pointer;
+      }
+
+      .testimonial-original summary:hover {
+        text-decoration: underline;
+      }
+
+      .testimonial-quote-original {
+        margin: 0.75rem 0 0 0;
+        padding: 0 0 0 0.75rem;
+        border-left: 2px solid var(--border);
         font-size: 0.875rem;
         color: var(--muted-foreground);
+        line-height: 1.6;
+        font-style: italic;
+      }
+
+      .testimonial-quote-placeholder {
+        margin: 0.75rem 0 0 0;
+        padding: 0 0 0 0.75rem;
+        border-left: 2px solid var(--border);
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+        opacity: 0.85;
+        line-height: 1.6;
+        font-style: italic;
+      }
+
+      .testimonial-card--with-original .testimonial-quote-main {
+        margin-bottom: 0;
+      }
+
+      .testimonial-card--with-original > footer {
+        margin-top: 1.5rem;
       }
 
       /* CONTACT - Lovable: max-w-2xl mx-auto */
@@ -1256,7 +1429,7 @@
       }
 
       .contact-text {
-        font-size: 0.9375rem;
+        font-size: 1rem;
         color: var(--muted-foreground);
         line-height: 1.6;
         margin-bottom: 3rem;
@@ -1269,7 +1442,7 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 3rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
 
       @media (min-width: 640px) {
@@ -1299,7 +1472,7 @@
         display: inline-flex;
         align-items: center;
         padding: 1rem 2.5rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-weight: 500;
         letter-spacing: 0.05em;
         border-radius: var(--radius);
@@ -1330,7 +1503,7 @@
         align-items: center;
         gap: 0.5rem;
         padding: 1rem 2.5rem;
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-weight: 500;
         letter-spacing: 0.05em;
         color: white;
@@ -1353,7 +1526,7 @@
       footer {
         border-top: 1px solid var(--border);
         padding: 2rem 0;
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         color: var(--muted-foreground);
       }
 
@@ -1432,6 +1605,12 @@
         .min-h-screen {
           min-height: auto;
         }
+
+        .hero {
+          min-height: auto !important;
+          max-height: none !important;
+          overflow: visible;
+        }
       }
     </style>
   </head>
@@ -1444,10 +1623,10 @@
           </a>
           <div class="nav-links">
             <a href="#about">About</a>
-            <a href="assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a href="#work">Work</a>
+            <a href="#work">Case Studies</a>
             <a href="#skills">Skills</a>
             <a href="#testimonials">Testimonials</a>
+            <a href="assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer" class="nav-link-resume" aria-label="Resume (PDF, opens in new tab)">Resume<span class="nav-pdf-badge">PDF</span></a>
             <a href="#contact">Contact</a>
           </div>
           <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -1458,10 +1637,10 @@
         <div class="nav-mobile-panel" id="nav-mobile">
           <div class="container nav-mobile-links">
             <a href="#about">About</a>
-            <a href="assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a href="#work">Work</a>
+            <a href="#work">Case Studies</a>
             <a href="#skills">Skills</a>
             <a href="#testimonials">Testimonials</a>
+            <a href="assets/Melanie%20Gierszal%20RESUME.pdf" target="_blank" rel="noopener noreferrer" class="nav-link-resume" aria-label="Resume (PDF, opens in new tab)">Resume<span class="nav-pdf-badge">PDF</span></a>
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -1503,10 +1682,10 @@
               <div class="about-grid">
                 <div class="about-body">
                 <p>
-                  I'm curious—a UX Researcher who takes ownership and initiative. Proactive and committed.
+                  I'm curious - a UX Researcher who takes ownership and initiative. Proactive and committed.
                 </p>
                 <p>
-                  As a cognitive scientist at heart, I'm trained to ask the right questions and read between the lines. Being multilingual lets me hear users in their own words; an analytical mind turns what they say into what they need.
+                  As a cognitive scientist at heart, I'm trained to ask the right questions and read between the lines. Being multilingual lets me hear users in their own words and my analytical mind turns what they say into what they need.
                 </p>
                 <p>
                   I thrive as a project leader when leading cross-functional work that balances user needs with business goals. Turning research into revenue. Moving the needle.
@@ -1530,22 +1709,6 @@
                 <div class="about-stat-label">Research Methods</div>
               </div>
             </div>
-            <div class="about-education">
-              <h3 class="about-degrees-heading">Degrees</h3>
-                <div class="about-edu-item">
-                  <div class="about-edu-degree">M.A. in Cognitive Science</div>
-                  <div class="about-edu-meta">Human-Computer Interaction</div>
-                  <div class="about-edu-meta">Cognitive Neuropsychology</div>
-                </div>
-                <div class="about-edu-item">
-                  <div class="about-edu-degree">Postgraduate in Business Planning and Strategy</div>
-                </div>
-                <div class="about-edu-item">
-                  <div class="about-edu-degree">B.A. in Applied Linguistics</div>
-                  <div class="about-edu-meta">Intercultural Communication</div>
-                  <div class="about-edu-meta">Translations</div>
-                </div>
-              </div>
             </div>
             </div>
           </div>
@@ -1610,7 +1773,7 @@
                         <li>Convert qualitative and quantitative data into prioritised, testable hypotheses.</li>
                       </ul>
                       <div class="case-expanded-label">Method</div>
-                      <p class="case-expanded-text">Implemented Design Thinking: ideation workshops; hypothesis mapping; KPI and test plan alignment; A/B and multivariate tests; supplemented by qualitative methods (e.g. interviews, usability checks).</p>
+                      <p class="case-expanded-text">Implemented Design Thinking: ideation workshops, hypothesis mapping, KPI and test plan alignment, A/B and multivariate tests, supplemented by qualitative methods (e.g. interviews, usability checks).</p>
                     </div>
                     <div class="case-expanded-grid case-expanded-grid-2">
                       <div class="case-expanded-card">
@@ -1618,16 +1781,16 @@
                         <div class="case-expanded-label">Key Insight</div>
                         <p class="case-expanded-text">A structured, research-driven practice increased experiment volume and quality, with improvements in user journeys and business KPIs.</p>
                         <div class="case-expanded-label">Project Decision</div>
-                        <p class="case-expanded-text">Oversaw over 90 projects in 2 years, including: AI product page recommendations (+2% basket increase); Markov Chains tool for on-site behaviour mapping; Checkout upsell removal (+0.5 p.p. conversion lift); other tests validated status quo or refined strategies.</p>
+                        <p class="case-expanded-text">Oversaw over 90 projects in 2 years, including: AI product page recommendations (+2% basket increase), Markov Chains tool for on-site behaviour mapping, Checkout upsell removal (+0.5 p.p. conversion lift), other tests validated status quo or refined strategies.</p>
                         <div class="case-expanded-label">Numbers</div>
-                        <p class="case-expanded-text">Over 90 projects; wins (e.g. +2% baskets, +0.5% conversion) prevented misguided changes.</p>
+                        <p class="case-expanded-text">Over 90 projects, wins (e.g. +2% baskets, +0.5% conversion) prevented misguided changes.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
                         <div class="case-expanded-label">What Worked</div>
                         <p class="case-expanded-text">A continuous feedback loop across research, product, and business enabled iterative improvements and data-informed decisions.</p>
                         <div class="case-expanded-label">What Could Be Done Differently</div>
-                        <p class="case-expanded-text">Clarify ownership in select projects; prioritise fewer, higher-impact initiatives over volume.</p>
+                        <p class="case-expanded-text">Clarify ownership in select projects, prioritise fewer, higher-impact initiatives over volume.</p>
                         <div class="case-expanded-label">Key Learnings</div>
                         <p class="case-expanded-text">Gained experience in Design Thinking workshop facilitation to align stakeholders and generate hypotheses. Developed cross-functional project coordination, managing backlogs and timelines. Learned to synthesise insights from multiple projects into strategic decisions.</p>
                       </div>
@@ -1649,18 +1812,18 @@
                 <p class="case-subtitle">
                   Led multivariate tests to refine checkout order fees, visuals, and flow.
                 </p>
-                <div class="case-row reversed">
+                <div class="case-row">
+                  <div class="case-row-image">
+                    <img src="assets/case-study-checkout-flow-new.jpeg" alt="Order Fee Optimization" />
+                  </div>
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
                     <p class="case-scope-text">As research project manager, I defined hypotheses, selected methodology and KPIs (e.g., conversion rate, revenue per order), conducted analysis, prepared financial reports, and delivered recommendations. Developed a multivariate testing system integrated with the database for real-time metric tracking.</p>
                   </div>
-                  <div class="case-row-image">
-                    <img src="assets/case-study-checkout-flow-new.jpeg" alt="Order Fee Optimization" />
+                  <div class="case-impact-box">
+                    <h4>Impact</h4>
+                    <p class="case-scope-text">Increased conversion rate by 1 percentage point, supporting revenue growth while preserving margins.</p>
                   </div>
-                </div>
-                <div class="case-impact-box">
-                  <h4>Impact</h4>
-                  <p class="case-scope-text">Increased conversion rate by 1 percentage point, supporting revenue growth while preserving margins.</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="2">Read full case study →</button>
                 <div class="case-detail" id="case-detail-2">
@@ -1721,7 +1884,7 @@
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
                         <div class="case-expanded-label">Key Insight</div>
-                        <p class="case-expanded-text">Transparent pricing—with fees shown in totals—maintained KPIs and improved conversion by 1 p.p.</p>
+                        <p class="case-expanded-text">Transparent pricing - with fees shown in totals - maintained KPIs and improved conversion by 1 p.p.</p>
                         <div class="case-expanded-label">Project Decision</div>
                         <p class="case-expanded-text">Removed upsell; introduced tiered fees, shown in totals.</p>
                         <div class="case-expanded-label">Numbers</div>
@@ -1734,7 +1897,7 @@
                         <div class="case-expanded-label">What Could Be Done Differently</div>
                         <p class="case-expanded-text">Earlier stakeholder alignment and clearer task delegation (e.g. IT monitoring) could have shortened the timeline.</p>
                         <div class="case-expanded-label">Key Learnings</div>
-                        <p class="case-expanded-text">Gained experience in a combined PM–UX researcher role, handling technical and legal aspects. Reinforced the value of researcher-led project management for data-driven decisions.</p>
+                        <p class="case-expanded-text">Gained experience in a combined PM - UX researcher role, handling technical and legal aspects. Reinforced the value of researcher-led project management for data-driven decisions.</p>
                       </div>
                     </div>
                   </div>
@@ -1756,17 +1919,17 @@
                   Created and led an annual user research report, synthesizing global survey data with internal analytics to inform business strategy.
                 </p>
                 <div class="case-row">
-                  <div class="case-row-scope">
-                    <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">As creator and lead, I managed the end-to-end process: defined research goals for sociodemographics, gaming behaviors, and purchase patterns; analyzed data for correlations; integrated with internal analytics and prior-year benchmarks; produced visual reports and actionable presentations.</p>
-                  </div>
                   <div class="case-row-image">
                     <img src="assets/case-study-user-report-map.png" alt="Yearly User Report" />
                   </div>
-                </div>
-                <div class="case-impact-box">
-                  <h4>Impact</h4>
-                  <p class="case-scope-text">Identified 3–4 key segments and behavioral shifts, guiding management, marketing, and product decisions.</p>
+                  <div class="case-row-scope">
+                    <div class="case-scope-label">Scope of Ownership</div>
+                    <p class="case-scope-text">As creator and lead, I managed the end-to-end process: defined research goals for sociodemographics, gaming behaviors, and purchase patterns I analyzed data for correlations, integrated with internal analytics and prior-year benchmarks and produced visual reports and actionable presentations.</p>
+                  </div>
+                  <div class="case-impact-box">
+                    <h4>Impact</h4>
+                    <p class="case-scope-text">Identified 3 - 4 key segments and behavioral shifts, guiding management, marketing, and product decisions.</p>
+                  </div>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="3">Read full case study →</button>
                 <div class="case-detail" id="case-detail-3">
@@ -1777,14 +1940,14 @@
                         <div class="case-expanded-label">Business Goal</div>
                         <p class="case-expanded-text">Ground strategic decisions in current customer profiles, not assumptions or outdated research.</p>
                         <div class="case-expanded-label">User Pain</div>
-                        <p class="case-expanded-text">No unified, regularly updated view of users—leading to fragmented decisions.</p>
+                        <p class="case-expanded-text">No unified, regularly updated view of users - leading to fragmented decisions.</p>
                         <div class="case-expanded-label">Trigger</div>
                         <p class="case-expanded-text">Not tracking user changes over time meant missing opportunities.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
                         <div class="case-expanded-label">Scope of Ownership</div>
-                        <p class="case-expanded-text">As creator and lead, I managed the end-to-end process: defined research goals for sociodemographics, gaming behaviors, and purchase patterns; analyzed data for correlations; integrated with internal analytics and prior-year benchmarks; produced visual reports and actionable presentations.</p>
+                        <p class="case-expanded-text">As creator and lead, I managed the end-to-end process: defined research goals for sociodemographics, gaming behaviors, and purchase patterns I analyzed data for correlations, integrated with internal analytics and prior-year benchmarks and produced visual reports and actionable presentations.</p>
                         <div class="case-expanded-label">Collaboration</div>
                         <p class="case-expanded-text">Management, Business, Marketing, Data Analysts</p>
                       </div>
@@ -1801,13 +1964,13 @@
                       <p class="case-expanded-text">Recurring global surveys; quantitative analysis combined with behavioral metrics; trend comparisons with prior years.</p>
                       <div class="case-expanded-label">Screens</div>
                       <div class="case-expanded-screens-grid case-expanded-screens-single-row">
-                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/User%20Report%20ToC1.jpg" data-modal-alt="Report table of contents – part 1">
-                          <span>Report table of contents – part 1</span>
-                          <span class="thumb-square"><img src="assets/User%20Report%20ToC1.jpg" alt="Report table of contents – part 1" /></span>
+                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/User%20Report%20ToC1.jpg" data-modal-alt="Report table of contents  -  part 1">
+                          <span>Report table of contents  -  part 1</span>
+                          <span class="thumb-square"><img src="assets/User%20Report%20ToC1.jpg" alt="Report table of contents  -  part 1" /></span>
                         </button>
-                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/User%20Report%20ToC2.jpg" data-modal-alt="Report table of contents – part 2">
-                          <span>Report table of contents – part 2</span>
-                          <span class="thumb-square"><img src="assets/User%20Report%20ToC2.jpg" alt="Report table of contents – part 2" /></span>
+                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/User%20Report%20ToC2.jpg" data-modal-alt="Report table of contents  -  part 2">
+                          <span>Report table of contents  -  part 2</span>
+                          <span class="thumb-square"><img src="assets/User%20Report%20ToC2.jpg" alt="Report table of contents  -  part 2" /></span>
                         </button>
                       </div>
                     </div>
@@ -1815,18 +1978,18 @@
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
                         <div class="case-expanded-label">Key Insight</div>
-                        <p class="case-expanded-text">The report revealed shifts in profiles, preferences, and behaviour—exposing unnoticed segments and contradictions between assumed and actual behaviour.</p>
+                        <p class="case-expanded-text">The report revealed shifts in profiles, preferences, and behaviour - exposing unnoticed segments and contradictions between assumed and actual behaviour.</p>
                         <div class="case-expanded-label">Project Decision</div>
-                        <p class="case-expanded-text">Management adopted for targeting; marketing refined offers; product adjusted messaging and priorities based on trends.</p>
+                        <p class="case-expanded-text">Management adopted for targeting, marketing refined offers, product adjusted messaging and priorities based on trends.</p>
                         <div class="case-expanded-label">Numbers</div>
-                        <p class="case-expanded-text">Globally representative sample; defined 3–4 segments; surfaced significant shifts.</p>
+                        <p class="case-expanded-text">Globally representative sample, defined 3 - 4 segments, surfaced significant shifts.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>Afterthought</h4>
                         <div class="case-expanded-label">What Worked</div>
                         <p class="case-expanded-text">Repeatable yearly rhythm closed the gap between one-off analytics and long-term strategic understanding.</p>
                         <div class="case-expanded-label">What Could Be Done Differently</div>
-                        <p class="case-expanded-text">Integrate earlier into planning cycles; add workshops for broader adoption.</p>
+                        <p class="case-expanded-text">Integrate earlier into planning cycles, add workshops for broader adoption.</p>
                         <div class="case-expanded-label">Key Learnings</div>
                         <p class="case-expanded-text">Combined surveys with analytics for insights beyond individual methods. Repeatable reports build organisational memory and reinforce user-centred decisions.</p>
                       </div>
@@ -1846,18 +2009,18 @@
                 <p class="case-subtitle">
                   Directed end-to-end A/B test as sole UX Researcher to eliminate a redundant checkout step, reducing drop-off.
                 </p>
-                <div class="case-row reversed">
+                <div class="case-row">
+                  <div class="case-row-image">
+                    <img src="assets/case-study-shorter-checkout.png" alt="Shorter Checkout" />
+                  </div>
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
                     <p class="case-scope-text">Sole UX Researcher: defined goals and KPIs, configured and monitored the A/B test, analyzed data, delivered recommendations.</p>
                   </div>
-                  <div class="case-row-image">
-                    <img src="assets/case-study-shorter-checkout.png" alt="Shorter Checkout" />
+                  <div class="case-impact-box">
+                    <h4>Impact</h4>
+                    <p class="case-scope-text">Increased cart conversion rate by 5 percentage points, enhancing purchase completion and revenue.</p>
                   </div>
-                </div>
-                <div class="case-impact-box">
-                  <h4>Impact</h4>
-                  <p class="case-scope-text">Increased cart conversion rate by 5 percentage points, enhancing purchase completion and revenue.</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="4">Read full case study →</button>
                 <div class="case-detail" id="case-detail-4">
@@ -1933,17 +2096,17 @@
                   Led UX research discovery for a new challenger bank app targeting young users and small businesses, defining niche, USP, and business model.
                 </p>
                 <div class="case-row">
+                  <div class="case-row-image">
+                    <img src="assets/case-study-challenger-bank-phases.png" alt="First Steps of a New Challenger Bank" />
+                  </div>
                   <div class="case-row-scope">
                     <div class="case-scope-label">Scope of Ownership</div>
                     <p class="case-scope-text">As UX Researcher in R&D, I led the discovery phase: desk research, competitive analysis, user interviews, surveys, and moderated usability tests. Delivered research summary with feature lists, wireframes, monetization strategies, niches, personas, and USPs.</p>
                   </div>
-                  <div class="case-row-image">
-                    <img src="assets/case-study-challenger-bank.png" alt="Challenger Bank" />
+                  <div class="case-impact-box">
+                    <h4>Impact</h4>
+                    <p class="case-scope-text">Enabled progression to planning phase, culminating in the launch of ZEN.COM as a standalone venture.</p>
                   </div>
-                </div>
-                <div class="case-impact-box">
-                  <h4>Impact</h4>
-                  <p class="case-scope-text">Enabled progression to planning phase, culminating in the launch of ZEN.COM as a standalone venture.</p>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="5">Read full case study →</button>
                 <div class="case-detail" id="case-detail-5">
@@ -1977,13 +2140,9 @@
                       <p class="case-expanded-text">Desk research, competitive benchmarking, user interviews and surveys with target segments.</p>
                       <div class="case-expanded-label">Screens</div>
                       <div class="case-expanded-screens-grid case-expanded-screens-single-row">
-                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/case-study-challenger-bank.png" data-modal-alt="Feature matrix: CORE, USP, IDEAS by SME and Young segments">
-                          <span>Feature matrix: CORE, USP, IDEAS</span>
-                          <span class="thumb-square"><img src="assets/case-study-challenger-bank.png" alt="Feature matrix: CORE, USP, IDEAS by SME and Young segments" /></span>
-                        </button>
-                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/case-study-challenger-bank-phases.png" data-modal-alt="Project phases from brief to implementation">
-                          <span>Project phases from brief to implementation</span>
-                          <span class="thumb-square"><img src="assets/case-study-challenger-bank-phases.png" alt="Project phases from brief to implementation" /></span>
+                        <button type="button" class="case-expanded-thumbnail case-expanded-thumbnail-rect" data-modal-src="assets/case-study-challenger-bank-phases.png" data-modal-alt="First Steps of a New Challenger Bank">
+                          <span>First Steps of a New Challenger Bank</span>
+                          <span class="thumb-square"><img src="assets/case-study-challenger-bank-phases.png" alt="First Steps of a New Challenger Bank" /></span>
                         </button>
                       </div>
                     </div>
@@ -1993,7 +2152,7 @@
                         <div class="case-expanded-label">Key Insight</div>
                         <p class="case-expanded-text">Two viable niches (young users and SME) emerged with tailored USPs, feature priorities, wireframes, and monetization models.</p>
                         <div class="case-expanded-label">Project Decision</div>
-                        <p class="case-expanded-text">Advanced to planning phase; initiative spun out as ZEN.COM.</p>
+                        <p class="case-expanded-text">Advanced to planning phase, initiative spun out as ZEN.COM.</p>
                         <div class="case-expanded-label">Numbers</div>
                         <p class="case-expanded-text">Discovery research propelled project from ideation to structured planning and commercialization.</p>
                       </div>
@@ -2025,18 +2184,18 @@
                 <p class="case-subtitle">
                   Led rapid moderated usability tests to validate redesigned purchase flow and onboarding, preventing a flawed launch.
                 </p>
-                <div class="case-row reversed">
-                  <div class="case-row-scope">
-                    <div class="case-scope-label">Scope of Ownership</div>
-                    <p class="case-scope-text">Designed and ran moderated usability tests under tight constraints; analyzed findings, recommended blocks, advocated for follow-up on pricing flow.</p>
-                  </div>
+                <div class="case-row">
                   <div class="case-row-image">
                     <img src="assets/Onboarding.jpg" alt="Mobile App Purchase Flow" />
                   </div>
-                </div>
-                <div class="case-impact-box">
-                  <h4>Impact</h4>
-                  <p class="case-scope-text">Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention and trust erosion (based on industry benchmarks).</p>
+                  <div class="case-row-scope">
+                    <div class="case-scope-label">Scope of Ownership</div>
+                    <p class="case-scope-text">Designed and ran moderated usability tests under tight constraints, analyzed findings, recommended blocks, advocated for follow-up on pricing flow.</p>
+                  </div>
+                  <div class="case-impact-box">
+                    <h4>Impact</h4>
+                    <p class="case-scope-text">Blocked confusing onboarding rollout, averting potential 20-30% drop in new user retention and trust erosion (based on industry benchmarks).</p>
+                  </div>
                 </div>
                 <button type="button" class="case-toggle" data-toggle="6">Read full case study →</button>
                 <div class="case-detail" id="case-detail-6">
@@ -2045,16 +2204,16 @@
                       <div class="case-expanded-card">
                         <h4>Problem & Motivation</h4>
                         <div class="case-expanded-label">Business Goal</div>
-                        <p class="case-expanded-text">Introduce onboarding; test redesigned purchase flow (search, filters, offers) ahead of launch.</p>
+                        <p class="case-expanded-text">Introduce onboarding, test redesigned purchase flow (search, filters, offers) ahead of launch.</p>
                         <div class="case-expanded-label">User Pain</div>
-                        <p class="case-expanded-text">New users faced confusion in first impressions, search, filters, and pricing—fostering distrust.</p>
+                        <p class="case-expanded-text">New users faced confusion in first impressions, search, filters, and pricing - fostering distrust.</p>
                         <div class="case-expanded-label">Trigger</div>
                         <p class="case-expanded-text">User feedback prompted redesign; research brought in pre-release for validation.</p>
                       </div>
                       <div class="case-expanded-card">
                         <h4>My Role</h4>
                         <div class="case-expanded-label">Scope of Ownership</div>
-                        <p class="case-expanded-text">Designed and ran moderated usability tests under tight constraints; analyzed findings, recommended blocks, advocated for follow-up on pricing flow.</p>
+                        <p class="case-expanded-text">Designed and ran moderated usability tests under tight constraints, analyzed findings, recommended blocks, advocated for follow-up on pricing flow.</p>
                         <div class="case-expanded-label">Collaboration</div>
                         <p class="case-expanded-text">Product Owner (Mobile App), UX Designer, IT team</p>
                       </div>
@@ -2088,9 +2247,9 @@
                       <div class="case-expanded-card">
                         <h4>Outcome</h4>
                         <div class="case-expanded-label">Key Insight</div>
-                        <p class="case-expanded-text">Onboarding induced confusion and distrust; purchase flow obscured pricing transparency via unexpected changes.</p>
+                        <p class="case-expanded-text">Onboarding induced confusion and distrust, purchase flow obscured pricing transparency via unexpected changes.</p>
                         <div class="case-expanded-label">Project Decision</div>
-                        <p class="case-expanded-text">Scrapped onboarding from release; deferred pricing flow redesign for deeper research.</p>
+                        <p class="case-expanded-text">Scrapped onboarding from release, deferred pricing flow redesign for deeper research.</p>
                         <div class="case-expanded-label">Numbers</div>
                         <p class="case-expanded-text">Testing with 5 users surfaced critical issues (per Nielsen's 5-user rule), saving weeks of post-launch fixes.</p>
                       </div>
@@ -2116,8 +2275,8 @@
           <div class="container">
             <p class="eyebrow">Expertise</p>
             <h2 class="section-heading skills-heading" style="margin-bottom: 0.25rem;">Skills &amp; Methods</h2>
-            <p class="about-body" style="margin-bottom: 4rem; max-width: 42rem;">Methods I use, tools I work with, and how I keep learning.</p>
-            <div class="skills-grid">
+            <p class="about-body" style="margin-bottom: 3rem; max-width: 42rem;">Methods I use, tools I work with, languages, credentials, and formal education.</p>
+            <div class="skills-layout">
               <div class="skills-col">
                 <h3>Research Methods</h3>
                 <ul class="skills-list">
@@ -2133,6 +2292,106 @@
                 </ul>
               </div>
               <div class="skills-col">
+                <h3>Certificates</h3>
+                <div class="skills-cert-list">
+                  <div class="skills-cert-item">
+                    <div>
+                      <span class="skills-cert-name">UX Professional</span>
+                      <span class="skills-cert-issuer">Baymard</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-baymard-ux-professional.png" data-modal-alt="UX Professional - Baymard" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </button>
+                  </div>
+                  <div class="skills-cert-item">
+                    <div>
+                      <span class="skills-cert-name">Product Analytics</span>
+                      <span class="skills-cert-issuer">Witflow</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-srcs="assets/cert-product-analytics-1.png,assets/cert-product-analytics-2.png" data-modal-alt="Product Analytics - Witflow" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </button>
+                  </div>
+                  <div class="skills-cert-item">
+                    <div>
+                      <span class="skills-cert-name">UX Strategy Fundamentals</span>
+                      <span class="skills-cert-issuer">Joe Natoli</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-ux-strategy.png" data-modal-alt="UX Strategy Fundamentals - Joe Natoli" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </button>
+                  </div>
+                  <div class="skills-cert-item">
+                    <div>
+                      <span class="skills-cert-name">Conducting Usability Testing</span>
+                      <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-conducting-usability-testing.jpeg" data-modal-alt="Conducting Usability Testing - Interaction Design Foundation" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </button>
+                  </div>
+                  <div class="skills-cert-item">
+                    <div>
+                      <span class="skills-cert-name">User Methods and Best Practices</span>
+                      <span class="skills-cert-issuer">Interaction Design Foundation</span>
+                    </div>
+                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-user-methods.jpeg" data-modal-alt="User Methods and Best Practices - Interaction Design Foundation" aria-label="View certificate">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="skills-col">
+                <h3>Languages</h3>
+                <div class="skills-lang-row">
+                  <span>Polish</span>
+                  <span class="skills-lang-pill">Native</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>German</span>
+                  <span class="skills-lang-pill">Native</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>English</span>
+                  <span class="skills-lang-pill">Fluent</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>Spanish</span>
+                  <span class="skills-lang-pill">Communicative</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>Swedish</span>
+                  <span class="skills-lang-pill">Basic</span>
+                </div>
+                <div class="skills-lang-row">
+                  <span>Russian</span>
+                  <span class="skills-lang-pill">Basic</span>
+                </div>
+              </div>
+
+              <div class="skills-col skills-degrees-section">
+                <h3>Degrees</h3>
+              <div class="skills-degrees-grid">
+                <div class="skills-degree-block">
+                  <div class="skills-degree-title">M.A. in Cognitive Science</div>
+                  <div class="skills-degree-lines">
+                    <span>Human-Computer Interaction</span>
+                    <span>Cognitive Neuropsychology</span>
+                  </div>
+                </div>
+                <div class="skills-degree-block">
+                  <div class="skills-degree-title">Postgraduate in Business Planning and Strategy</div>
+                </div>
+                <div class="skills-degree-block">
+                  <div class="skills-degree-title">B.A. in Applied Linguistics</div>
+                  <div class="skills-degree-lines">
+                    <span>Intercultural Communication</span>
+                    <span>Translations</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="skills-col skills-tools-row">
                 <h3>Tools</h3>
                 <div class="skills-tool-categories">
                   <div class="skills-tool-row">
@@ -2187,83 +2446,15 @@
                       <span class="skills-tag">InVision</span>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="skills-col">
-                <h3>Certificates</h3>
-                <div class="skills-cert-list">
-                  <div class="skills-cert-item">
-                    <div>
-                      <span class="skills-cert-name">UX Professional</span>
-                      <span class="skills-cert-issuer">Baymard</span>
+                  <div class="skills-tool-row">
+                    <span class="skills-tool-label">AI:</span>
+                    <div class="skills-tags">
+                      <span class="skills-tag">ChatGPT</span>
+                      <span class="skills-tag">Perplexity</span>
+                      <span class="skills-tag">Lovable</span>
+                      <span class="skills-tag">Cursor</span>
                     </div>
-                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-baymard-ux-professional.png" data-modal-alt="UX Professional - Baymard" aria-label="View certificate">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-                    </button>
                   </div>
-                  <div class="skills-cert-item">
-                    <div>
-                      <span class="skills-cert-name">Product Analytics</span>
-                      <span class="skills-cert-issuer">Witflow</span>
-                    </div>
-                    <button type="button" class="skills-cert-view" data-modal-srcs="assets/cert-product-analytics-1.png,assets/cert-product-analytics-2.png" data-modal-alt="Product Analytics - Witflow" aria-label="View certificate">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-                    </button>
-                  </div>
-                  <div class="skills-cert-item">
-                    <div>
-                      <span class="skills-cert-name">UX Strategy Fundamentals</span>
-                      <span class="skills-cert-issuer">Joe Natoli</span>
-                    </div>
-                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-ux-strategy.png" data-modal-alt="UX Strategy Fundamentals - Joe Natoli" aria-label="View certificate">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-                    </button>
-                  </div>
-                  <div class="skills-cert-item">
-                    <div>
-                      <span class="skills-cert-name">Conducting Usability Testing</span>
-                      <span class="skills-cert-issuer">Interaction Design Foundation</span>
-                    </div>
-                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-conducting-usability-testing.jpeg" data-modal-alt="Conducting Usability Testing - Interaction Design Foundation" aria-label="View certificate">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-                    </button>
-                  </div>
-                  <div class="skills-cert-item">
-                    <div>
-                      <span class="skills-cert-name">User Methods and Best Practices</span>
-                      <span class="skills-cert-issuer">Interaction Design Foundation</span>
-                    </div>
-                    <button type="button" class="skills-cert-view" data-modal-src="assets/cert-user-methods.jpeg" data-modal-alt="User Methods and Best Practices - Interaction Design Foundation" aria-label="View certificate">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="skills-col">
-                <h3>Languages</h3>
-                <div class="skills-lang-row">
-                  <span>Polish</span>
-                  <span class="skills-lang-pill">Native</span>
-                </div>
-                <div class="skills-lang-row">
-                  <span>German</span>
-                  <span class="skills-lang-pill">Native</span>
-                </div>
-                <div class="skills-lang-row">
-                  <span>English</span>
-                  <span class="skills-lang-pill">Fluent</span>
-                </div>
-                <div class="skills-lang-row">
-                  <span>Spanish</span>
-                  <span class="skills-lang-pill">Communicative</span>
-                </div>
-                <div class="skills-lang-row">
-                  <span>Swedish</span>
-                  <span class="skills-lang-pill">Basic</span>
-                </div>
-                <div class="skills-lang-row">
-                  <span>Russian</span>
-                  <span class="skills-lang-pill">Basic</span>
                 </div>
               </div>
             </div>
@@ -2276,25 +2467,69 @@
             <p class="eyebrow">Testimonials</p>
             <h2 class="section-heading">What people say</h2>
             <div class="testimonials-grid">
-              <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"Współpraca z Melanie to dowód na to, jak ogromny wpływ na biznes potrafi mieć świetny UX Research. (...) Najbardziej imponująca w pracy Melanie jest jej umiejętność łączenia perspektywy użytkownika z celami firmy. (...)"</p>
+              <blockquote class="testimonial-card testimonial-card--with-original">
+                <div>
+                  <p class="testimonial-quote testimonial-quote-main">&quot;Working with Melanie shows how much impact excellent UX research can have on a business. (...) What&apos;s most impressive in her work is her ability to connect the user&apos;s perspective with company goals. (...) she always delivered concrete, actionable recommendations whose implementation brought measurable business benefits. (...)&quot;</p>
+                  <details class="testimonial-original">
+                    <summary>Original</summary>
+                    <p class="testimonial-quote testimonial-quote-original">&quot;Współpraca z Melanie to dowód na to, jak ogromny wpływ na biznes potrafi mieć świetny UX Research. Melanie to profesjonalistka w każdym calu. Jej przenikliwość i analityczny umysł pozwalają jej dostrzegać niuanse w zachowaniach użytkowników, które inni łatwo przeoczają. Najbardziej imponująca w pracy Melanie jest jej umiejętność łączenia perspektywy użytkownika z celami firmy. Jej badania nigdy nie kończyły się na samej diagnozie problemu, zawsze dostarczała konkretne, wartościowe rekomendacje, których wdrożenie przynosiło nam wymierne korzyści biznesowe. Gorąco polecam Melanie każdej organizacji, która chce tworzyć lepsze produkty i usługi w oparciu o rzetelne dane.&quot;</p>
+                  </details>
+                </div>
                 <footer>
                   <p class="testimonial-author">Maciej Rynarzewski</p>
                   <p class="testimonial-role">Strategy Director at ZEN.COM</p>
                 </footer>
               </blockquote>
-              <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. (...) As a manager, she was very supportive, offered her help and shared her expertise whenever we needed it. (...)"</p>
+              <blockquote class="testimonial-card testimonial-card--with-original">
+                <div>
+                  <p class="testimonial-quote testimonial-quote-main">&quot;During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. (...)As a manager, she was very supportive, offered her help and shared her expertise whenever we needed it. (...)&quot;</p>
+                  <details class="testimonial-original">
+                    <summary>Original</summary>
+                    <p class="testimonial-quote testimonial-quote-original">&quot;During my time at G2A, Melanie was my team leader and my mentor. She is very thorough, pays attention to every small detail and has a very broad knowledge of research methods and cognitive science. She also has an impeccable command of four (!) languages, which makes her able to talk to users from all around the world. As a manager, she was very supportive, offered her help and shared her expertise whenever we needed it. I learned a lot from Melanie and I&apos;m sure whoever gets to work with her will learn a lot, too.&quot;</p>
+                  </details>
+                </div>
                 <footer>
                   <p class="testimonial-author">Olga Skoczek (Wojnarowska)</p>
                   <p class="testimonial-role">UX Researcher at G2A.COM</p>
                 </footer>
               </blockquote>
-              <blockquote class="testimonial-card">
-                <p class="testimonial-quote">"I have pleasure to work with Melanie on many projects that focus strongly on UX Research. (...) She's a very knowledgable researcher that has provided critical data and solutions to company's projects and has improved the flow of information across many branches in the company. (...)"</p>
+              <blockquote class="testimonial-card testimonial-card--with-original">
+                <div>
+                  <p class="testimonial-quote testimonial-quote-main">&quot;(...) She&apos;s a very knowledgable researcher that has provided critical data and solutions to company&apos;s projects and has improved the flow of information across many branches in the company. I&apos;m very thankful I get to design, knowing that my every move is being backed by such a professional.&quot;</p>
+                  <details class="testimonial-original">
+                    <summary>Original</summary>
+                    <p class="testimonial-quote testimonial-quote-original">&quot;I have pleasure to work with Melanie on many projects that focus strongly on UX Research. She has helped me improve my UX Designs plenty of times and as well as optimising many products. She&apos;s a very knowledgable researcher that has provided critical data and solutions to company&apos;s projects and has improved the flow of information across many branches in the company. I&apos;m very thankful I get to design, knowing that my every move is being backed by such a professional.&quot;</p>
+                  </details>
+                </div>
                 <footer>
                   <p class="testimonial-author">Kamil Rejman</p>
                   <p class="testimonial-role">UX Designer at G2A.COM</p>
+                </footer>
+              </blockquote>
+              <blockquote class="testimonial-card testimonial-card--with-original">
+                <div>
+                  <p class="testimonial-quote testimonial-quote-main">&quot;Melanie is an outstanding collaborator who excels in team environments. She prioritizes relationships, proactively communicates, and fosters a positive atmosphere. Over four years she supported the development of my mobile application, (...) Her experience in leading UXR projects repeatedly enabled us to overcome significant challenges.&quot;</p>
+                  <details class="testimonial-original">
+                    <summary>Original</summary>
+                    <p class="testimonial-quote testimonial-quote-original">&quot;Melanie is an outstanding collaborator who excels in team environments. She prioritizes relationships, proactively communicates, and fosters a positive atmosphere. Over four years she supported the development of my mobile application, ensuring our team stayed closely connected to users and had access to valuable data, insights, and recommendations. Melanie demonstrates strong professionalism, curiosity and the ability to ask insightful questions. Her experience in leading UXR projects repeatedly enabled us to overcome significant challenges.&quot;</p>
+                  </details>
+                </div>
+                <footer>
+                  <p class="testimonial-author">Monika Majnert</p>
+                  <p class="testimonial-role">Product Owner of Mobile App at G2A.COM</p>
+                </footer>
+              </blockquote>
+              <blockquote class="testimonial-card testimonial-card--with-original">
+                <div>
+                  <p class="testimonial-quote testimonial-quote-main">&quot;(...) She demonstrates strong commitment to projects, reliability, and openness to dialogue and collaboration, even when opinions differ. Curious and engaged, she is willing to go beyond surface-level work and take a deeper interest in the project. She works effectively across the organization, not just within her own team or function. (...)&quot;</p>
+                  <details class="testimonial-original">
+                    <summary>Original</summary>
+                    <p class="testimonial-quote testimonial-quote-original">&quot;I have been working with Melanie on a strategically important project that has evolved through several iterations over the past few years. She demonstrates strong commitment to projects, reliability, and openness to dialogue and collaboration, even when opinions differ. Curious and engaged, she is willing to go beyond surface-level work and take a deeper interest in the project. She works effectively across the organization, not just within her own team or function. She is also open to feedback and able to explain complex topics in a clear and accessible way, making them understandable to people with different levels of expertise in various parts of the company.&quot;</p>
+                  </details>
+                </div>
+                <footer>
+                  <p class="testimonial-author">Joanna Frota Kurkowska</p>
+                  <p class="testimonial-role">Head of Strategic Research at Zaiks Lab</p>
                 </footer>
               </blockquote>
             </div>

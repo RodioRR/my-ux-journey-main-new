@@ -8,7 +8,7 @@ const CaseStudies = () => {
   return (
     <section id="work" className="py-24 md:py-32">
       <div className="container">
-        <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-4">
+        <p className="font-body text-base tracking-[0.3em] uppercase text-primary mb-4">
           Selected Work
         </p>
         <h2 className="font-display text-3xl md:text-5xl text-foreground mb-16">
@@ -16,7 +16,7 @@ const CaseStudies = () => {
         </h2>
 
         <div className="divide-y divide-border/40">
-          {caseStudies.map((study, index) => (
+          {caseStudies.map((study) => (
             <div key={study.id} className="py-16 md:py-20 first:pt-0">
               <CaseStudyCard
                 study={study}
@@ -24,7 +24,6 @@ const CaseStudies = () => {
                 onToggle={() =>
                   setExpandedId(expandedId === study.id ? null : study.id)
                 }
-                index={index}
               />
             </div>
           ))}

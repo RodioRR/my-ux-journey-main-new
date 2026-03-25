@@ -7,11 +7,9 @@ interface Props {
   study: CaseStudy;
   isExpanded: boolean;
   onToggle: () => void;
-  index: number;
 }
 
-const CaseStudyCard = ({ study, isExpanded, onToggle, index }: Props) => {
-  const isReversed = index % 2 === 1;
+const CaseStudyCard = ({ study, isExpanded, onToggle }: Props) => {
   const [showLightbox, setShowLightbox] = useState(false);
 
   return (
@@ -25,7 +23,7 @@ const CaseStudyCard = ({ study, isExpanded, onToggle, index }: Props) => {
           {study.tags.map((tag) => (
             <span
               key={tag}
-              className="font-body text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
+              className="font-body text-sm px-2.5 py-1 rounded-full bg-muted text-muted-foreground"
             >
               {tag}
             </span>
@@ -36,60 +34,63 @@ const CaseStudyCard = ({ study, isExpanded, onToggle, index }: Props) => {
           {study.subtitle}
         </p>
 
-        {/* Case study 1 (no image): scope (no box) + impact side by side */}
+        {/* Case study 1 (no image): scope left + centre (2/3), impact right */}
         {study.id === 1 ? (
-          <div className="grid md:grid-cols-[5fr_2fr] gap-6 mb-6 items-start">
-            <div className="flex flex-col">
-              <h4 className="font-body text-xs tracking-[0.15em] uppercase text-accent font-medium mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 mb-6 items-start">
+            <div className="flex flex-col min-w-0 md:min-h-0">
+              <h4 className="font-body text-sm tracking-[0.15em] uppercase text-accent font-medium mb-2">
                 Scope of Ownership
               </h4>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+              <p className="font-body text-base text-muted-foreground leading-relaxed">
                 {study.scopeOfOwnership}
               </p>
             </div>
-            <div className="p-4 rounded-lg bg-primary/5 border border-primary/10">
-              <p className="font-body text-sm flex-1">
+            <div className="p-4 rounded-lg bg-primary/5 border border-primary/10 md:self-stretch">
+              <p className="font-body text-base flex-1">
                 <span className="font-medium text-primary">Impact: </span>
                 <span className="text-foreground">{study.impact}</span>
               </p>
             </div>
           </div>
         ) : (
-          <>
-            {/* Image + Scope side by side */}
-            <div className={`flex flex-col md:flex-row gap-8 mb-6 ${isReversed ? "md:flex-row-reverse" : ""}`}>
-              <div className={`${study.imageAspect === "portrait" ? "md:w-3/5" : "md:w-1/2"} flex flex-col justify-center ${isReversed ? "md:text-left" : "md:text-right"}`}>
-                <h4 className="font-body text-xs tracking-[0.15em] uppercase text-accent font-medium mb-2">
-                  Scope of Ownership
-                </h4>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  {study.scopeOfOwnership}
-                </p>
-              </div>
-              <button
-                className={`${study.imageAspect === "portrait" ? "md:w-2/5" : "md:w-1/2"} overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition-opacity flex items-center`}
-                onClick={() => setShowLightbox(true)}
-              >
-                <img
-                  src={study.image}
-                  alt={study.title}
-                  className="w-full h-auto object-contain"
-                />
-              </button>
+          <div
+            className={`grid grid-cols-1 gap-6 mb-6 items-start ${
+              study.imageAspect === "portrait"
+                ? "md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)_minmax(0,0.9fr)]"
+                : "md:grid-cols-3"
+            }`}
+          >
+            <button
+              type="button"
+              className="min-w-0 overflow-hidden rounded-xl cursor-pointer hover:opacity-90 transition-opacity flex items-center"
+              onClick={() => setShowLightbox(true)}
+            >
+              <img
+                src={study.image}
+                alt={study.title}
+                className="w-full h-auto object-contain"
+              />
+            </button>
+            <div className="flex flex-col justify-center min-w-0">
+              <h4 className="font-body text-sm tracking-[0.15em] uppercase text-accent font-medium mb-2">
+                Scope of Ownership
+              </h4>
+              <p className="font-body text-base text-muted-foreground leading-relaxed text-left">
+                {study.scopeOfOwnership}
+              </p>
             </div>
-
-            <div className="p-4 rounded-lg bg-primary/5 border border-primary/10 mb-5">
-              <p className="font-body text-sm">
+            <div className="p-4 rounded-lg bg-primary/5 border border-primary/10 min-w-0 md:self-stretch">
+              <p className="font-body text-base">
                 <span className="font-medium text-primary">Impact: </span>
                 <span className="text-foreground">{study.impact}</span>
               </p>
             </div>
-          </>
+          </div>
         )}
 
         <button
           onClick={onToggle}
-          className="font-body text-sm font-medium text-primary transition-colors no-print"
+          className="font-body text-base font-medium text-primary transition-colors no-print"
         >
           {isExpanded ? "Show less ↑" : "Read full case study →"}
         </button>

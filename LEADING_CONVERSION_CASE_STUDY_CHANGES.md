@@ -1,4 +1,4 @@
-# Leading Conversion Optimisation Team Case Study – Rewrite Summary
+# Leading Conversion Optimisation Team Case Study  -  Rewrite Summary
 
 ## Overview
 The case study was rewritten to be more concise, professional, and free of exaggerations. Tone is simple and direct.
@@ -115,7 +115,7 @@ The case study was rewritten to be more concise, professional, and free of exagg
 **What Could Be Done Differently**
 | Before | After |
 |--------|-------|
-| Clarify ownership in select projects to avoid inefficiencies or cancellations; prioritize fewer, higher-impact initiatives over volume. | Clarify ownership in select projects; prioritise fewer, higher-impact initiatives over volume. |
+| Clarify ownership in select projects to avoid inefficiencies or cancellations; prioritize fewer, higher-impact initiatives over volume. | Clarify ownership in select projects, prioritise fewer, higher-impact initiatives over volume. |
 
 *Shortened; UK spelling: "prioritise".*
 

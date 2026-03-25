@@ -66,7 +66,7 @@ const ImageLightbox = ({ src, alt, open, onOpenChange }: Props) => {
           )}
         </div>
         {multiPage && (
-          <p className="text-center text-xs text-muted-foreground mt-1">
+          <p className="text-center text-sm text-muted-foreground mt-1">
             {index + 1} / {images.length}
           </p>
         )}
