@@ -57,22 +57,12 @@ const Hero = () => {
             style={{ animationDelay: "0.3s" }}
           >
             <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("#contact");
-              }}
-              className="inline-flex items-center px-5 py-3 rounded-lg bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide hover:opacity-90 transition-opacity no-print sm:px-8 sm:py-3.5"
-            >
-              Get in Touch
-            </a>
-            <a
               href="#work"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("#work");
               }}
-              className="inline-flex items-center px-5 py-3 rounded-lg border border-foreground/20 text-foreground font-body font-medium text-sm tracking-wide hover:bg-foreground/5 transition-colors no-print sm:px-8 sm:py-3.5"
+              className="inline-flex items-center px-5 py-3 rounded-lg bg-primary text-primary-foreground font-body font-medium text-sm tracking-wide hover:opacity-90 transition-opacity no-print sm:px-8 sm:py-3.5"
             >
               View Case Studies
             </a>
