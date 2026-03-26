@@ -98,10 +98,6 @@
     font-family: var(--font-display);
   }
 
-  /* Offset scroll targets so they're not hidden under fixed navbar */
-  [id] {
-    scroll-margin-top: 5rem;
-  }
 }
 
 @layer components {

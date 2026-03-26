@@ -68,10 +68,6 @@
         scroll-behavior: smooth;
       }
 
-      [id] {
-        scroll-margin-top: 5rem;
-      }
-
       h1,
       h2,
       h3,
@@ -268,7 +264,7 @@
       }
 
       .nav-mobile-links {
-        padding: 1rem 0;
+        padding-block: 1rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -356,12 +352,26 @@
         text-align: left;
       }
 
+      @media (max-width: 767px) {
+        .hero-content {
+          max-width: none;
+          width: 100%;
+        }
+      }
+
       .hero-label {
         font-size: 1rem;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         color: var(--primary);
         margin-bottom: 1.5rem;
+      }
+
+      @media (max-width: 767px) {
+        .hero-label {
+          font-size: 0.75rem;
+          letter-spacing: 0.2em;
+        }
       }
 
       .hero-title {
@@ -2643,7 +2653,17 @@
           var target = document.getElementById(targetId);
           if (target) {
             e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            var navEl = document.getElementById("nav");
+            var navRow = navEl ? navEl.querySelector(".nav-inner") : null;
+            var navFixed =
+              navEl && window.getComputedStyle(navEl).position === "fixed";
+            var offset =
+              navFixed && navRow ? navRow.offsetHeight : 0;
+            var top =
+              target.getBoundingClientRect().top +
+              (window.scrollY || window.pageYOffset) -
+              offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
           }
         });
 

@@ -33,11 +33,11 @@ const Hero = () => {
       </div>
 
       <div className="container relative z-10 flex flex-1 flex-col justify-center pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:pb-6 sm:pt-6 md:pb-8 md:pt-8">
-        <div className="max-w-3xl w-full">
-          <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-3 sm:tracking-[0.3em] sm:mb-4 md:mb-6 animate-fade-in">
+        <div className="w-full max-w-none md:max-w-3xl">
+          <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-3 sm:text-sm sm:tracking-[0.3em] sm:mb-4 md:mb-6 animate-fade-in">
             UX Research Portfolio
           </p>
-          <h1 className="font-display text-[clamp(2rem,calc(5.5vw+0.5rem),6rem)] text-foreground leading-[1.05] mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
+          <h1 className="font-display text-[clamp(2rem,calc(5.5vw+0.5rem),6rem)] text-foreground leading-[1.05] mb-4 sm:mb-6 md:mb-8 animate-fade-in-up w-full">
             Hi, I'm
             <br />
             <span className="text-primary">Melanie Gierszal</span>
