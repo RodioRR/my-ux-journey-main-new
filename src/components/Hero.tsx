@@ -37,7 +37,7 @@ const Hero = () => {
           <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-3 sm:text-sm sm:tracking-[0.3em] sm:mb-4 md:mb-6 animate-fade-in">
             UX Research Portfolio
           </p>
-          <h1 className="font-display text-[clamp(2rem,calc(5.5vw+0.5rem),6rem)] text-foreground leading-[1.05] mb-4 sm:mb-6 md:mb-8 animate-fade-in-up w-full">
+          <h1 className="font-display w-full max-w-xl text-[clamp(2.5rem,calc(7vw+0.5rem),6rem)] sm:text-[clamp(2rem,calc(5.5vw+0.5rem),6rem)] text-foreground leading-[1.05] mb-4 sm:mb-6 md:mb-8 animate-fade-in-up">
             Hi, I'm
             <br />
             <span className="text-primary">Melanie Gierszal</span>
